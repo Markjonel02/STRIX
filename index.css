@@ -1,0 +1,48 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+/* App.css */
+
+
+*{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+
+}
+
+@font-face {
+  font-family: 'Montserrat',;
+  src: url('/public/fonts/Montserrat-Regular.ttf') format('truetype');
+  src: url('/public/fonts/Montserrat-Bold.ttf') format('truetype');
+  /* You can include other font formats (e.g., woff, woff2) for better browser support */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  /* Use 'YourCustomFont' as the font-family for the entire application */
+}
+
+.container{
+  display: flex;
+}
+
+.nav-bar, .nav-item{
+display: flex;
+justify-content: space-between;
+font-weight: 500;
+}
+
+.navbar a{
+  color: aliceblue;
+  text-decoration: none;
+ font-size: 1.2rem;
+ text-align: center;
+ letter-spacing: 2px;
+ display: flex;
+ justify-content: space-between;
+}
+
+
