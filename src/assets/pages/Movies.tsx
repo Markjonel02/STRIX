@@ -1,7 +1,4 @@
-
-
-export const Movies = () => {
-  return (
-    <div>Movies</div>
-  )
-}
+const Movies = () => {
+  return <div>Hello</div>;
+};
+export default Movies;

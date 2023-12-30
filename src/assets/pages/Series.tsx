@@ -3,6 +3,7 @@
   color?: "bg-danger" | "bg-dark";
 }
  */
-export const Series = () => {
+const Series = () => {
   return <div>SERIES</div>;
 };
+export default Series;

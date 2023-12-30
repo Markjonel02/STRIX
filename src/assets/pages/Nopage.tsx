@@ -1,16 +1,19 @@
-import Video from "../../img/404vid.mp4";
-export const Nopage = () => {
+import React from "react";
+import videoSource from "../img/404vid.mp4"; // Update the path to your video file
+
+const MyVideoComponent: React.FC = () => {
   return (
-    <>
-      <div className="nopage  bg-body-dark w-100  ">
-        <video
-          src={Video}
-          muted
-          loop
-          autoPlay
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        />
-      </div>
-    </>
+    <div>
+      <video
+        src={videoSource}
+        autoPlay
+        muted
+        loop
+        height="360"
+        style={{ maxWidth: "100%", height: "auto" }}
+      />
+    </div>
   );
 };
+
+export default MyVideoComponent;

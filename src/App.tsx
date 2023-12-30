@@ -1,32 +1,40 @@
-import { Header } from "./assets/components/Header";
-import { Maincontainer } from "./assets/components/Maincontainer";
+import Header from "./assets/components/Header";
+import Maincontainer from "./assets/components/Maincontainer";
 import { Routes, Route } from "react-router-dom";
+
+import { useEffect, Suspense, lazy } from "react";
+// Animation on Scroll
+import Aos from "aos";
+import "aos/dist/aos.css";
 //routes
-import { Home } from "./assets/pages/Home";
-import { Movies } from "./assets/pages/Movies";
-import { Nopage } from "./assets/pages/Nopage";
-import { Series } from "./assets/pages/Series";
-import { About } from "./assets/pages/About";
+const Homes = lazy(() => import("./assets/pages/Home"));
+const Movies = lazy(() => import("./assets/pages/Movies"));
+const Series = lazy(() => import("./assets/pages/Series"));
+const About = lazy(() => import("./assets/pages/About"));
+const Nopage = lazy(() => import("./assets/pages/Nopage"));
 
 const App = () => {
+  useEffect(() => {
+    Aos.init();
+  });
+
   return (
     <>
-      <div className="cotainer">
-        <div className="heading">
-          <Header />
-        </div>
-
-        <div className="main-container p-0 m-0 vh-100">
+      <div className="heading">
+        <Header />
+      </div>
+      <div className="main-container w-100 vh-100" data-aos="fade-right">
+        <Suspense fallback={<div>Loading....</div>}>
           <Maincontainer>
             <Routes>
-              <Route index element={<Home />} />
+              <Route path="/" index element={<Homes />} />
               <Route path="movies" element={<Movies />} />
               <Route path="series" element={<Series />} />
               <Route path="about" element={<About />} />
               <Route path="*" element={<Nopage />} />
             </Routes>
           </Maincontainer>
-        </div>
+        </Suspense>
       </div>
     </>
   );

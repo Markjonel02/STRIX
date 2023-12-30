@@ -25,8 +25,12 @@ body {
   /* Use 'YourCustomFont' as the font-family for the entire application */
 }
 
-.container{
-  display: flex;
+.navbar{
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  background-color: rgba(17, 25, 40, 0.61);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
 .nav-bar, .nav-item{
@@ -34,6 +38,13 @@ display: flex;
 justify-content: space-between;
 font-weight: 500;
 }
+.heading {
+  position: sticky;
+  top: 0;
+  background-color: white; /* Add your desired background color */
+  z-index: 100; /* Adjust the z-index as needed */
+}
+
 
 .navbar a{
   color: aliceblue;
@@ -43,6 +54,23 @@ font-weight: 500;
  letter-spacing: 2px;
  display: flex;
  justify-content: space-between;
+}
+
+
+/* PinterestGrid.css */
+.my-masonry-grid {
+  display: flex;
+  margin-left: -30px; /* Adjust the margin to control the gap between items */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 30px; /* Adjust the padding to control the gap between items */
+}
+
+.pinterest-grid-item {
+  width: 100%; /* Full width within the column */
+  margin-bottom: 30px; /* Adjust the margin to control the gap between items */
 }
 
 
