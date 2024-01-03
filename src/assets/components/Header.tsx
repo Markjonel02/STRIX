@@ -12,7 +12,7 @@ const styles = {
   backdropFilter: "blur(6px) saturate(120%)",
   WebkitBackdropFilter: "blur(6px) saturate(120%)",
   backgroundColor: "rgba(17, 25, 40, 0.61)",
-  borderRadius: "12px",
+
   border: "1px solid rgba(255, 255, 255, 0.125)",
 };
 const Header = () => {

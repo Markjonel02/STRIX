@@ -25,13 +25,7 @@ body {
   /* Use 'YourCustomFont' as the font-family for the entire application */
 }
 
-.navbar{
-  backdrop-filter: blur(6px) saturate(120%);
-  -webkit-backdrop-filter: blur(6px) saturate(120%);
-  background-color: rgba(17, 25, 40, 0.61);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
-}
+
 
 .nav-bar, .nav-item{
 display: flex;
@@ -60,17 +54,98 @@ font-weight: 500;
 /* PinterestGrid.css */
 .my-masonry-grid {
   display: flex;
-  margin-left: -30px; /* Adjust the margin to control the gap between items */
+  margin-left: -30px; 
   width: auto;
 }
 
 .my-masonry-grid_column {
-  padding-left: 30px; /* Adjust the padding to control the gap between items */
+  padding-left: 30px; 
 }
 
 .pinterest-grid-item {
   width: 100%; /* Full width within the column */
-  margin-bottom: 30px; /* Adjust the margin to control the gap between items */
+  margin-bottom: 30px; 
 }
 
 
+/* card toggle */
+label {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 15px 10px 10px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  color: black;
+ }
+ 
+ input {
+  display: none;
+ }
+ 
+ input:checked + label svg {
+  fill: hsl(0deg 100% 50%);
+  stroke: hsl(0deg 100% 50%);
+  animation: heartButton 1s;
+ }
+ 
+ @keyframes heartButton {
+  0% {
+   transform: scale(1);
+  }
+ 
+  25% {
+   transform: scale(1.3);
+  }
+ 
+  50% {
+   transform: scale(1);
+  }
+ 
+  75% {
+   transform: scale(1.3);
+  }
+ 
+  100% {
+   transform: scale(1);
+  }
+ }
+ 
+ input + label .action {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+ }
+ 
+ input + label .action span {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  transition: all .5s;
+ }
+ 
+ input + label .action span.option-1 {
+  transform: translate(0px,0%);
+  opacity: 1;
+ }
+ 
+ input:checked + label .action span.option-1 {
+  transform: translate(0px,-100%);
+  opacity: 0;
+ }
+ 
+ input + label .action span.option-2 {
+  transform: translate(0px,100%);
+  opacity: 0;
+ }
+ 
+ input:checked + label .action span.option-2 {
+  transform: translate(0px,0%);
+  opacity: 1;
+ }
+ 
+ 

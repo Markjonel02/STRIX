@@ -3,7 +3,6 @@ import { Outlet, Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      {" "}
       <ul className="navbar-nav ml-auto ">
         <li className="nav-item ">
           <Link className="nav-link " to="/">
@@ -23,6 +22,12 @@ const Navbar = () => {
         <li className="nav-item  ">
           <Link className="nav-link" to="/about">
             About
+          </Link>
+        </li>
+
+        <li className="nav-item  ">
+          <Link className="nav-link" to="/favorites">
+            Favorites <i className="bi bi-bell"></i>
           </Link>
         </li>
         <li className="nav-item  d-none">
