@@ -4,7 +4,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 // Import your components
-import Header from "./assets/components/Header";
+const Header = lazy(() => import("./assets/components/Header"));
 import Maincontainer from "./assets/components/Maincontainer";
 
 // Import your pages
@@ -17,32 +17,52 @@ const Favorites = lazy(() => import("./assets/pages/Favorites"));
 
 const App = () => {
   useEffect(() => {
-    Aos.init();
+    // Initialize AOS with options
+    Aos.init({ duration: 1000 });
+
+    // Clean up AOS on component unmount
+    return () => {
+      Aos.refresh();
+    };
   }, []);
 
   return (
-    <>
+    <div className="container-fluid">
       <div className="heading">
         <Header />
       </div>
-      <div
-        className="main-container w-100 vh-100 mt-0 p-0"
-        data-aos="fade-right"
+      <Suspense
+        fallback={
+          <section className="dots-container mt-5">
+            <div className="dot"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
+          </section>
+        }
       >
-        <Suspense fallback={<div>Loading....</div>}>
+        <div
+          className="main-container w-100 vh-100 mb-5"
+          style={{ marginTop: "100px" }}
+          data-aos="fade-up"
+          data-aos-duration="500"
+        >
           <Maincontainer>
-            <Routes>
-              <Route path="/" element={<Homes />} />
-              <Route path="/movies" element={<Movies />} />
-              <Route path="series" element={<Series />} />
-              <Route path="about" element={<About />} />
-              <Route path="favorites" element={<Favorites />} />
-              <Route path="*" element={<Nopage />} />
-            </Routes>
+          
+              <Routes>
+                <Route path="/" element={<Homes />} />
+                <Route path="/movies" element={<Movies />} />
+                <Route path="/series" element={<Series />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/favorites" element={<Favorites />} />
+                <Route path="*" element={<Nopage />} />
+              </Routes>
+          
           </Maincontainer>
-        </Suspense>
-      </div>
-    </>
+        </div>
+      </Suspense>
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@ interface Props {
   children: ReactNode;
 }
 const Maincontainer = ({ children }: Props) => {
-  return <>{children}</>;
+  return <div>{children}</div>;
 };
 
 export default Maincontainer;
