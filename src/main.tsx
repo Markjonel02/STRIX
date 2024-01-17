@@ -9,7 +9,7 @@ import { FavoritesProvider } from "./assets/Context/FavoriteContext.tsx";
 import "swiper/css";
 import "swiper/css/navigation";
 import { BrowserRouter as Router } from "react-router-dom";
-
+import "@fortawesome/fontawesome-svg-core";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <FavoritesProvider>

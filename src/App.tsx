@@ -49,16 +49,14 @@ const App = () => {
           data-aos-duration="500"
         >
           <Maincontainer>
-          
-              <Routes>
-                <Route path="/" element={<Homes />} />
-                <Route path="/movies" element={<Movies />} />
-                <Route path="/series" element={<Series />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/favorites" element={<Favorites />} />
-                <Route path="*" element={<Nopage />} />
-              </Routes>
-          
+            <Routes>
+              <Route path="/" element={<Homes />} />
+              <Route path="/movies" element={<Movies />} />
+              <Route path="/series" element={<Series />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/favorites" element={<Favorites />} />
+              <Route path="*" element={<Nopage />} />
+            </Routes>
           </Maincontainer>
         </div>
       </Suspense>

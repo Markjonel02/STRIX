@@ -1,63 +1,68 @@
 import React from "react";
-import { useFavorites } from "../Context/FavoriteContext";
-import { VideoItem } from "./Movies";
 
+import { useFavorites } from "../Context/FavoriteContext";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faPlay } from "@fortawesome/free-solid-svg-icons/faPlay";
 const FavoritesPage: React.FC = () => {
   const { favorites } = useFavorites();
-  // Sample video items (replace with your actual items array)
-  const items: VideoItem[] = [
-    // ... (other items)
-    {
-      id: 1,
-      imageUrl: "https://placekitten.com/300/200", // Replace with your image URL
-      title: "Item 1",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      genre: "comedy",
+  const breakpoints = {
+    577: {
+      slidesPerView: 1.75,
+      spaceBetween: 10,
     },
-    {
-      id: 2,
-      imageUrl: "https://placekitten.com/400/300", // Replace with your image URL
-      title: "Item 2",
-      genre: "Rom-com",
-      content:
-        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    877: {
+      slidesPerView: 2,
     },
-    {
-      id: 3,
-      imageUrl: "https://placekitten.com/400/300", // Replace with your image URL
-      title: "Item 2",
-      content:
-        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      genre: "Horror",
+    1024: {
+      slidesPerView: 4.8,
     },
-    {
-      id: 4,
-      imageUrl: "https://placekitten.com/400/300", // Replace with your image URL
-      title: "Item 2",
-      content:
-        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      genre: "Action",
-    },
-    {
-      id: 5,
-      imageUrl: "https://placekitten.com/400/300", // Replace with your image URL
-      title: "Item 2",
-      content:
-        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.adadaaddd",
-      genre: "Documentary",
-    },
-  ];
-
+  };
+  const i = <FontAwesomeIcon icon={faTrash} />;
+  const p = <FontAwesomeIcon icon={faPlay} />;
   return (
-    <div>
+    <>
       <h1>Favorites Page</h1>
-      {favorites.map((item) => (
-        <div key={item.id}>
-          <p>{item.title}</p>
-          {/* Add other details as needed */}
-        </div>
-      ))}
-    </div>
+      <Swiper
+        className="mySwiper container-fluid"
+        pagination={{ clickable: true }}
+        breakpoints={breakpoints}
+      >
+        {favorites.map((item) => (
+          <SwiperSlide
+            className="swiper-container d-flex flex-nowrap p-2 position-relative"
+            key={item.id}
+          >
+            <div className="card-animation-cont d-flex">
+              <div className="card">
+                <img src={item.imageUrl} alt="" />
+                <div className="info">
+                  <strong>{item.title}</strong>
+                  <span className="sub-title">{item.genre}</span>
+                  <hr />
+                  <div className="hide-info">
+                    <span className="text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      <div className="butt-cont d-flex">
+                        <button className="btn btn-outline-primary ms-1">
+                          Watch <span>{p}</span>
+                        </button>
+                        <button className="btn btn-outline-danger ms-1">
+                          <span>{i}</span>
+                        </button>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
   );
 };
 

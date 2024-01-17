@@ -16,8 +16,10 @@ export interface VideoItem {
   genre: string;
 }
 
-const Movies: React.FC = () => {
+const Movies: React.FC = (/* { video } */) => {
   // Sample video items
+
+
   const { addToFavorites } = useFavorites();
   const items: VideoItem[] = [
     {
@@ -78,10 +80,19 @@ const Movies: React.FC = () => {
       : Array(items.length).fill(false);
   });
 
+  const [favoriteCount, setfavoriteCount] = useState<number>(() => {
+    const storedCounts = localStorage.getItem("favoriteCount");
+    return storedCounts ? parseInt(storedCounts, 10) : 0;
+  });
+
   // Update localStorage when favoriteStates change
   useEffect(() => {
     localStorage.setItem("favoriteStates", JSON.stringify(favoriteStates));
   }, [favoriteStates]);
+
+  useEffect(() => {
+    localStorage.setItem("favoriteCount", JSON.stringify(favoriteCount));
+  }, [favoriteCount]);
 
   // Handle toggling the favorite status of a video item
   const handleToggleFavorite = (index: number) => {
@@ -89,11 +100,18 @@ const Movies: React.FC = () => {
     newFavoriteStates[index] = !newFavoriteStates[index];
     setFavoriteStates(newFavoriteStates);
 
+    const update = newFavoriteStates.filter((state) => state).length;
+    setfavoriteCount(update);
+
     if (!favoriteStates[index]) {
       addToFavorites(items[index]);
     }
   };
 
+  /*  const handleRemoveFromFavorites = () => {
+    removeFromFavorites(video);
+  };
+ */
   // Define the responsive columns for the Masonry layout
   const breakpointColumnsObj = {
     default: 4,
