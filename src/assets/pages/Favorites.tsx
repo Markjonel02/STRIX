@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useFavorites } from "../Context/FavoriteContext";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
@@ -10,6 +8,7 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons/faPlay";
 
 const FavoritesPage: React.FC = () => {
   const { favorites } = useFavorites();
+
   const breakpoints = {
     577: {
       slidesPerView: 1.75,
@@ -25,6 +24,7 @@ const FavoritesPage: React.FC = () => {
 
   const i = <FontAwesomeIcon icon={faTrash} />;
   const p = <FontAwesomeIcon icon={faPlay} />;
+
   return (
     <>
       <h1>Favorites Page</h1>

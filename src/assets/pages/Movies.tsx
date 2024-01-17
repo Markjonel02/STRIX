@@ -38,7 +38,7 @@ const Movies: React.FC = () => {
     },
     {
       id: 3,
-      imageUrl: "https://placekitten.com/400/300", // Replace with your image URL
+      imageUrl: "https://placekitten.com/400/300",
       title: "Item 2",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -46,7 +46,7 @@ const Movies: React.FC = () => {
     },
     {
       id: 4,
-      imageUrl: "https://placekitten.com/400/300", // Replace with your image URL
+      imageUrl: "https://placekitten.com/400/300",
       title: "Item 2",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -54,7 +54,7 @@ const Movies: React.FC = () => {
     },
     {
       id: 5,
-      imageUrl: "https://placekitten.com/400/300", // Replace with your image URL
+      imageUrl: "https://placekitten.com/400/300",
       title: "Item 2",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.adadaaddd",
@@ -62,7 +62,7 @@ const Movies: React.FC = () => {
     },
     {
       id: 6,
-      imageUrl: "https://placekitten.com/400/300", // Replace with your image URL
+      imageUrl: "https://placekitten.com/400/300",
       title: "Item 2",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -124,7 +124,12 @@ const Movies: React.FC = () => {
   };
 
   return (
-    <Container fluid data-aos="fade-right" data-aos-duration="700">
+    <Container
+      fluid
+      data-aos="fade-right "
+      data-aos-duration="700"
+      className=" overflow-y-auto "
+    >
       <h1 className="text-center fw-medium p-3">Video Gallery</h1>
       <Swiper>
         <SwiperSlide>
