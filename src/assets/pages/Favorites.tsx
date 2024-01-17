@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faPlay } from "@fortawesome/free-solid-svg-icons/faPlay";
+
 const FavoritesPage: React.FC = () => {
   const { favorites } = useFavorites();
   const breakpoints = {
@@ -18,9 +19,10 @@ const FavoritesPage: React.FC = () => {
       slidesPerView: 2,
     },
     1024: {
-      slidesPerView: 4.8,
+      slidesPerView: 4.5,
     },
   };
+
   const i = <FontAwesomeIcon icon={faTrash} />;
   const p = <FontAwesomeIcon icon={faPlay} />;
   return (
