@@ -37,9 +37,9 @@ const Header = () => {
     <>
       <nav
         className={`navbar navbar-expand-lg navbar-dark fixed-top ${
-          isScrolling ? "bg-dark" : ""
+          isScrolling ? "" : "bg-dark"
         }`}
-        style={isScrolling ? {} : predefinedStyles}
+        style={isScrolling ? predefinedStyles : {}}
       >
         <div className="container-fluid">
           <a className="navbar-brand" href="/">

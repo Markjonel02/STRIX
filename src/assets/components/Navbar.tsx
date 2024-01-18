@@ -7,9 +7,9 @@ const Navbar = () => {
   const i = <FontAwesomeIcon icon={faBell} />;
   return (
     <>
-      <ul className="navbar-nav ml-auto ">
-        <li className="nav-item ">
-          <Link className="nav-link " to="/">
+      <ul className="navbar-nav ml-auto text-center">
+        <li className="nav-item  text-center">
+          <Link className="nav-link text-center " to="/">
             Home
           </Link>
         </li>

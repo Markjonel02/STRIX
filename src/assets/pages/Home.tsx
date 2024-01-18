@@ -22,7 +22,7 @@ const Home = () => {
   }; */
   return (
     <>
-      <Carousel id="carouselExampleDark" variant="dark">
+      <Carousel id="carouselExampleDark" variant="dark" className=" rounded-3">
         <Carousel.Item interval={3000}>
           <LazyLoadImage
             src={marvel}
@@ -81,10 +81,15 @@ const Home = () => {
         </Carousel.Item>
       </Carousel>
 
-      {/* swiper section */}
-
       <Swiper>
-        <SwiperSlide></SwiperSlide>
+        <SwiperSlide>
+          <div className="card-wrapper">
+            <h2></h2>
+            <div className="cards">
+              <h5>title</h5>
+            </div>
+          </div>
+        </SwiperSlide>
       </Swiper>
     </>
   );

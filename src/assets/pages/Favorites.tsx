@@ -49,11 +49,11 @@ const FavoritesPage: React.FC = () => {
                     <span className="text">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       <div className="butt-cont d-flex">
-                        <button className="btn btn-outline-primary ms-1">
+                        <button className="btn btn-outline-success ms-2 mt-3 ">
                           Watch <span>{p}</span>
                         </button>
-                        <button className="btn btn-outline-danger ms-1">
-                          <span>{i}</span>
+                        <button className="btn btn-outline-danger ms-2 mt-3">
+                          Delete<span>{i}</span>
                         </button>
                       </div>
                     </span>
