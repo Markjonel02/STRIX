@@ -34,7 +34,13 @@ export const useFavorites = () => {
   return context;
 };
  */
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 import { VideoItem } from "../pages/Movies";
 
 interface FavoritesContextProps {
@@ -52,14 +58,32 @@ export const FavoritesProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [favorites, setFavorites] = useState<VideoItem[]>([]);
 
+  // Load favorites from local storage when the component is mounted
+  useEffect(() => {
+    const storedFavorites = localStorage.getItem("favorites");
+    if (storedFavorites) {
+      setFavorites(JSON.parse(storedFavorites));
+    }
+  }, []);
+
   const addToFavorites = (item: VideoItem) => {
-    setFavorites((prevFavorites) => [...prevFavorites, item]);
+    setFavorites((prevFavorites) => {
+      const newFavorites = [...prevFavorites, item];
+      // Save favorites to local storage
+      localStorage.setItem("favorites", JSON.stringify(newFavorites));
+      return newFavorites;
+    });
   };
 
   const removeFromFavorites = (item: VideoItem) => {
-    setFavorites((prevFavorites) =>
-      prevFavorites.filter((favorite) => favorite.id !== item.id)
-    );
+    setFavorites((prevFavorites) => {
+      const newFavorites = prevFavorites.filter(
+        (favorite) => favorite.id !== item.id
+      );
+      // Save favorites to local storage
+      localStorage.setItem("favorites", JSON.stringify(newFavorites));
+      return newFavorites;
+    });
   };
 
   return (

@@ -63,7 +63,7 @@ const Movies: React.FC = () => {
     {
       id: 6,
       imageUrl: "https://placekitten.com/400/300",
-      title: "Item 2",
+      title: "Sample 6",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       genre: "Crime",
