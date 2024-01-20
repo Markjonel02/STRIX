@@ -10,32 +10,32 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
-   animation: .3 all ease 150ms
+  animation: .3 all ease 150ms
 }
 
 @font-face {
   font-family: 'Montserrat',;
   src: url('/public/fonts/Montserrat-Regular.ttf') format('truetype');
   src: url('/public/fonts/Montserrat-Bold.ttf') format('truetype');
-  /* You can include other font formats (e.g., woff, woff2) for better browser support */
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #F5F7F8;
   
-  /* Use 'YourCustomFont' as the font-family for the entire application */
+
 }
 
 
-.nav-bar, .nav-item{
-font-weight: 500;
+.nav-bar, .nav-item,.nav-link{
+display: flex;
+font-weight: 600;
 }
 
 .heading {
   position: sticky;
   top: 0;
-  z-index: 100; /* Adjust the z-index as needed */
+  z-index: 100; 
 }
 
 
@@ -62,7 +62,7 @@ border-bottom:2px solid #b3d4fc;
 }
 
 .pinterest-grid-item {
-  width: 100%; /* Full width within the column */
+  width: 100%;
   margin-bottom: 30px; 
 }
 
@@ -308,3 +308,8 @@ label {
   transform: translateY(0);
 }
 
+/* Media Queries */
+
+@media screen and (min-width: 577px) {
+  /* Portrait and mobiles */
+}

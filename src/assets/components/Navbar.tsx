@@ -9,18 +9,20 @@ const Navbar: React.FC = () => {
   const heartIcon = <FontAwesomeIcon icon={faHeart} />;
 
   return (
-    <ul className="navbar-nav">
-      <NavItem to="/" text="Home" />
-      <NavItem to="/movies" text="Movies" />
-      <NavItem to="/series" text="Series" />
-      <NavItem to="/about" text="About" />
-      <NavItemWithIcon
-        to="/favorites"
-        icon={heartIcon}
-        count={favorites.length}
-      />
-      <Outlet />
-    </ul>
+    <>
+      <ul className="navbar-nav ">
+        <NavItem to="/" text="Home" />
+        <NavItem to="/movies" text="Movies" />
+        <NavItem to="/series" text="Series" />
+        <NavItem to="/about" text="About" />
+        <NavItemWithIcon
+          to="/favorites"
+          icon={heartIcon}
+          count={favorites.length}
+        /> 
+        <Outlet />
+      </ul>
+    </>
   );
 };
 
@@ -50,7 +52,7 @@ const NavItemWithIcon: React.FC<NavItemWithIconProps> = ({
 }) => (
   <li className="nav-item">
     <NavLink className="nav-link nav-item" to={to}>
-      <span>{icon}</span>
+      <span className="mx-1">{icon}</span>
       {count !== 0 && <span>{count}</span>}
     </NavLink>
   </li>
