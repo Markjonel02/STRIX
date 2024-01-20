@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faPlay } from "@fortawesome/free-solid-svg-icons/faPlay";
+
 const FavoritesPage: React.FC = () => {
   const { favorites } = useFavorites();
 
@@ -25,9 +26,9 @@ const FavoritesPage: React.FC = () => {
   const p = <FontAwesomeIcon icon={faPlay} />;
 
   return (
-    <>
+    <div className=" d-flex justify-content-center  align-items-center">
       {favorites.length === 0 ? (
-        <h1>No Favorites yet!</h1>
+        <h1 className="text-center">No Favorites yet!</h1>
       ) : (
         <Swiper
           className="mySwiper container-fluid"
@@ -66,7 +67,7 @@ const FavoritesPage: React.FC = () => {
           ))}
         </Swiper>
       )}
-    </>
+    </div>
   );
 };
 

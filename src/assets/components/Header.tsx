@@ -9,8 +9,8 @@ const img = {
 };
 
 const predefinedStyles = {
-  backdropFilter: "blur(16px) saturate(180%)",
-  WebkitBackdropFilter: "blur(16px) saturate(180%);",
+  backdropFilter: "blur(3px) saturate(199%)",
+  WebkitBackdropFilter: "blur(16px) saturate(180%)",
   backgroundColor: "rgba(17, 25, 40, 0.61)",
   border: "1px solid rgba(255, 255, 255, 0.125)",
 };
@@ -34,34 +34,32 @@ const Header = () => {
   const isScrolling = scrollPosition > 100;
 
   return (
-    <>
-      <nav
-        className={`navbar navbar-expand-lg navbar-dark fixed-top ${
-          isScrolling ? "" : "bg-dark"
-        }`}
-        style={isScrolling ? predefinedStyles : {}}
-      >
-        <div className="container-fluid">
-          <a className="navbar-brand" href="/">
-            <img src={Img} alt={img.altname} style={{ width: img.size }} />
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse ms-4" id="navbarNav">
-            <Navbar />
-          </div>
+    <nav
+      className={`navbar navbar-expand-lg navbar-dark fixed-top ${
+        isScrolling ? "" : "bg-dark"
+      }`}
+      style={isScrolling ? predefinedStyles : {}}
+    >
+      <div className="container-fluid">
+        <img src={Img} alt={img.altname} style={{ width: img.size }} />
+
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse ms-4" id="navbarNav">
+          <Navbar />
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 };
 

@@ -27,13 +27,13 @@ const App = () => {
   }, []);
 
   return (
-    <div className="container-fluid">
+    <div className="">
       <div className="heading">
         <Header />
       </div>
       <Suspense
         fallback={
-          <section className="dots-container mt-5">
+          <section className="dots-container">
             <div className="dot"></div>
             <div className="dot"></div>
             <div className="dot"></div>
@@ -43,8 +43,7 @@ const App = () => {
         }
       >
         <div
-          className="main-container w-100 vh-100 mb-5"
-          style={{ marginTop: "100px" }}
+          className=" main-container w-100 vh-100 mb-5 mt-lg-5 "
           data-aos="fade-up"
           data-aos-duration="500"
         >

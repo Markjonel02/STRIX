@@ -23,16 +23,13 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #F5F7F8;
+  
   /* Use 'YourCustomFont' as the font-family for the entire application */
 }
 
 
-
 .nav-bar, .nav-item{
-display: flex;
-justify-content: space-between;
 font-weight: 500;
-align-items: center;
 }
 
 .heading {
@@ -42,20 +39,14 @@ align-items: center;
 }
 
 
-.navbar a{
-  color: aliceblue;
-  text-decoration: none;
+.navbar  a{
  font-size: 1.2rem;
- text-align: center;
  letter-spacing: 2px;
- display: flex;
- justify-content: space-between;
+
 }
 .navbar a:hover{
 color:limegreen;
 border-bottom:2px solid #b3d4fc;
-
-
 }
 
 
@@ -316,5 +307,4 @@ label {
   opacity: 1;
   transform: translateY(0);
 }
-
 

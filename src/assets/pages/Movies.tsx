@@ -8,6 +8,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import "swiper/swiper-bundle.css";
 
 // Define the type for each video item
+
 export interface VideoItem {
   id: number;
   imageUrl: string;
@@ -20,17 +21,18 @@ const Movies: React.FC = () => {
   // Sample video items
 
   const { addToFavorites, removeFromFavorites } = useFavorites();
+
   const items: VideoItem[] = [
     {
       id: 1,
-      imageUrl: "https://placekitten.com/300/200", // Replace with your image URL
+      imageUrl: "https://placekitten.com/300/200",
       title: "Item 1",
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       genre: "comedy",
     },
     {
       id: 2,
-      imageUrl: "https://placekitten.com/400/300", // Replace with your image URL
+      imageUrl: "https://placekitten.com/400/300",
       title: "Item 2",
       genre: "Rom-com",
       content:
@@ -115,7 +117,6 @@ const Movies: React.FC = () => {
   };
 
   // Define the responsive columns for the Masonry layout
-
   const breakpointColumnsObj = {
     default: 4,
     1100: 2,
@@ -124,18 +125,12 @@ const Movies: React.FC = () => {
   };
 
   return (
-    <Container
-      fluid
-      data-aos="fade-right "
-      data-aos-duration="700"
-      className=" overflow-y-auto "
-    >
-      <h1 className="text-center fw-medium p-3">Video Gallery</h1>
+    <Container fluid data-aos="fade-right " data-aos-duration="700">
       <Swiper>
         <SwiperSlide>
           <Masonry
             breakpointCols={breakpointColumnsObj}
-            className="my-masonry-grid mt-2"
+            className="my-masonry-grid mt-5"
             columnClassName="my-masonry-grid_column"
           >
             {/* Map through video items and render each as a Card */}
