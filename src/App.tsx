@@ -27,7 +27,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="">
+    <>
       <div className="heading">
         <Header />
       </div>
@@ -59,7 +59,7 @@ const App = () => {
           </Maincontainer>
         </div>
       </Suspense>
-    </div>
+    </>
   );
 };
 

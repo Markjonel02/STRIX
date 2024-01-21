@@ -6,6 +6,10 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useFavorites } from "../Context/FavoriteContext";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "swiper/swiper-bundle.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // Define the type for each video item
 
@@ -18,8 +22,20 @@ export interface VideoItem {
 }
 
 const Movies: React.FC = () => {
-  // Sample video items
+  useEffect(() => {
+    Aos.init();
+    return () => {
+      Aos.refresh();
+    };
+  });
 
+  // Sample video items
+  const i = (
+    <FontAwesomeIcon
+      icon={faCheckCircle}
+      className="mx-2  bg-success rounded-5"
+    />
+  );
   const { addToFavorites, removeFromFavorites } = useFavorites();
 
   const items: VideoItem[] = [
@@ -71,6 +87,21 @@ const Movies: React.FC = () => {
       genre: "Crime",
     },
   ];
+  const [Toast, setToast] = useState<string>("");
+
+  const [Showtoast, setShowtoast] = useState(false);
+
+  const Handletoast = (index: number) => {
+    const sel = items[index];
+    setShowtoast(!Showtoast);
+
+    // Set a timer to hide the toast after 3000 milliseconds (adjust as needed)
+    setTimeout(() => {
+      setShowtoast(false);
+    }, 5000);
+
+    setToast(sel.title);
+  };
 
   // State to track favorite status of each video item
   const [favoriteStates, setFavoriteStates] = useState<boolean[]>(() => {
@@ -107,6 +138,7 @@ const Movies: React.FC = () => {
     const selectedItems = items[index];
     if (!favoriteStates[index]) {
       addToFavorites(selectedItems);
+      Handletoast(index);
     } else {
       handleRemoveFromFavorites(selectedItems); //
     }
@@ -125,81 +157,113 @@ const Movies: React.FC = () => {
   };
 
   return (
-    <Container fluid data-aos="fade-right " data-aos-duration="700">
-      <Swiper>
-        <SwiperSlide>
-          <Masonry
-            breakpointCols={breakpointColumnsObj}
-            className="my-masonry-grid mt-5"
-            columnClassName="my-masonry-grid_column"
-          >
-            {/* Map through video items and render each as a Card */}
-            {items.map((item, index) => (
-              <Card
-                key={item.id}
-                className="pinterest-grid-item"
-                data-aos="fade-down"
-                data-aos-easing="linear"
-                data-aos-duration="500ms"
-              >
-                {/* Lazy-loaded image with blur effect */}
-                <LazyLoadImage
-                  alt={item.title}
-                  height="100%"
-                  src={item.imageUrl}
-                  width="100%"
-                  effect="blur"
-                  wrapperClassName="lazy-image-wrapper"
-                />
-                {/* Card body containing title, content, and favorite checkbox */}
-                <Card.Body>
-                  <Card.Title>{item.title}</Card.Title>
-                  <Card.Text>
-                    <p>{` Category: ${item.genre}`}</p>
-                  </Card.Text>
-                  <Card.Text>{item.content}</Card.Text>
-
-                  <input
-                    type="checkbox"
-                    checked={favoriteStates[index]}
-                    id={`favorite-${index}`}
-                    name={`favorite-checkbox-${index}`}
-                    value={`favorite-button-${index}`}
-                    onChange={() => handleToggleFavorite(index)}
+    <>
+      <Container fluid data-aos="fade-right " data-aos-duration="700">
+        <Swiper>
+          <SwiperSlide>
+            <Masonry
+              breakpointCols={breakpointColumnsObj}
+              className="my-masonry-grid mt-5"
+              columnClassName="my-masonry-grid_column"
+            >
+              {/* Map through video items and render each as a Card */}
+              {items.map((item, index) => (
+                <Card
+                  key={item.id}
+                  className="pinterest-grid-item"
+                  data-aos="fade-down"
+                  data-aos-easing="linear"
+                  data-aos-duration="500ms"
+                >
+                  {/* Lazy-loaded image with blur effect */}
+                  <LazyLoadImage
+                    alt={item.title}
+                    height="100%"
+                    src={item.imageUrl}
+                    width="100%"
+                    effect="blur"
+                    wrapperClassName="lazy-image-wrapper"
                   />
+                  {/* Card body containing title, content, and favorite checkbox */}
+                  <Card.Body>
+                    <Card.Title>{item.title}</Card.Title>
+                    <Card.Text>
+                      <p>{` Category: ${item.genre}`}</p>
+                    </Card.Text>
+                    <Card.Text>{item.content}</Card.Text>
 
-                  <label htmlFor={`favorite-${index}`} className="container">
-                    {/* Heart icon indicating favorite status */}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill={favoriteStates[index] ? "red" : "none"}
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="feather feather-heart"
-                    >
-                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                    </svg>
-                    {/* Display whether the item is added to favorites or not */}
-                    <div className="action">
-                      {favoriteStates[index] ? (
-                        <span className="option-2">Added to Favorites</span>
-                      ) : (
-                        <span className="option-1">Add to Favorites</span>
-                      )}
-                    </div>
-                  </label>
-                </Card.Body>
-              </Card>
-            ))}
-          </Masonry>
-        </SwiperSlide>
-      </Swiper>
-    </Container>
+                    <input
+                      type="checkbox"
+                      checked={favoriteStates[index]}
+                      id={`favorite-${index}`}
+                      name={`favorite-checkbox-${index}`}
+                      value={`favorite-button-${index}`}
+                      onChange={() => handleToggleFavorite(index)}
+                    />
+
+                    <label htmlFor={`favorite-${index}`} className="container">
+                      {/* Heart icon indicating favorite status */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill={favoriteStates[index] ? "red" : "none"}
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="feather feather-heart"
+                      >
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                      </svg>
+                      {/* Display whether the item is added to favorites or not */}
+                      <div className="action">
+                        {favoriteStates[index] ? (
+                          <span className="option-2">Added to Favorites</span>
+                        ) : (
+                          <span className="option-1">Add to Favorites</span>
+                        )}
+                      </div>
+                    </label>
+                  </Card.Body>
+                </Card>
+              ))}
+            </Masonry>
+          </SwiperSlide>
+        </Swiper>
+        <div className="Toast-con position-fixed   end-0 p-3">
+          {
+            <div
+              id="liveToast"
+              className={`toast ${Showtoast ? "show " : "hide"} `}
+              role="alert"
+              aria-live="assertive"
+              aria-atomic="true"
+              data-aos="fade-up-left"
+            >
+              <div className="toast-header bg-success-subtle ">
+                <strong className="me-auto">
+                  {i}
+                  {Toast}
+                </strong>
+                <small>11 mins ago</small>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="toast"
+                  aria-label="Close"
+                  onClick={() => setShowtoast(false)}
+                ></button>
+              </div>
+              <div className="toast-body">
+                {`The ${Toast} has been added to the Favorites `}
+              </div>
+            </div>
+          }
+        </div>
+      </Container>
+    </>
   );
 };
 

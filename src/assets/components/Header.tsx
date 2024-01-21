@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Img from "../img/logo2.png";
 import Navbar from "./Navbar";
 
-
 const img = {
   size: 200,
   altname: "logo",
@@ -35,7 +34,7 @@ const Header = () => {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-dark fixed-top ${
+      className={`navbar navbar-expand-lg navbar-dark fixed-top pt-3 ${
         isScrolling ? "" : "bg-dark "
       }`}
       style={isScrolling ? predefinedStyles : {}}
@@ -65,18 +64,6 @@ const Header = () => {
         >
           <Navbar />
         </div>
-        <form className="d-flex" role="search">
-          <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-     
-          <button className="btn btn-outline-success" type="submit">
-            Search
-          </button>
-        </form>
       </div>
     </nav>
   );

@@ -308,8 +308,10 @@ label {
   transform: translateY(0);
 }
 
-/* Media Queries */
 
-@media screen and (min-width: 577px) {
-  /* Portrait and mobiles */
+/* Movies Toggle */
+.Toast-con{
+   z-index: 1000;
+   bottom: 50%;
+  
 }
