@@ -149,7 +149,7 @@ const Home = () => {
       </div>
 
       <div className="watch-k bg-black mt-3 position-relative d-flex justify-content-center align-items-center text-center ">
-        <div className="tv-video position-relative mt-3">
+        <div className="tv-video position-relative mt-3" data-aos="zoom-in">
           <img src={kids} alt="GIF" className="img-kids img-fluid" />
         </div>
 
