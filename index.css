@@ -335,7 +335,7 @@ label {
 
 .top-image {
   position: absolute;
-  top: 70px;
+  top: 85px;
   left: 140px;
   width: 200px;
   height: auto;
@@ -378,4 +378,31 @@ label {
   align-items: center;
   flex-direction: column;
   }
+
+.Download-mobile{
+  display: flex;
+  flex-direction: column;
+}
+.img-DL>img{
+  margin-bottom: 10px;
+  size:300px ;
+}
+.watch-e{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+flex-direction: column;
+
+}
+.img-kids>img{
+  size: 200px;
+  height: auto;
+  
+}
+.watch-k{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 }

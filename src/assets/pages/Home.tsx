@@ -3,7 +3,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import gif from "../img/Colourful Multimedia Stream Play Button Icon Logo.gif";
 import img from "../img/tv.png";
-
+import dl from "../img/modbile.jpg";
+import kids from "../img/kids.png";
 const Home = () => {
   // aos
   useEffect(() => {
@@ -92,7 +93,7 @@ const Home = () => {
         </div>
       </div>
       <div className="tv-section bg-black mt-3 position-relative d-flex justify-content-center align-items-center text-center ">
-        <div className="text-container text-light mb-3">
+        <div className="text-container text-light mb-3" data-aos="zoom-in-up">
           <h1 className="fs-1 fw-bold mt-2 ">
             <strong>Enjoy on your TV</strong>
           </h1>
@@ -101,12 +102,67 @@ const Home = () => {
             players, and more.
           </strong>
         </div>
-        <div className="tv-video position-relative mt-3">
+
+        <div
+          className="tv-video position-relative mt-3"
+          data-aos="fade"
+          data-aos-duration="1000"
+          data-a0s-delay="900"
+        >
           <img src={gif} alt="GIF" className="top-image img-fluid" />
           <img src={img} alt="Image" className="bottom-image img-fluid" />
         </div>
       </div>
-      <div className="Download-mobile"></div>
+
+      <div className="Download-mobile mt-3 pt-3 bg-black position-relative d-flex justify-content-center align-items-center ">
+        <div className="img-DL" data-aos="zoom-in">
+          <img
+            src={dl}
+            alt="Download"
+            style={{ width: "500px" }}
+            className="img-fluid"
+          />
+        </div>
+        <div className="text-dl-container text-light text-center">
+          <h1 className=" fw-bold d-flex flex-wrap ">
+            <strong>Download your shows to watch offline </strong>
+          </h1>
+          <strong className="fs-4">
+            Save your favorites easily and always have something to watch.
+          </strong>
+        </div>
+      </div>
+
+      <div className="watch-e mt-3 bg-black  position-relative text-light justify-content-start align-items-center ">
+        <div className="text-watch p-5 ms-xl-5 ">
+          <h1 className="fs-1 fw-bold flex-wrap">
+            <strong>Watch everywhere</strong>
+          </h1>
+
+          <strong className="fs-4">
+            Stream unlimited movies and TV
+            <span> shows on your phone, tablet, laptop,</span>
+            <br />
+            and TV.
+          </strong>
+        </div>
+      </div>
+
+      <div className="watch-k bg-black mt-3 position-relative d-flex justify-content-center align-items-center text-center ">
+        <div className="tv-video position-relative mt-3">
+          <img src={kids} alt="GIF" className="img-kids img-fluid" />
+        </div>
+
+        <div className="k-text text-light mb-3">
+          <h1 className="fs-1 fw-bold mt-2 ">
+            <strong>Create profiles for kids</strong>
+          </h1>
+          <strong className="fs-4">
+            Send kids on adventures with their favorite characters in a space
+            made just for them—free with your membership.
+          </strong>
+        </div>
+      </div>
     </>
   );
 };
