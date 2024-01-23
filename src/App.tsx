@@ -25,6 +25,7 @@ const App = () => {
       Aos.refresh();
     };
   }, []);
+  const bg = ["bg-dark"];
 
   return (
     <>
@@ -43,11 +44,11 @@ const App = () => {
         }
       >
         <div
-          className=" main-container w-100 vh-100 mb-5 mt-lg-5 "
+          className=" main-container w-100 vh-100 mb-5 mt-lg-5"
           data-aos="fade-up"
           data-aos-duration="500"
         >
-          <Maincontainer>
+          <Maincontainer classname={bg}>
             <Routes>
               <Route path="/" element={<Homes />} />
               <Route path="/movies" element={<Movies />} />
