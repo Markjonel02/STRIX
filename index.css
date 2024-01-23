@@ -313,5 +313,25 @@ label {
 .Toast-con{
    z-index: 1000;
    bottom: 50%;
-  
+}
+
+/* Home-Swiper */
+
+.Swiper-disc {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.Swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.Swiper-slide img {
+  display: absolute;
+  width: 100%;
+
 }

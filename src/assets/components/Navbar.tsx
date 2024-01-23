@@ -3,7 +3,7 @@ import { Outlet, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useFavorites } from "../Context/FavoriteContext";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { Search } from "react-router-dom";
+
 const Navbar: React.FC = () => {
   const { favorites } = useFavorites();
   const heartIcon = <FontAwesomeIcon icon={faHeart} />;
