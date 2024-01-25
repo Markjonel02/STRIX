@@ -94,7 +94,7 @@ const Movies: React.FC = () => {
       id: 2,
       imageUrl: maleficent,
       title: "Maleficent",
-      genre: "Rom-com",
+      genre: "Romance, Drama",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
@@ -262,11 +262,38 @@ const Movies: React.FC = () => {
         </Swiper>
       </div>
 
+      <div className="dropdown mt-5 d-flex justify-content-end align-items-center">
+        <button
+          className="btn btn-outline-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Category
+        </button>
+        <ul className="dropdown-menu">
+          <li>
+            <button className="dropdown-item" type="button">
+              Action
+            </button>
+          </li>
+          <li>
+            <button className="dropdown-item" type="button">
+              Another action
+            </button>
+          </li>
+          <li>
+            <button className="dropdown-item" type="button">
+              Something else here
+            </button>
+          </li>
+        </ul>
+      </div>
       <Container
         fluid
         data-aos="fade-right "
         data-aos-duration="700"
-        className=" overflow-y-auto vh-100 mt-5 hide-scrollbar "
+        className=" overflow-y-auto vh-100 hide-scrollbar mt-2  "
       >
         <h1 className="text-center text-light">Discover </h1>
         <Masonry

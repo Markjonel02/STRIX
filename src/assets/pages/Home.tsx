@@ -66,7 +66,7 @@ const Home = () => {
     <>
       <div className="home" style={parallaxStyles}>
         <div className="" style={parallaxStyle}>
-          <div style={textOverlayContainerStyle}>
+          <div className="" style={textOverlayContainerStyle}>
             <h2
               className="text-overlay"
               style={textOverlayStyle}
@@ -74,33 +74,35 @@ const Home = () => {
               data-aos-duration="800"
               data-aos-delay="500"
             >
-              <i>MovieFlix</i>
+              MovieFlix
             </h2>
-            <strong
+
+            <h3
+              className="sub-title text-white  fs-4 "
               data-aos="zoom-in-up"
               data-aos-duration="900"
               data-aos-delay="1000"
             >
-              <h3 className="sub-title text-white  fw-semibold">
-                Experience the <span></span>
-                <span className="span-shadow text-capitalize shadow-lg">
-                  best and quality movies
-                </span>
-                , TV series, and more just for you..
-              </h3>
-            </strong>
+              Experience the <span></span>
+              <span className="span-shadow text-capitalize shadow-lg">
+                best and quality movies
+              </span>
+              , TV series, <br />
+              and more just for you..
+            </h3>
           </div>
         </div>
       </div>
-      <div className="tv-section bg-black mt-3 position-relative d-flex justify-content-center align-items-center text-center ">
+      <div className="tv-section bg-black mt-2 position-relative d-flex justify-content-center align-items-center text-start ">
         <div className="text-container text-light mb-3" data-aos="zoom-in-up">
           <h1 className="fs-1 fw-bold mt-2 ">
             <strong>Enjoy on your TV</strong>
           </h1>
-          <strong className="fs-4">
-            Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray
-            players, and more.
-          </strong>
+          <span className="fs-4">
+            Watch on Smart TVs, Playstation, Xbox,
+            <br />
+            Chromecast, Apple TV, Blu-ray players, and more.
+          </span>
         </div>
 
         <div
@@ -114,7 +116,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="Download-mobile mt-3 pt-3 bg-black position-relative d-flex justify-content-center align-items-center ">
+      <div className="Download-mobile mt-2 pt-3 bg-black position-relative d-flex justify-content-center align-items-center py-5">
         <div className="img-DL" data-aos="zoom-in">
           <img
             src={dl}
@@ -123,32 +125,38 @@ const Home = () => {
             className="img-fluid"
           />
         </div>
-        <div className="text-dl-container text-light text-center">
+        <div className="text-dl-container text-light text-start  ">
           <h1 className=" fw-bold d-flex flex-wrap ">
-            <strong>Download your shows to watch offline </strong>
+            <strong>
+              Download your
+              <br />
+              shows to watch <br /> offline
+            </strong>
           </h1>
-          <strong className="fs-4">
-            Save your favorites easily and always have something to watch.
-          </strong>
+          <span className="fs-4">
+            Save your favorites easily and always have <br />
+            something to watch.
+          </span>
         </div>
       </div>
 
-      <div className="watch-e mt-3 bg-black  position-relative text-light justify-content-start align-items-center ">
+      <div className="watch-e mt-2 bg-black  position-relative text-light justify-content-center align-items-center  text-center py-5">
         <div className="text-watch p-5 ms-xl-5 ">
           <h1 className="fs-1 fw-bold flex-wrap">
             <strong>Watch everywhere</strong>
           </h1>
-
-          <strong className="fs-4">
+          <span className="fs-4">
             Stream unlimited movies and TV
-            <span> shows on your phone, tablet, laptop,</span>
-            <br />
+            <span>
+              shows on your phone, <br />
+              tablet, laptop,
+            </span>
             and TV.
-          </strong>
+          </span>
         </div>
       </div>
 
-      <div className="watch-k bg-black mt-3 position-relative d-flex justify-content-center align-items-center text-center ">
+      <div className="watch-k bg-black mt-2 position-relative d-flex justify-content-center align-items-center text-start ">
         <div className="tv-video position-relative mt-3" data-aos="zoom-in">
           <img src={kids} alt="GIF" className="img-kids img-fluid" />
         </div>
@@ -157,13 +165,13 @@ const Home = () => {
           <h1 className="fs-1 fw-bold mt-2 ">
             <strong>Create profiles for kids</strong>
           </h1>
-          <strong className="fs-4">
-            Send kids on adventures with their favorite characters in a space
-            made just for them—free with your membership.
-          </strong>
+          <span className="fs-4">
+            Send kids on adventures with their favorite characters in <br /> a
+            space made just for them—free with your membership.
+          </span>
         </div>
       </div>
-      <div className="footer mt-0" style={{ backgroundColor: "#131517ff" }}>
+      <div className="footer m-0" style={{ backgroundColor: "#131517ff" }}>
         <Footer />
       </div>
     </>

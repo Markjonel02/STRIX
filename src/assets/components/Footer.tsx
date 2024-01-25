@@ -1,5 +1,4 @@
 import logo from "../img/logo2.png";
-
 const Footer = () => {
   const img = {
     imgURL: logo,
