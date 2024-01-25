@@ -5,6 +5,7 @@ import gif from "../img/Colourful Multimedia Stream Play Button Icon Logo.gif";
 import img from "../img/tv.png";
 import dl from "../img/modbile.jpg";
 import kids from "../img/kids.png";
+import Footer from "../components/Footer";
 const Home = () => {
   // aos
   useEffect(() => {
@@ -31,17 +32,16 @@ const Home = () => {
     height: "100vh",
     overflow: "hidden",
   };
-
   const parallaxStyle: React.CSSProperties = {
     content: "''",
-    background: "url('./src/assets/img/watching.jpg') center no-repeat",
+    background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./src/assets/img/watching.jpg') center no-repeat`,
     backgroundSize: "cover",
+    backgroundAttachment: "fixed",
     width: "100%",
     height: "100%",
-    position: "absolute",
     top: 0,
     left: 0,
-    filter: "grayscale(0.30)",
+    filter: "brightness(100%)",
     transform: `translateZ(-1px) translateY(${scrollPos * 0.3}px)`,
     willChange: "transform",
     zIndex: -1,
@@ -54,6 +54,7 @@ const Home = () => {
     transform: `translate(-50%, -50%) translateY(${-scrollPos * 0.3}px)`,
     textAlign: "center",
     willChange: "transform",
+    filter: "brightness(100%)",
   };
 
   const textOverlayStyle: React.CSSProperties = {
@@ -61,7 +62,6 @@ const Home = () => {
     fontWeight: "bolder",
     color: "white",
   };
-
   return (
     <>
       <div className="home" style={parallaxStyles}>
@@ -162,6 +162,9 @@ const Home = () => {
             made just for them—free with your membership.
           </strong>
         </div>
+      </div>
+      <div className="footer mt-0" style={{ backgroundColor: "#131517ff" }}>
+        <Footer />
       </div>
     </>
   );
