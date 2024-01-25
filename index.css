@@ -54,7 +54,8 @@ border-bottom:2px solid #b3d4fc;
 .my-masonry-grid {
   display: flex;
   margin-left: -30px; 
-  width: auto;
+  width: auto; 
+  flex-wrap: nowrap;
 }
 
 .my-masonry-grid_column {

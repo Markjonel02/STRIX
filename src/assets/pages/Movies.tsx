@@ -8,9 +8,18 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import "swiper/swiper-bundle.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
+/* image */
 import Avenger from "../img/Moviesimg/avengers-endgame.jpg";
 import spiderman from "../img/Moviesimg/hd_spiderman_no_way_home.jpg";
 import marvel from "../img/Moviesimg/Marvel.jpg";
+import avengers from "../img/Moviesimg/avengers-poster-wallpapers.jpg";
+import maleficent from "../img/Moviesimg/maleficent-4k-wallpapers.jpg";
+import marvels from "../img/Moviesimg/marvel-4k-wallpapers.jpg";
+import shrek from "../img/Moviesimg/shrek-the-movie-wallpapers.jpg";
+import terminator from "../img/Moviesimg/terminator-genisys-movie-wallpapers.jpg";
+import conjuring from "../img/Moviesimg/the-conjuring-3-wallpapers.jpg";
+import venom from "../img/Moviesimg/venom-let-there-be-carnage-movie-wallpapers.jpg";
+import blackpanther from "../img/Moviesimg/BlackPanther.jpg";
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
@@ -18,6 +27,7 @@ import "swiper/css/effect-fade";
 import "swiper/swiper-bundle.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
+
 // Define the type for each video item
 
 export interface VideoItem {
@@ -27,6 +37,32 @@ export interface VideoItem {
   content: string;
   genre: string;
 }
+
+//truncating text
+interface TruncatedTextProps {
+  content: string;
+  maxLength: number;
+}
+
+const TruncatedText: React.FC<TruncatedTextProps> = ({
+  content,
+  maxLength,
+}) => {
+  const truncatedText =
+    content.length > maxLength ? `${content.slice(0, maxLength)}...` : content;
+
+  return (
+    <div
+      style={{
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        whiteSpace: "nowrap",
+      }}
+    >
+      {truncatedText}
+    </div>
+  );
+};
 
 const Movies: React.FC = () => {
   useEffect(() => {
@@ -48,57 +84,72 @@ const Movies: React.FC = () => {
   const items: VideoItem[] = [
     {
       id: 1,
-      imageUrl: "https://placekitten.com/300/200",
-      title: "Item 1",
+      imageUrl: avengers,
+      title: "Avengers Infinity War",
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      genre: "comedy",
+      genre: "Action,Sci-fi,superheroes",
     },
     {
       id: 2,
-      imageUrl: "https://placekitten.com/400/300",
-      title: "Item 2",
+      imageUrl: maleficent,
+      title: "Maleficent",
       genre: "Rom-com",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
       id: 3,
-      imageUrl: "https://placekitten.com/400/300",
-      title: "Item 2",
+      imageUrl: marvels,
+      title: "Captain Marvel",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       genre: "Horror",
     },
     {
       id: 4,
-      imageUrl: "https://placekitten.com/400/300",
-      title: "Item 2",
+      imageUrl: shrek,
+      title: "Shrek",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       genre: "Action",
     },
     {
       id: 5,
-      imageUrl: "https://placekitten.com/400/300",
-      title: "Item 2",
+      imageUrl: terminator,
+      title: "Terminator",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.adadaaddd",
       genre: "Documentary",
     },
     {
       id: 6,
-      imageUrl: "https://placekitten.com/400/300",
-      title: "Sample 6",
+      imageUrl: conjuring,
+      title: "Conjuring",
+      content:
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      genre: "Horror,Supernatural,exorcist",
+    },
+    {
+      id: 7,
+      imageUrl: venom,
+      title: "Venom Let there be carnage",
+      content:
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      genre: "Action",
+    },
+    {
+      id: 8,
+      imageUrl: blackpanther,
+      title: "Black Panther",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       genre: "Crime",
     },
   ];
 
+  /* toast */
   const [Toast, setToast] = useState<string>("");
-
   const [Showtoast, setShowtoast] = useState(false);
-
   const Handletoast = (index: number) => {
     const sel = items[index];
     setShowtoast(!Showtoast);
@@ -164,9 +215,21 @@ const Movies: React.FC = () => {
     877: 1.75,
   };
 
+  const breakpoints = {
+    577: {
+      slidesPerView: 1.75,
+      spaceBetween: 5,
+    },
+    877: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 4.5,
+    },
+  };
   return (
     <>
-      <div className="home-slider">
+      <div className="Movie-slider">
         <Swiper
           pagination={{ dynamicBullets: true, clickable: true }}
           autoplay={{
@@ -211,84 +274,85 @@ const Movies: React.FC = () => {
       </div>
 
       <Container fluid data-aos="fade-right " data-aos-duration="700">
-        <Swiper>
-          <SwiperSlide>
-            <Masonry
-              breakpointCols={breakpointColumnsObj}
-              className="my-masonry-grid mt-5"
-              columnClassName="my-masonry-grid_column"
-            >
-              {/* Map through video items and render each as a Card */}
-              {items.map((item, index) => (
-                <Swiper>
-                  <Card
-                    key={item.id}
-                    className="pinterest-grid-item"
-                    data-aos="fade-down"
-                    data-aos-easing="linear"
-                    data-aos-duration="500ms"
-                  >
-                    {/* Lazy-loaded image with blur effect */}
-                    <LazyLoadImage
-                      alt={item.title}
-                      height="100%"
-                      src={item.imageUrl}
-                      width="100%"
-                      effect="blur"
-                      wrapperClassName="lazy-image-wrapper"
-                    />
-                    {/* Card body containing title, content, and favorite checkbox */}
-                    <Card.Body>
-                      <Card.Title>{item.title}</Card.Title>
-                      <Card.Text>
-                        <p>{` Category: ${item.genre}`}</p>
-                      </Card.Text>
-                      <Card.Text>{item.content}</Card.Text>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid mt-5"
+          columnClassName="my-masonry-grid_column"
+        >
+          {/* Map through video items and render each as a Card */}
+          {items.map((item, index) => (
+            <Swiper breakpoints={breakpoints}>
+              <Card
+                key={item.id}
+                className="pinterest-grid-item"
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="500ms"
+              >
+                {/* Lazy-loaded image with blur effect */}
+                <LazyLoadImage
+                  alt={item.title}
+                  height="100%"
+                  src={item.imageUrl}
+                  width="100%"
+                  effect="blur"
+                  wrapperClassName="lazy-image-wrapper"
+                />
+                {/* Card body containing title, content, and favorite checkbox */}
+                <Card.Body>
+                  <Card.Title>{item.title}</Card.Title>
+                  <Card.Text>
+                    <p>{` Category: ${item.genre}`}</p>
+                  </Card.Text>
+                  <Card.Text>
+                    {" "}
+                    <TruncatedText content={item.content} maxLength={20} />
+                  </Card.Text>
 
-                      <input
-                        type="checkbox"
-                        checked={favoriteStates[index]}
-                        id={`favorite-${index}`}
-                        name={`favorite-checkbox-${index}`}
-                        value={`favorite-button-${index}`}
-                        onChange={() => handleToggleFavorite(index)}
-                      />
+                  <input
+                    type="checkbox"
+                    checked={favoriteStates[index]}
+                    id={`favorite-${index}`}
+                    name={`favorite-checkbox-${index}`}
+                    value={`favorite-button-${index}`}
+                    onChange={() => handleToggleFavorite(index)}
+                  />
 
-                      <label
-                        htmlFor={`favorite-${index}`}
-                        className="container"
-                      >
-                        {/* Heart icon indicating favorite status */}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill={favoriteStates[index] ? "red" : "none"}
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="feather feather-heart"
-                        >
-                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                        {/* Display whether the item is added to favorites or not */}
-                        <div className="action">
-                          {favoriteStates[index] ? (
-                            <span className="option-2">Added to Favorites</span>
-                          ) : (
-                            <span className="option-1">Add to Favorites</span>
-                          )}
-                        </div>
-                      </label>
-                    </Card.Body>
-                  </Card>
-                </Swiper>
-              ))}
-            </Masonry>
-          </SwiperSlide>
-        </Swiper>
+                  <label htmlFor={`favorite-${index}`} className="container">
+                    {/* Heart icon indicating favorite status */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill={favoriteStates[index] ? "red" : "none"}
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="feather feather-heart"
+                    >
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    {/* Display whether the item is added to favorites or not */}
+                    <div className="action">
+                      {favoriteStates[index] ? (
+                        <span className="option-2 shadow ">
+                          Added to Favorites
+                        </span>
+                      ) : (
+                        <span className="option-1 shadow ">
+                          Add to Favorites
+                        </span>
+                      )}
+                    </div>
+                  </label>
+                </Card.Body>
+              </Card>
+            </Swiper>
+          ))}
+        </Masonry>
+
         <div className="Toast-con position-fixed   end-0 p-3">
           {
             <div
