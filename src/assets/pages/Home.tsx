@@ -122,15 +122,17 @@ const Home = () => {
           <img src={dl} alt="Download" className="img-fluid" />
         </div>
         <div className="text-dl-container text-light text-start  ">
-          <h1 className=" fw-bold">
+          <h1 className=" fw-bolder">
             <strong>
-              Download your <br /> <span>shows to watch </span>
-              <br /> <span>offline</span>
+              Download your <br />
+              <span>shows to watch </span>
+              <br />
+              <span>offline</span>
             </strong>
           </h1>
           <span className=" subtext fs-4">
-            Save your favorites easily and always have <br />
-            something to watch.
+            Save your favorites easily and always have
+            <span style={{ display: "block" }}> something to watch.</span>
           </span>
         </div>
       </div>
@@ -151,18 +153,20 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="watch-k bg-black mt-2 position-relative d-flex  align-items-center text-start ">
+      <div className="watch-k bg-black mt-2  d-flex  align-items-center text-start ">
         <div className="tv-video position-relative mt-3" data-aos="zoom-in">
           <img src={kids} alt="GIF" className="img-kids img-fluid" />
         </div>
 
-        <div className="k-text text-light mb-3">
+        <div className="k-text text-light mb-3" style={{ display: "block" }}>
           <h1 className="fs-1 fw-bold mt-2 ">
             <strong>Create profiles for kids</strong>
           </h1>
-          <span className="fs-4">
-            Send kids on adventures with their favorite characters in <br /> a
-            space made just for them—free with your membership.
+          <span className="kids-span fs-4">
+            Send kids on adventures with their favorite characters in
+            <span style={{ display: "block" }}>
+              a space made just for them—free with your membership.
+            </span>
           </span>
         </div>
       </div>

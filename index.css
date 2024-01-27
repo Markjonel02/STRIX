@@ -35,7 +35,7 @@ body {
   scroll-behavior: smooth;
 }
 body::-webkit-scrollbar {
-  width: 0px;
+  width:0x;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -485,7 +485,10 @@ flex-direction: column;
   justify-content: center;
   align-items: center;
 text-align: center;
-font-size: 1rem;
-
+white-space:  pre-line;
+}
+.k-text, h1, .kids-span{
+text-align: center;
+padding: 0 1em 0 1em;
 }
 }
