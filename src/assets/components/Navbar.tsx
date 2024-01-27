@@ -13,7 +13,6 @@ const Navbar: React.FC = () => {
       <ul className="navbar-nav ">
         <NavItem to="/" text="Home" />
         <NavItem to="/movies" text="Movies" />
-        <NavItem to="/series" text="Series" />
         <NavItem to="/about" text="About" />
 
         <li className=" d-flex ms-lg-5 ">
@@ -22,18 +21,6 @@ const Navbar: React.FC = () => {
             icon={heartIcon}
             count={favorites.length}
           />
-          <form className="d-flex mx-3 " role="search">
-            <input
-              className="form-control me-2 w-100"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
         </li>
 
         <Outlet />

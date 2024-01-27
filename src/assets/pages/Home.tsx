@@ -170,6 +170,7 @@ const Home = () => {
           </span>
         </div>
       </div>
+      
       <div className="footer " style={{ backgroundColor: "#131517ff" }}>
         <Footer />
       </div>

@@ -1,7 +1,7 @@
 import { Container, Card } from "react-bootstrap";
 import Masonry from "react-masonry-css";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import Series from "./Series";
 import { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useFavorites } from "../Context/FavoriteContext";
@@ -262,120 +262,87 @@ const Movies: React.FC = () => {
         </Swiper>
       </div>
 
-      <div className="dropdown mt-5 d-flex justify-content-end align-items-center">
-        <button
-          className="btn btn-outline-secondary dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Category
-        </button>
-        <ul className="dropdown-menu">
-          <li>
-            <button className="dropdown-item" type="button">
-              Action
-            </button>
-          </li>
-          <li>
-            <button className="dropdown-item" type="button">
-              Another action
-            </button>
-          </li>
-          <li>
-            <button className="dropdown-item" type="button">
-              Something else here
-            </button>
-          </li>
-        </ul>
-      </div>
+      <h1 className=" text-light mt-xl-5 ms-3 py-2 fs-4 fw-light ">Discover</h1>
       <Container
         fluid
         data-aos="fade-right "
         data-aos-duration="700"
-        className=" overflow-y-auto vh-100 hide-scrollbar mt-2  "
+        className=" overflow-y-auto h-100 hide-scrollbar mt-2  "
       >
-        <h1 className="text-center text-light">Discover </h1>
         <Masonry
           breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid "
+          className="my-masonry-grid shadow-1"
           columnClassName="my-masonry-grid_column"
         >
           {/* Map through video items and render each as a Card */}
           {items.map((item, index) => (
-            <Swiper>
-              <SwiperSlide>
-                <Card
-                  key={item.id}
-                  className="pinterest-grid-item"
-                  data-aos="fade-down"
-                  data-aos-easing="linear"
-                  data-aos-duration="500ms"
-                >
-                  {/* Lazy-loaded image with blur effect */}
-                  <LazyLoadImage
-                    alt={item.title}
-                    height="100%"
-                    src={item.imageUrl}
-                    width="100%"
-                    effect="blur"
-                    wrapperClassName="lazy-image-wrapper"
-                  />
-                  {/* Card body containing title, content, and favorite checkbox */}
-                  <Card.Body>
-                    <Card.Title>{item.title}</Card.Title>
-                    <Card.Text>
-                      <p>{` Category: ${item.genre}`}</p>
-                    </Card.Text>
-                    <Card.Text>
-                      <TruncatedText content={item.content} maxLength={30} />
-                    </Card.Text>
+            <Card
+              key={item.id}
+              className="pinterest-grid-item"
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="500ms"
+            >
+              {/* Lazy-loaded image with blur effect */}
+              <LazyLoadImage
+                alt={item.title}
+                height="100%"
+                src={item.imageUrl}
+                width="100%"
+                effect="blur"
+                wrapperClassName="lazy-image-wrapper"
+                className=" rounded "
+              />
+              {/* Card body containing title, content, and favorite checkbox */}
+              <Card.Body>
+                <Card.Title>{item.title}</Card.Title>
+                <Card.Text>
+                  <p>{` Category: ${item.genre}`}</p>
+                </Card.Text>
+                <Card.Text>
+                  <TruncatedText content={item.content} maxLength={30} />
+                </Card.Text>
 
-                    <input
-                      type="checkbox"
-                      checked={favoriteStates[index]}
-                      id={`favorite-${index}`}
-                      name={`favorite-checkbox-${index}`}
-                      value={`favorite-button-${index}`}
-                      onChange={() => handleToggleFavorite(index)}
-                    />
+                <input
+                  type="checkbox"
+                  checked={favoriteStates[index]}
+                  id={`favorite-${index}`}
+                  name={`favorite-checkbox-${index}`}
+                  value={`favorite-button-${index}`}
+                  onChange={() => handleToggleFavorite(index)}
+                />
 
-                    <label htmlFor={`favorite-${index}`} className="container">
-                      {/* Heart icon indicating favorite status */}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill={favoriteStates[index] ? "red" : "none"}
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="feather feather-heart"
-                      >
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                      </svg>
-                      {/* Display whether the item is added to favorites or not */}
-                      <div className="action">
-                        {favoriteStates[index] ? (
-                          <span className="option-2 shadow ">
-                            Added to Favorites
-                          </span>
-                        ) : (
-                          <span className="option-1 shadow ">
-                            Add to Favorites
-                          </span>
-                        )}
-                      </div>
-                    </label>
-                  </Card.Body>
-                </Card>
-              </SwiperSlide>
-            </Swiper>
+                <label htmlFor={`favorite-${index}`} className="container">
+                  {/* Heart icon indicating favorite status */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill={favoriteStates[index] ? "red" : "none"}
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="feather feather-heart"
+                  >
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                  {/* Display whether the item is added to favorites or not */}
+                  <div className="action">
+                    {favoriteStates[index] ? (
+                      <span className="option-2 shadow ">
+                        Added to Favorites
+                      </span>
+                    ) : (
+                      <span className="option-1 shadow ">Add to Favorites</span>
+                    )}
+                  </div>
+                </label>
+              </Card.Body>
+            </Card>
           ))}
         </Masonry>
-
         <div className="Toast-con position-fixed   end-0 p-3">
           {
             <div
@@ -405,6 +372,37 @@ const Movies: React.FC = () => {
               </div>
             </div>
           }
+        </div>
+        <div className="dropdown mt-5 d-flex justify-content-end align-items-center">
+          <button
+            className="btn btn-outline-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Category
+          </button>
+          <ul className="dropdown-menu">
+            <li>
+              <button className="dropdown-item" type="button">
+                Action
+              </button>
+            </li>
+            <li>
+              <button className="dropdown-item" type="button">
+                Another action
+              </button>
+            </li>
+            <li>
+              <button className="dropdown-item" type="button">
+                Something else here
+              </button>
+            </li>
+          </ul>
+        </div>
+        <span className="d-flex fs-4 fw-light text-light">Series</span>
+        <div className="container-fluid mt-2 border  py-3">
+          <Series />
         </div>
       </Container>
     </>
