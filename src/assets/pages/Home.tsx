@@ -6,6 +6,7 @@ import img from "../img/tv.png";
 import dl from "../img/modbile.jpg";
 import kids from "../img/kids.png";
 import Footer from "../components/Footer";
+
 const Home = () => {
   // aos
   useEffect(() => {
@@ -93,12 +94,12 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="tv-section bg-black mt-2 position-relative d-flex justify-content-center align-items-center text-start ">
+      <div className="tv-section bg-black mt-2 position-relative d-flex justify-content-center align-items-center text-start  py-5">
         <div className="text-container text-light mb-3" data-aos="zoom-in-up">
           <h1 className="fs-1 fw-bold mt-2 ">
             <strong>Enjoy on your TV</strong>
           </h1>
-          <span className="fs-4">
+          <span className="subtext fs-4">
             Watch on Smart TVs, Playstation, Xbox,
             <br />
             Chromecast, Apple TV, Blu-ray players, and more.
@@ -116,24 +117,18 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="Download-mobile mt-2 pt-3 bg-black position-relative d-flex justify-content-center align-items-center py-5">
+      <div className="Download-mobile mt-2 bg-black position-relative d-flex justify-content-center align-items-center py-5">
         <div className="img-DL" data-aos="zoom-in">
-          <img
-            src={dl}
-            alt="Download"
-            style={{ width: "500px" }}
-            className="img-fluid"
-          />
+          <img src={dl} alt="Download" className="img-fluid" />
         </div>
         <div className="text-dl-container text-light text-start  ">
-          <h1 className=" fw-bold d-flex flex-wrap ">
+          <h1 className=" fw-bold">
             <strong>
-              Download your
-              <br />
-              shows to watch <br /> offline
+              Download your <br /> <span>shows to watch </span>
+              <br /> <span>offline</span>
             </strong>
           </h1>
-          <span className="fs-4">
+          <span className=" subtext fs-4">
             Save your favorites easily and always have <br />
             something to watch.
           </span>
@@ -156,7 +151,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="watch-k bg-black mt-2 position-relative d-flex justify-content-center align-items-center text-start ">
+      <div className="watch-k bg-black mt-2 position-relative d-flex  align-items-center text-start ">
         <div className="tv-video position-relative mt-3" data-aos="zoom-in">
           <img src={kids} alt="GIF" className="img-kids img-fluid" />
         </div>
@@ -171,7 +166,7 @@ const Home = () => {
           </span>
         </div>
       </div>
-      <div className="footer m-0" style={{ backgroundColor: "#131517ff" }}>
+      <div className="footer " style={{ backgroundColor: "#131517ff" }}>
         <Footer />
       </div>
     </>

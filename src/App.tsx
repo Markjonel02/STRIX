@@ -25,7 +25,7 @@ const App = () => {
       Aos.refresh();
     };
   }, []);
-  const bg = ["bg-dark"];
+  const bg = ["bg-dark,py-5"];
 
   return (
     <>

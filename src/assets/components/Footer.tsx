@@ -9,15 +9,14 @@ const Footer = () => {
   };
 
   const footerStyle: React.CSSProperties = {
-    backgroundColor: "rgb(40, 45, 50)",
-    color: "#6b757dff",
+    color: "#fff",
     paddingBottom: "40px",
   };
 
   return (
     <>
-      <footer style={footerStyle} className="bg-black text-secondary ">
-        <div className="container text-secondary">
+      <footer style={footerStyle} className="bg-black  mt-2 ">
+        <div className="container p-5">
           <div className="row">
             <div className="col-md-6 item text" style={{ marginBottom: "0px" }}>
               <img src={img.imgURL} alt="sample" style={img.size} />
@@ -27,23 +26,19 @@ const Footer = () => {
                 All here from MovieFlix
               </p>
             </div>
-            <div className="col-sm-6 col-md-3 item fw-light list-unstyled  ">
+            <div className=" about-links col-sm-6 col-md-3 item fw-light list-unstyled  ">
               <h3>About</h3>
               <ul>
                 <li>
-                  <a href="#" style={{ color: "#6b757dff" }}>
+                  <a href="#" className="">
                     Company
                   </a>
                 </li>
                 <li>
-                  <a href="#" style={{ color: "#6b757dff" }}>
-                    Team
-                  </a>
+                  <a href="#">Team</a>
                 </li>
                 <li>
-                  <a href="#" style={{ color: "#6b757dff" }}>
-                    Careers
-                  </a>
+                  <a href="#">Careers</a>
                 </li>
               </ul>
             </div>
@@ -51,30 +46,23 @@ const Footer = () => {
               <h3>Services</h3>
               <ul>
                 <li>
-                  <a href="#" style={{ color: "#6b757dff" }}>
-                    Monitoring
-                  </a>
+                  <a href="#">Monitoring</a>
                 </li>
                 <li>
-                  <a href="#" style={{ color: "#6b757dff" }}>
-                    Development
-                  </a>
+                  <a href="#">Development</a>
                 </li>
                 <li>
-                  <a href="#" style={{ color: "#6b757dff" }}>
-                    Reporting
-                  </a>
+                  <a href="#">Reporting</a>
                 </li>
               </ul>
             </div>
           </div>
 
           <div></div>
-          <strong className="d-flex justify-content-center align-content-end mt-4 ">
-            <p className="copyright" style={{ color: "#6b757dff" }}>
-              MovieFlix © 2024
-            </p>
-          </strong>
+
+          <p className="copyright d-flex justify-content-center align-content-end mt-4 fs-3 ">
+            MovieFlix © 2024
+          </p>
         </div>
       </footer>
     </>

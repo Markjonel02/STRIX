@@ -104,7 +104,7 @@ const Movies: React.FC = () => {
       title: "Captain Marvel",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      genre: "Horror",
+      genre: "superheroes",
     },
     {
       id: 4,
@@ -112,7 +112,7 @@ const Movies: React.FC = () => {
       title: "Shrek",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      genre: "Action",
+      genre: "comedy, romance, drama",
     },
     {
       id: 5,
@@ -120,7 +120,7 @@ const Movies: React.FC = () => {
       title: "Terminator",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.adadaaddd",
-      genre: "Documentary",
+      genre: "Action",
     },
     {
       id: 6,
@@ -144,7 +144,7 @@ const Movies: React.FC = () => {
       title: "Black Panther",
       content:
         "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      genre: "Crime",
+      genre: "Action,Adventure",
     },
   ];
 

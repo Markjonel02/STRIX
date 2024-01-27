@@ -96,7 +96,6 @@ label {
   gap: 14px;
   padding: 10px 15px 10px 10px;
   cursor: pointer;
-  user-select: none;
   border-radius: 10px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   color: black;
@@ -403,6 +402,7 @@ label {
 /* footer */
 
 footer {
+  
   background-color: #292c2f;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
@@ -410,17 +410,25 @@ footer {
   text-align: left;
   font: bold 16px sans-serif;
   padding: 55px 50px;
-  margin-top: 80px;
   bottom: 0;
   color: #fff;
 }
 
-
+footer a {
+color: #fff;
+line-height:2.5 ;
+text-decoration: none;
+}
+.about-links a,
+.services-links a {
+  line-height: 2.5;
+  color: #fff;
+}
 /* Media-Queries */
 /* Your other CSS styles */
 
 @media all and (min-width: 320px) and (max-width: 577px) {
-  .home, .text-overlay{
+.home, .text-overlay{
     font-size: 7rem;
   }
   .tv-section{
@@ -429,14 +437,35 @@ footer {
   align-items: center;
   flex-direction: column;
   }
+.tv-section .text-container{
+  text-align: center;
 
+}
 .Download-mobile{
   display: flex;
+  justify-content: center;
+  font-size: 1rem;
   flex-direction: column;
 }
+.Download-mobile>.text-dl-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.Download-mobile .text-dl-container h1, .subtext{
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: center;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
 .img-DL>img{
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   size:300px ;
+
 }
 .watch-e{
   display: flex;
@@ -455,5 +484,8 @@ flex-direction: column;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+text-align: center;
+font-size: 1rem;
+
 }
 }
