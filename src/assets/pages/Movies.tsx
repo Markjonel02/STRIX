@@ -1,7 +1,7 @@
 import { Container, Card } from "react-bootstrap";
 import Masonry from "react-masonry-css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Series from "./Series";
+import Category from "./Category";
 import { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useFavorites } from "../Context/FavoriteContext";
@@ -373,12 +373,30 @@ const Movies: React.FC = () => {
             </div>
           }
         </div>
+        <div className="head-banner text-light d-block mt-xl-5 ms-2 py-5">
+          <strong>
+            <h1 className="fw-bolder" style={{ fontSize: "3.2em" }}>
+              Only in MovieFlix
+            </h1>
+          </strong>
+          <span
+            className="d-block fs-5 fw-light "
+            style={{ whiteSpace: "pre-line" }}
+          >
+            MovieFlix is the home of amazing original programming that you can’t
+            <span className="d-block">
+              find anywhere else. Movies, TV shows, specials and more, all
+              tailored
+            </span>
+            <span>specifically to you.</span>
+          </span>
+        </div>
 
-        <div className="container-fluid mt-xl-5  py-3">
-          <span className="d-flex fs-4 fw-light text-light">
+        <div className="container-fluid mt-2 py-3">
+          <span className="d-flex fs-5 fw-light text-light mb-2">
             Popular Series
           </span>
-          <Series />
+          <Category />
         </div>
       </Container>
     </>

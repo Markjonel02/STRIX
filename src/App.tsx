@@ -10,7 +10,7 @@ import Maincontainer from "./assets/components/Maincontainer";
 // Import your pages
 const Homes = lazy(() => import("./assets/pages/Home"));
 const Movies = lazy(() => import("./assets/pages/Movies"));
-const Series = lazy(() => import("./assets/pages/Series"));
+const Series = lazy(() => import("./assets/pages/Category"));
 const About = lazy(() => import("./assets/pages/About"));
 const Nopage = lazy(() => import("./assets/pages/Nopage"));
 const Favorites = lazy(() => import("./assets/pages/Favorites"));

@@ -502,4 +502,12 @@ white-space:  pre-line;
 text-align: center;
 padding: 0 1em 0 1em;
 }
+.head-banner{
+margin-bottom: 2em;
+}
+.head-banner span{
+display: flex;
+text-align: center;
+justify-content: center;
+}
 }
