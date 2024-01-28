@@ -46,7 +46,9 @@ body::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-
+a{
+  text-decoration: none;
+}
 .nav-bar, .nav-item,.nav-link{
 display: flex;
 font-weight: 600;
@@ -73,18 +75,19 @@ border-bottom:2px solid #b3d4fc;
 /* PinterestGrid.css */
 .my-masonry-grid {
   display: flex;
-  margin-left: -30px; 
+  margin-left: -20px; 
   width: auto; 
   flex-wrap: nowrap;
+
 }
 
 .my-masonry-grid_column {
-  padding-left: 30px; 
+  padding-left: 20px; 
 }
 
 .pinterest-grid-item {
   width: 100%;
-  margin-bottom: 30px; 
+  margin-bottom: 20px; 
 }
 
 
@@ -225,7 +228,10 @@ label {
   }
 }/* swiper  */
 
-
+.swiper-slides img{
+ width: 100%;
+ height: fit-content;
+}
  /* swiper  */
  .swiper-container {
   display: flex;
@@ -338,6 +344,7 @@ label {
 
 
 
+
 /* Home-css & Home-Swiper */
 .home {
   position: relative;
@@ -441,6 +448,9 @@ text-decoration: none;
 .tv-section .text-container{
   text-align: center;
 
+}
+.dc-grid{
+  width: 100%;
 }
 .Download-mobile{
   display: flex;

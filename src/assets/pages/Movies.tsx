@@ -267,7 +267,7 @@ const Movies: React.FC = () => {
         fluid
         data-aos="fade-right "
         data-aos-duration="700"
-        className=" overflow-y-auto h-100 hide-scrollbar mt-2  "
+        className="dc-grid overflow-y-auto h-100 hide-scrollbar mt-2  "
       >
         <Masonry
           breakpointCols={breakpointColumnsObj}
@@ -373,35 +373,11 @@ const Movies: React.FC = () => {
             </div>
           }
         </div>
-        <div className="dropdown mt-5 d-flex justify-content-end align-items-center">
-          <button
-            className="btn btn-outline-secondary dropdown-toggle"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Category
-          </button>
-          <ul className="dropdown-menu">
-            <li>
-              <button className="dropdown-item" type="button">
-                Action
-              </button>
-            </li>
-            <li>
-              <button className="dropdown-item" type="button">
-                Another action
-              </button>
-            </li>
-            <li>
-              <button className="dropdown-item" type="button">
-                Something else here
-              </button>
-            </li>
-          </ul>
-        </div>
-        <span className="d-flex fs-4 fw-light text-light">Series</span>
-        <div className="container-fluid mt-2 border  py-3">
+
+        <div className="container-fluid mt-xl-5  py-3">
+          <span className="d-flex fs-4 fw-light text-light">
+            Popular Series
+          </span>
           <Series />
         </div>
       </Container>
