@@ -14,6 +14,7 @@ const About = lazy(() => import("./assets/pages/About"));
 const Nopage = lazy(() => import("./assets/pages/Nopage"));
 const Favorites = lazy(() => import("./assets/pages/Favorites"));
 const Series = lazy(() => import("./assets/pages/Series"));
+const SeriesOverView = lazy(() => import("./assets/pages/SeriesOverView"));
 const App = () => {
   useEffect(() => {
     // Initialize AOS with options
@@ -51,6 +52,10 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Homes />} />
               <Route path="/movies" element={<Movies />} />
+              <Route
+                path="/image/:series/:index"
+                element={<SeriesOverView />}
+              />
               <Route path="/series" element={<Series />} />
               <Route path="/about" element={<About />} />
               <Route path="/favorites" element={<Favorites />} />

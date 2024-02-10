@@ -1,22 +1,23 @@
-import chucky from "../img/seriesimg/chucky-series-wallpapers.jpg";
-import echo from "../img/seriesimg/echo-marvel-wallpapers.jpg";
-import greys from "../img/seriesimg/greys-anatomy-wallpapers.jpg";
-import sweethome from "../img/seriesimg/sweet-home-wallpapers.jpg";
-import chosen from "../img/seriesimg/the-chosen-wallpapers.jpg";
-import vincenzo from "../img/seriesimg/vincenzo-netflix-wallpapers.jpg";
-import young from "../img/seriesimg/young-sheldon-wallpapers.jpg";
+/* eslint-disable react-refresh/only-export-components */
+// seriesData.ts
+
+import chuckyImage from "../img/seriesimg/chucky-series-wallpapers.jpg";
+import echoImage from "../img/seriesimg/echo-marvel-wallpapers.jpg";
+import greysImage from "../img/seriesimg/greys-anatomy-wallpapers.jpg";
+import sweethomeImage from "../img/seriesimg/sweet-home-wallpapers.jpg";
+import chosenImage from "../img/seriesimg/the-chosen-wallpapers.jpg";
+import vincenzoImage from "../img/seriesimg/vincenzo-netflix-wallpapers.jpg";
+import youngImage from "../img/seriesimg/young-sheldon-wallpapers.jpg";
 
 /* Kdrama */
-import korean from "../img/seriesimg/kdrama/a-korean-odyssey-wallpapers.jpg";
-import descendants from "../img/seriesimg/kdrama/descendants-of-the-sun-wallpapers.jpg";
-import extraordinary from "../img/seriesimg/kdrama/extraordinary-attorney-woo-wallpapers.jpg";
-import gumiho from "../img/seriesimg/kdrama/gumiho-wallpapers.jpg";
-import hotel from "../img/seriesimg/kdrama/hotel-del-luna-hd-wallpapers.jpg";
-import mydemon from "../img/seriesimg/kdrama/my-demon-kdrama-wallpapers.jpg";
-import mylove from "../img/seriesimg/kdrama/my-love-from-the-star-wallpapers.jpg";
-import reply from "../img/seriesimg/kdrama/reply-1988-wallpapers.jpg";
-
-// types.ts
+import koreanImage from "../img/seriesimg/kdrama/a-korean-odyssey-wallpapers.jpg";
+import descendantsImage from "../img/seriesimg/kdrama/descendants-of-the-sun-wallpapers.jpg";
+import extraordinaryImage from "../img/seriesimg/kdrama/extraordinary-attorney-woo-wallpapers.jpg";
+import gumihoImage from "../img/seriesimg/kdrama/gumiho-wallpapers.jpg";
+import hotelImage from "../img/seriesimg/kdrama/hotel-del-luna-hd-wallpapers.jpg";
+import mydemonImage from "../img/seriesimg/kdrama/my-demon-kdrama-wallpapers.jpg";
+import myloveImage from "../img/seriesimg/kdrama/my-love-from-the-star-wallpapers.jpg";
+import replyImage from "../img/seriesimg/kdrama/reply-1988-wallpapers.jpg";
 
 export interface ImageData {
   genre: string;
@@ -25,48 +26,52 @@ export interface ImageData {
 }
 
 export const Kdramadb: ImageData[] = [
-  { title: "A Korean Oddesey", imageUrl: korean, genre: "Drama" },
-  { title: "Descendants of the sun", imageUrl: descendants, genre: "Drama" },
+  { title: "Korean-Oddesey", imageUrl: koreanImage, genre: "Drama" },
   {
-    title: "Extraordinary Attorney Woo",
-    imageUrl: extraordinary,
+    title: "Descendants-of-the-sun",
+    imageUrl: descendantsImage,
     genre: "Drama",
   },
   {
-    title: "My Girlfriend is a gumiho",
-    imageUrl: gumiho,
-    genre: "Fantasy, Romance",
+    title: "Extraordinary-Attorney-Woo",
+    imageUrl: extraordinaryImage,
+    genre: "Drama",
   },
-  { title: "Hotel del Luna", imageUrl: hotel, genre: "Fantasy, Romance" },
-  { title: "My demon", imageUrl: mydemon, genre: "Fantasy, Romance" },
   {
-    title: "My love From The Star",
-    imageUrl: mylove,
+    title: "My-Girlfriend-is-a-gumiho",
+    imageUrl: gumihoImage,
     genre: "Fantasy, Romance",
   },
-  { title: "Reply 1988", imageUrl: reply, genre: "Drama" },
+  { title: "Hotel-del-Luna", imageUrl: hotelImage, genre: "Fantasy, Romance" },
+  { title: "My-demon", imageUrl: mydemonImage, genre: "Fantasy, Romance" },
+  {
+    title: "My-love-From-The-Star",
+    imageUrl: myloveImage,
+    genre: "Fantasy, Romance",
+  },
+  { title: "Reply-1988", imageUrl: replyImage, genre: "Drama" },
 ];
 
 export const series: ImageData[] = [
-  { title: "Chucky", imageUrl: chucky, genre: "Horror" },
+  { title: "Chucky", imageUrl: chuckyImage, genre: "Horror" },
   {
-    title: "Vincenzo ",
-    imageUrl: vincenzo,
+    title: "Vincenzo",
+    imageUrl: vincenzoImage,
     genre: "Action, Adventure, Comedy",
   },
-  { title: "Young-Sheldon", imageUrl: young, genre: "Comedy, Family" },
-  { title: "Echo", imageUrl: echo, genre: "Comedy, Family" },
-  { title: "Greys Anatomy's", imageUrl: greys, genre: "Drama, Romance" },
+  { title: "Young-Sheldon", imageUrl: youngImage, genre: "Comedy, Family" },
+  { title: "Echo", imageUrl: echoImage, genre: "Comedy, Family" },
+  { title: "Greys-Anatomys", imageUrl: greysImage, genre: "Drama, Romance" },
   {
     title: "Sweethome",
-    imageUrl: sweethome,
+    imageUrl: sweethomeImage,
     genre: "Horror, Thriller",
   },
-  { title: "Chosen", imageUrl: chosen, genre: "Comedy, Family" },
+  { title: "Chosen", imageUrl: chosenImage, genre: "Comedy, Family" },
 ];
 
 const Data = () => {
-  return { series };
+  return { series: series, Kdramadb: Kdramadb };
 };
 
 export default Data;

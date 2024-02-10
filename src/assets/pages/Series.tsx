@@ -33,21 +33,23 @@ const Series = () => {
         grabCursor={true}
       >
         {/* get all the images in the directory */}
-        {series.map((images, index) => (
+        {series.map((series, index) => (
           <SwiperSlide
             className="swiper-slides"
             style={{ width: "18rem" }}
             key={index}
           >
-            <Link to={`/image/${images.title}/${index + 1}`}>
+            <Link
+              to={`/series/${encodeURIComponent(series.title)}/${index + 1}`}
+            >
               <img
-                src={images.imageUrl}
+                src={series.imageUrl}
                 className={`card-img-top img-fluid border-0  rounded ${size}`}
-                alt={`${images.title}${index + 1}`}
+                alt={`${series.title}${index + 1}`}
                 loading="lazy"
               />
               <p className="text-center mt-2 text-decoration-none  fw-lighter  text-light ">
-                {images.title}
+                {series.title}
               </p>
             </Link>
           </SwiperSlide>
@@ -71,7 +73,7 @@ const Series = () => {
               style={{ width: "18rem" }}
               key={index}
             >
-              <Link to={`/image/${kd.title}/${index + 1}`}>
+              <Link to={`/series/${encodeURIComponent(kd.title)}/${index + 1}`}>
                 <img
                   src={kd.imageUrl}
                   className={`card-img-top img-fluid border-0  rounded ${size}`}
