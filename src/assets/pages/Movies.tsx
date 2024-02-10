@@ -1,7 +1,7 @@
 import { Container, Card } from "react-bootstrap";
 import Masonry from "react-masonry-css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Category from "./Category";
+import Series from "./Series";
 import { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useFavorites } from "../Context/FavoriteContext";
@@ -311,7 +311,6 @@ const Movies: React.FC = () => {
                   value={`favorite-button-${index}`}
                   onChange={() => handleToggleFavorite(index)}
                 />
-
                 <label htmlFor={`favorite-${index}`} className="container">
                   {/* Heart icon indicating favorite status */}
                   <svg
@@ -396,7 +395,7 @@ const Movies: React.FC = () => {
           <span className="d-flex fs-5 fw-light text-light mb-2">
             Popular Series
           </span>
-          <Category />
+          <Series />
         </div>
       </Container>
     </>

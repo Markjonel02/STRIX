@@ -1,8 +1,15 @@
+import deadpool from "../img/About-img/deadpool-removebg-preview.png";
 const About = () => {
   return (
-    <div className="mt-5 ">
-      <h1 className=" fs-1  fw-bolder text-center bg-red">About </h1>
-    </div>
+    <>
+      <div className="about-container about mt-5 py-5 d-flex  justify-content-center ">
+        <h1 className="mt-2 text-light">About Developer</h1>
+
+        <div className="img-container">
+          <img src={deadpool} alt="" />
+        </div>
+      </div>
+    </>
   );
 };
 

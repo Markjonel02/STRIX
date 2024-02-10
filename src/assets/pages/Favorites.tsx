@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faPlay } from "@fortawesome/free-solid-svg-icons/faPlay";
-import { Pagination } from "swiper/modules";
+
 const FavoritesPage: React.FC = () => {
   const { favorites } = useFavorites();
 
@@ -34,7 +34,6 @@ const FavoritesPage: React.FC = () => {
           className="mySwiper container-fluid"
           pagination={{ clickable: true }}
           breakpoints={breakpoints}
-          modules={[Pagination]}
         >
           {favorites.map((item) => (
             <SwiperSlide

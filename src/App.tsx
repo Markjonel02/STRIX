@@ -10,11 +10,10 @@ import Maincontainer from "./assets/components/Maincontainer";
 // Import your pages
 const Homes = lazy(() => import("./assets/pages/Home"));
 const Movies = lazy(() => import("./assets/pages/Movies"));
-const Series = lazy(() => import("./assets/pages/Category"));
 const About = lazy(() => import("./assets/pages/About"));
 const Nopage = lazy(() => import("./assets/pages/Nopage"));
 const Favorites = lazy(() => import("./assets/pages/Favorites"));
-
+const Series = lazy(() => import("./assets/pages/Series"));
 const App = () => {
   useEffect(() => {
     // Initialize AOS with options
@@ -25,7 +24,7 @@ const App = () => {
       Aos.refresh();
     };
   }, []);
-  const bg = ["bg-dark,py-5"];
+  const bg = ["bg-dark, mt-lg-5"];
 
   return (
     <>
@@ -55,6 +54,7 @@ const App = () => {
               <Route path="/series" element={<Series />} />
               <Route path="/about" element={<About />} />
               <Route path="/favorites" element={<Favorites />} />
+              <Route path="/"></Route>
               <Route path="*" element={<Nopage />} />
             </Routes>
           </Maincontainer>
