@@ -1,59 +1,51 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.css";
-import { Pagination, Navigation } from "swiper/modules";
-import "swiper/css/navigation";
 import "swiper/css";
-import { Outlet, Link } from "react-router-dom";
-import { series } from "../data/Data";
-import { Kdramadb } from "../data/Data";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper/modules";
+import { Link, Outlet } from "react-router-dom";
+import { series, Kdramadb } from "../data/Data";
+
 const size = ["w-100 h-50"];
 
 const Series = () => {
   const breakpoints = {
-    577: {
-      slidesPerView: 1.0,
-    },
-    877: {
-      slidesPerView: 2.75,
-      spaceBetween: 20, // corrected typo here
-    },
-    1024: {
-      slidesPerView: 4.75,
-      spaceBetween: 20,
-    },
+    577: { slidesPerView: 1.0 },
+    877: { slidesPerView: 2.75, spaceBetween: 20 },
+    1024: { slidesPerView: 4.75, spaceBetween: 20 },
   };
 
   return (
     <>
       <Swiper
-        className="Swiper-container d-flex justify-content-center align-items-center mb-4 "
+        className="Swiper-container d-flex justify-content-center align-items-center mb-4"
         modules={[Pagination, Navigation]}
         navigation={true}
         breakpoints={breakpoints}
         grabCursor={true}
       >
-        {/* get all the images in the directory */}
-        {series.map((series, index) => (
+        {/* Mapping over the series array */}
+        {series.map((seriesItem, index) => (
           <SwiperSlide
             className="swiper-slides"
             style={{ width: "18rem" }}
             key={index}
           >
             <Link
-              to={`/series/${encodeURIComponent(series.title)}/${index + 1}`}
+              to={`/series/${encodeURIComponent(seriesItem.title)}/${index}`}
             >
               <img
-                src={series.imageUrl}
-                className={`card-img-top img-fluid border-0  rounded ${size}`}
-                alt={`${series.title}${index + 1}`}
+                src={seriesItem.imageUrl}
+                className={`card-img-top img-fluid border-0 ${size}`}
+                alt={`${seriesItem.title}${index}`}
                 loading="lazy"
               />
-              <p className="text-center mt-2 text-decoration-none  fw-lighter  text-light ">
-                {series.title}
+              <p className="text-center mt-2 text-decoration-none fw-lighter text-light">
+                {seriesItem.title.replace(/-/g, " ")}
               </p>
             </Link>
           </SwiperSlide>
         ))}
+        <Outlet />
       </Swiper>
 
       <span className="d-flex fs-5 fw-light text-light mb-2">
@@ -65,31 +57,32 @@ const Series = () => {
           navigation={true}
           breakpoints={breakpoints}
           grabCursor={true}
-          className="d-flex justify-content-center align-items-center mb-4 "
+          className="d-flex justify-content-center align-items-center mb-4"
         >
+          {/* Mapping over the Kdramadb array */}
           {Kdramadb.map((kd, index) => (
             <SwiperSlide
               className="swiper-slides"
               style={{ width: "18rem" }}
               key={index}
             >
-              <Link to={`/series/${encodeURIComponent(kd.title)}/${index + 1}`}>
+              <Link to={`/series/${encodeURIComponent(kd.title)}/${index}`}>
                 <img
                   src={kd.imageUrl}
-                  className={`card-img-top img-fluid border-0  rounded ${size}`}
-                  alt={`${kd.title}${index + 1}`}
+                  className={`card-img-top border-0 ${size}`}
+                  alt={`${kd.title}${index}`}
                   loading="lazy"
                 />
-                <p className="text-center mt-2 text-decoration-none  fw-lighter  text-light ">
-                  {kd.title}
+                <p className="text-center text-decoration-none fw-lighter text-light">
+                  {kd.title.replace(/-/g, " ")}
                 </p>
               </Link>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-      <Outlet />
     </>
   );
 };
+
 export default Series;
