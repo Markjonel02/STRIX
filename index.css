@@ -465,6 +465,17 @@ label {
 }
 
 
+.img-overlays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(126, 125, 125, 0.7) 100%, rgba(0,0,0,0.9) 100%);
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: multiply; /* This will make the overlay blend with the image */
+}
 .image-container {
   background-color: #000000ff;
   box-shadow: 1px 9px 42px 1px rgba(0,0,0,0.42);
@@ -560,7 +571,6 @@ text-decoration: none;
   line-height: 2.5; 
   color: #fff;
 }
-
 /* Overview  section */
 .bgs {
   background:url(./src/assets/img/SeriesOverview/.jpg) no-repeat center;
@@ -569,9 +579,29 @@ text-decoration: none;
   height: 100%;
   background-attachment: fixed;
   z-index:-1
-
-
 }
+
+
+.about-section {
+
+  background-image: url('./src/assets/img/pexels-donald-tong-109669.jpg');
+  background-size: cover; 
+  background-position: center;
+  padding: 20px; 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: linear-gradient(120deg, rgba(0,0, 0, 1) 100%, rgba(0,0,0,0.1) 100%);
+}
+
+/* Adjust other styles as needed */
+.text-acontainer { 
+position: absolute;
+z-index: 1000;
+color: #fff;
+}
+
 
 /* Media-Queries */
 @media all and (min-width: 320px) and (max-width: 577px) {
@@ -586,8 +616,8 @@ text-decoration: none;
   }
 .tv-section .text-container{
   text-align: center;
-
 }
+
 .dc-grid{
   width: 100%;
 }
@@ -648,5 +678,25 @@ margin-bottom: 2em;
 display: flex;
 text-align: center;
 justify-content: center;
+}
+.img-container>img{
+display:none;
+}
+
+.containers{
+  display: flex;
+  flex-direction: column;
+ 
+
+}
+.title{
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  text-align: left;
+}
+.desc-p{
+  display: flex;
+  font-size: 1em;
+  flex-wrap: wrap;text-overflow: ellipsis;
 }
 }

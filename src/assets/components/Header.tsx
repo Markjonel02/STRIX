@@ -8,10 +8,9 @@ const img = {
 };
 
 const predefinedStyles = {
-  backdropFilter: "blur(16px) saturate(180%)",
-  WebkitBackdropFilter: "blur(16px) saturate(180%)",
-  backgroundColor: "rgba(17, 25, 40, 0.61)",
-  border: "1px solid rgba(255, 255, 255, 0.125)",
+  backgroundColor: "background-color: rgba(17, 25, 40, 0.15)",
+  backdropFilter: "backdrop-filter: blur(1px) saturate(170%)",
+  WebkitBackdropFilter: "-webkit-backdrop-filter: blur(1px) saturate(170%)",
 };
 
 const Header = () => {
@@ -35,12 +34,13 @@ const Header = () => {
   return (
     <nav
       className={`navbar navbar-expand-lg navbar-dark fixed-top pt-3 ${
-        isScrolling ? "" : "bg-dark "
+        isScrolling ? "bg-dark shadow" : {}
       }`}
-      style={isScrolling ? predefinedStyles : {}}
+      style={isScrolling ? {} : predefinedStyles}
     >
       <div className="container-fluid d-flex justify-content-between align-items-center">
         <div className="img-container me-3">
+          <h1 className="d-none fs-1  fw-medium   ">MovieFlix</h1>
           <img src={Img} alt={img.altname} style={{ width: img.size }} />
         </div>
 

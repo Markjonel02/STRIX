@@ -38,21 +38,26 @@ const SeriesOverview = () => {
             data-aos-delay="100ms"
           />
           <div className="overlay"></div>
-          <div className="text-containers  text-light d-flex">
-            <div className="" style={{ width: "500px" }} data-aos="zoom-in-up">
+          <div
+            className="text-containers  text-light d-flex"
+            style={{ width: "500px" }}
+          >
+            <div className="containers" data-aos="zoom-in-up">
               <h1 className="title mb-4" data-aos="zoom-in">
                 {selectedSeries.title.replace(/-/g, " ")}
               </h1>
-              <div className="desc d-flex ">
-                <p className="ms-2">{selectedSeries.date}</p>
-                <span className=" ms-2">| </span>
-                <p className="ms-2 border px-2 ">{selectedSeries.age}</p>
-                <span className="ms-2">| </span>
-                <p className="ms-2"> {selectedSeries.genre}</p>
+              <div className="desc">
+                <div className="d-flex flex-wrap">
+                  <p className="ms-2 mb-1">{selectedSeries.date}</p>
+                  <span className="ms-2 me-1">|</span>
+                  <p className="ms-1 mb-1">{selectedSeries.age}</p>
+                  <span className="ms-2 me-1">|</span>
+                  <p className="ms-1 mb-1">{selectedSeries.genre}</p>
+                </div>
+                <p className="desc-p mt-2 fs-6">{selectedSeries.desc}</p>
               </div>
-              <p className=" ">{selectedSeries.desc}</p>
 
-              <div className="cast">
+              <div className="cast fs-6 fw-lighter ">
                 <p>
                   <span style={{ color: "#eeee" }}>Starings: </span>
                   {selectedSeries.staring}

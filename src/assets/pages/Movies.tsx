@@ -229,6 +229,7 @@ const Movies: React.FC = () => {
           loop={true}
           modules={[Autoplay, EffectFade, Pagination]}
         >
+          <div className="img-overlays"></div>
           <SwiperSlide>
             <LazyLoadImage
               src={marvel}
