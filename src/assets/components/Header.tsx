@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Img from "../img/logo2.png";
+/* import Img from "../img/logo2.png"; */
 import Navbar from "./Navbar";
 
-const img = {
+/* const img = {
   size: 200,
   altname: "logo",
-};
+}; */
 
 const predefinedStyles = {
   backgroundColor: "background-color: rgba(17, 25, 40, 0.15)",
@@ -40,8 +40,9 @@ const Header = () => {
     >
       <div className="container-fluid d-flex justify-content-between align-items-center">
         <div className="img-container me-3">
-          <h1 className="d-none fs-1  fw-medium   ">MovieFlix</h1>
-          <img src={Img} alt={img.altname} style={{ width: img.size }} />
+          <h1 className="fw-bolder fs-1 text-light">MovieFlix</h1>
+
+          {/*     <img src={Img} alt={img.altname} style={{ width: img.size }} /> */}
         </div>
 
         <div className="button">

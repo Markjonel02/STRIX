@@ -59,6 +59,9 @@ font-weight: 600;
   top: 0;
   z-index: 100; 
 }
+.heading>h1 {
+ 
+}
 
 
 .navbar  a{
@@ -580,26 +583,42 @@ text-decoration: none;
   background-attachment: fixed;
   z-index:-1
 }
-
-
 .about-section {
-
-  background-image: url('./src/assets/img/pexels-donald-tong-109669.jpg');
+  background: url('./src/assets/img/pexels-donald-tong-109669.jpg') no-repeat center;
   background-size: cover; 
-  background-position: center;
-  padding: 20px; 
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: linear-gradient(120deg, rgba(0,0, 0, 1) 100%, rgba(0,0,0,0.1) 100%);
+  position: relative; /* Added */
 }
 
-/* Adjust other styles as needed */
-.text-acontainer { 
-position: absolute;
-z-index: 1000;
-color: #fff;
+.aoverlay {
+  position: absolute; /* Added */
+  top: 0; /* Added */
+  left: 0; /* Added */
+  width: 100%; /* Added */
+  height: 100%; /* Added */
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (0.5) to darken more or less */
+}
+
+.about-section::before {
+  content: ""; /* Added */
+  position: absolute; /* Added */
+  top: 0; /* Added */
+  left: 0; /* Added */
+  width: 100%; /* Added */
+  height: 100%; /* Added */
+  background: linear-gradient(150deg, rgba(0,0, 0,0.4) 80%, rgba(0,0,0,0.2) 100%); /* Maintain the existing gradient */
+}
+ 
+
+
+
+.text-acontainer>h1{
+  font-size:4em;
+  color: #fff;
+  font-weight: 800;
+}
+.sub-text{
+  color:#eee;
+  font-size:1.2rem;
 }
 
 
