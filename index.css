@@ -59,9 +59,7 @@ font-weight: 600;
   top: 0;
   z-index: 100; 
 }
-.heading>h1 {
- 
-}
+
 
 
 .navbar  a{
@@ -574,6 +572,13 @@ text-decoration: none;
   line-height: 2.5; 
   color: #fff;
 }
+.imgs{
+  border-radius: 20px;
+  }
+  .imgs:hover{
+
+  }
+
 /* Overview  section */
 .bgs {
   background:url(./src/assets/img/SeriesOverview/.jpg) no-repeat center;
@@ -586,25 +591,25 @@ text-decoration: none;
 .about-section {
   background: url('./src/assets/img/pexels-donald-tong-109669.jpg') no-repeat center;
   background-size: cover; 
-  position: relative; /* Added */
+  position: relative; 
 }
 
 .aoverlay {
-  position: absolute; /* Added */
-  top: 0; /* Added */
-  left: 0; /* Added */
-  width: 100%; /* Added */
-  height: 100%; /* Added */
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (0.5) to darken more or less */
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.5); 
 }
 
 .about-section::before {
-  content: ""; /* Added */
-  position: absolute; /* Added */
-  top: 0; /* Added */
-  left: 0; /* Added */
-  width: 100%; /* Added */
-  height: 100%; /* Added */
+  content: ""; 
+  position: absolute; 
+  top: 0;
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
   background: linear-gradient(150deg, rgba(0,0, 0,0.4) 80%, rgba(0,0,0,0.2) 100%); /* Maintain the existing gradient */
 }
  
@@ -612,13 +617,13 @@ text-decoration: none;
 
 
 .text-acontainer>h1{
-  font-size:4em;
+  font-size:5em;
   color: #fff;
   font-weight: 800;
 }
 .sub-text{
   color:#eee;
-  font-size:1.2rem;
+  font-size:1.5rem;
 }
 
 
@@ -718,4 +723,11 @@ display:none;
   font-size: 1em;
   flex-wrap: wrap;text-overflow: ellipsis;
 }
+.text-acontainer>h1{
+font-size:3.1rem;
+display: flex;
+flex-wrap: wrap;
+}
+
+
 }

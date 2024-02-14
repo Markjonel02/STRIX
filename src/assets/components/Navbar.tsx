@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
         <NavItem to="/movies" text="Movies" />
         <NavItem to="/about" text="About" />
 
-        <li className=" d-flex ms-lg-5 ">
+        <li className=" d-flex ms-5 ">
           <NavItemWithIcon
             to="/favorites"
             icon={heartIcon}
