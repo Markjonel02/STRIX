@@ -575,10 +575,6 @@ text-decoration: none;
 .imgs{
   border-radius: 20px;
   }
-  .imgs:hover{
-
-  }
-
 /* Overview  section */
 .bgs {
   background:url(./src/assets/img/SeriesOverview/.jpg) no-repeat center;
@@ -613,22 +609,23 @@ text-decoration: none;
   background: linear-gradient(150deg, rgba(0,0, 0,0.4) 80%, rgba(0,0,0,0.2) 100%); /* Maintain the existing gradient */
 }
  
-
-
-
 .text-acontainer>h1{
   font-size:5em;
   color: #fff;
   font-weight: 800;
 }
 .sub-text{
-  color:#eee;
-  font-size:1.5rem;
+ color:#eee;
+
+font-size:1.5rem;
+}
+.card:hover{
+transform:scale(1.1);
 }
 
-
 /* Media-Queries */
-@media all and (min-width: 320px) and (max-width: 577px) {
+@media all and (min-width:320px)  and (max-width:577px) {
+
 .home, .text-overlay{
     font-size: 7rem;
   }
@@ -710,9 +707,8 @@ display:none;
 .containers{
   display: flex;
   flex-direction: column;
- 
-
 }
+
 .title{
   font-size: 2.2rem;
   letter-spacing: 2px;
@@ -728,6 +724,8 @@ font-size:3.1rem;
 display: flex;
 flex-wrap: wrap;
 }
-
+.btn-watch{
+display: flex;  
+}
 
 }
