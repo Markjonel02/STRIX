@@ -636,18 +636,22 @@ transform:scale(1.1);
   overflow-wrap: break-word;
 }
 .circular-button {
-  width: 50px; /* Set the width of the button */
-  height: 50px; /* Set the height of the button */
-  overflow: hidden; /* Hide the overflow */
+  width: 50px;
+  height: 50px;
+  overflow: hidden; 
   display: flex;
   justify-content: center;
   align-items: center;
   border:transparent none;
   border-color: transparent;
-  background-color:transparent ; /* Background color for the circular button */
-  cursor: pointer; /* Show pointer cursor on hover */
+  background-color:transparent ; 
+  cursor: pointer; 
+  transition: transform 0.5s ease; 
 }
 
+.rotated {
+  transform: rotate(45deg); /* Add the desired rotation angle */
+}
 .faq-clicker{
   background-color:#eeee;
   border-radius: 10px 10px 0 0;
@@ -661,7 +665,7 @@ transform:scale(1.1);
   font-weight: 800;
 }
 .plus-clicked{
-  display: none;
+
   padding: 10px;
   font-size: 1.2em;
   font-weight:500 ;
