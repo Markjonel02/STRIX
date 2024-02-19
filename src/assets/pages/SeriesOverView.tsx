@@ -39,25 +39,26 @@ const SeriesOverview = () => {
           />
           <div className="overlay"></div>
           <div
-            className="text-containers  text-light d-flex"
+            className="text-containers  text-light d-flex flex-wrap "
             style={{ width: "500px" }}
           >
-            <div className="containers" data-aos="zoom-in-up">
+            <div className="container" data-aos="zoom-in-up">
               <h1 className="title mb-4" data-aos="zoom-in">
                 {selectedSeries.title.replace(/-/g, " ")}
               </h1>
               <div className="desc">
-                <div className="d-flex flex-wrap">
+                <div className="d-flex flex-wrap fw-medium ">
                   <p className="ms-2 mb-1">{selectedSeries.date}</p>
                   <span className="ms-2 me-1">|</span>
                   <p className="ms-1 mb-1">{selectedSeries.age}</p>
                   <span className="ms-2 me-1">|</span>
                   <p className="ms-1 mb-1">{selectedSeries.genre}</p>
                 </div>
+              </div>
+              <div className="dec-section">
                 <p className="desc-p mt-2 fs-6">{selectedSeries.desc}</p>
               </div>
-
-              <div className="cast fs-6 fw-lighter ">
+              <div className="cast fs-6 fw-lighter mt-2">
                 <p>
                   <span style={{ color: "#eeee" }}>Starings: </span>
                   {selectedSeries.staring}

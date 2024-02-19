@@ -177,7 +177,7 @@ export const series: ImageData[] = [
   {
     title: "The-Chosen",
     imageUrl: chosenImage,
-    genre: "Comedy, Family",
+    genre: "Historical, Family, Drama",
     date: "2022",
     age: "14+",
     desc: "The Chosen is a historical drama based on the life of Jesus and those who knew him. Set against the backdrop of Roman oppression in first-century Palestine, the series shares an authentic look at Jesus' revolutionary life and teachings.",

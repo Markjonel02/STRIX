@@ -20,25 +20,24 @@ const About = () => {
     <>
       <div className="about-container about">
         <div className="aoverlay"></div>
-        <div className="about-section w-100 vh-100 d-flex align-items-center justify-content-start flex-wrap">
+        <div className="about-section w-100 vh-100 d-flex align-items-center justify-content-center flex-wrap">
           <div
-            className="text-acontainer ms-5"
+            className="text-acontainer"
             data-aos="zoom-in-up"
             data-aos-duration="500ms"
             data-aos-delay="300"
           >
-       
-            <h1 className="mb-4">Welcome to MovieFlix</h1>
-            <p className="sub-text mt-5">
+            <h1 className="mb-3">Welcome to MovieFlix</h1>
+            <p className="sub-text mt-3 d-flex  justify-content-center align-items-center text-center">
               Experienced the best Movies Quality watch with family, friends,
               and kids.
             </p>
-            <div className="button mt-2">
+            <div className="button mt-2 d-flex justify-content-center  align-items-center">
               <button
-                className="rounded mt-4 p-2 px-2 fw-bold fs-4 btn btn-outline-secondary"
+                className="rounded mt-4 p-2 fw-bold fs-4 btn btn-outline-secondary text-light"
                 style={{
                   height: "4.5rem",
-                  width: "20.5rem",
+                  width: "14.5rem",
                 }}
               >
                 Get Started

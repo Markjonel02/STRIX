@@ -296,7 +296,7 @@ const Movies: React.FC = () => {
               />
               {/* Card body containing title, content, and favorite checkbox */}
               <Card.Body>
-                <Card.Title>{item.title}</Card.Title>
+                <Card.Title className=" fw-semibold ">{item.title}</Card.Title>
                 <Card.Text>
                   <p>{` Category: ${item.genre}`}</p>
                 </Card.Text>
