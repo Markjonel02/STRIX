@@ -210,8 +210,8 @@ const About = () => {
         </div>
 
         {/* FAQ SECTION */}
-        <div className="FAQ container d-flex flex-column mb-5 py">
-          <h1 className=" text-light fw-bolder mb-4">MovieFlix FAQ</h1>
+        <div className="FAQ container d-flex flex-column mb-xl-5 py-5 ">
+          <h2 className=" text-light fw-bolder mb-4">MovieFlix FAQ</h2>
           {/* Render FAQ items */}
           {faqItems.map((item, index) => (
             <div
