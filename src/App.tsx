@@ -51,6 +51,7 @@ const App = () => {
           <Maincontainer classname={bg}>
             <Routes>
               <Route path="/" element={<Homes />} />
+
               <Route path="/movies" element={<Movies />} />
               <Route
                 path="/series/:title/:index"

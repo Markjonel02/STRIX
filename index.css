@@ -632,6 +632,36 @@ transform:scale(1.1);
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
+.circular-button {
+  width: 50px; /* Set the width of the button */
+  height: 50px; /* Set the height of the button */
+  overflow: hidden; /* Hide the overflow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:transparent none;
+  border-color: transparent;
+  background-color:transparent ; /* Background color for the circular button */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.faq-clicker{
+  background-color:#eeee;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.6);
+}
+.plus-clicked{
+  display: none;
+  padding: 10px;
+  font-size: 1.2em;
+  font-weight:500 ;
+  border-radius:0 0 10px 10px ;
+  background-color:#ffff;
+
+}
+
 /* Media-Queries */
 @media all and (min-width:320px)  and (max-width:577px) {
 
@@ -726,5 +756,13 @@ flex-wrap: wrap;
 .btn-watch{
 display: flex;  
 }
-
+.text-content{
+  display:flex; 
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.card:hover{
+opacity:0.8;
+}
 }

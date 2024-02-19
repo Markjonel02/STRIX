@@ -5,8 +5,9 @@ import chucky2 from "../img/seriesimg/chucky/chucky-series.jpg";
 import chucky3 from "../img/seriesimg/chucky/chucky_new.jpg";
 import chuckyt from "../img/seriesimg/chucky/chuckyseries.jpg";
 
+
 export interface Images {
-  imgall: string[];
+  imgall: string;
 }
 
 export const Chucks: Images[] = [
