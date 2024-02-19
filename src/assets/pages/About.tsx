@@ -53,8 +53,7 @@ const About = () => {
             <div className="col-md-6">
               <div className="text-content mb-5 ">
                 <h1
-                  className=" titles fw-bolder"
-                  style={{ fontSize: "4.1rem" }}
+                  className=" titles "
                   data-aos="fade-right"
                   data-aos-duration="500ms"
                   data-aos-delay="150"
@@ -102,8 +101,7 @@ const About = () => {
         <div className="container mt-5 mb-5 py-5 shadow">
           <div className="benefits-container">
             <h1
-              className="btitles fw-bolder text-light mb-3"
-              style={{ fontSize: "4.1rem" }}
+              className="btitles  text-light mb-3"
               data-aos="fade-right"
               data-aos-duration="500ms"
               data-aos-delay="150"
@@ -178,17 +176,17 @@ const About = () => {
         </div>
 
         {/* FAQ SEction */}
-        <div className="FAQv container d-flex flex-column">
+        <div className="FAQ container d-flex flex-column mb-5 py-5">
           <div className="faq-title text-light ">
-            <h1 className="fs-2" style={{ fontWeight: "800" }}>
+            <h1 className="fs-2 mb-4" style={{ fontWeight: "800" }}>
               MovieFlix FAQ
             </h1>
           </div>
           <div className="wrapper d-flex justify-content-between align-items-center flex-column mb-4">
             <div className="faq-clicker w-100 d-flex justify-content-between   p-2  ">
-              <p className="text-center d-flex justify-content-center  align-items-center ">
+              <h4 className="text-center d-flex justify-content-center  align-items-center ">
                 Q: Can I download movies and TV shows for offline viewing?
-              </p>
+              </h4>
               <button className="circular-button">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -204,10 +202,10 @@ const About = () => {
                 </svg>
               </button>
             </div>
-            <div className="plus-clicked">
+            <div className="plus-clicked ">
               <ul>
                 <li>
-                  <p>
+                  <p className="para">
                     A: Yes, MovieFlix allows users to download select movies and
                     TV shows for offline viewing. This feature is available on
                     the MovieFlix app for mobile devices. Simply find the title
@@ -221,9 +219,9 @@ const About = () => {
 
           <div className="wrapper d-flex justify-content-between align-items-center flex-column mb-4">
             <div className="faq-clicker w-100 d-flex justify-content-between   p-2  ">
-              <p className="text-center d-flex justify-content-center  align-items-center ">
+              <h4 className="text-center d-flex justify-content-center  align-items-center ">
                 Q: Are there different subscription plans available?
-              </p>
+              </h4>
               <button className="circular-button">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -242,7 +240,7 @@ const About = () => {
             <div className="plus-clicked ">
               <ul>
                 <li>
-                  <p>
+                  <p className="para">
                     A: MovieFlix offers different subscription tiers to cater to
                     varying user needs. These may include options for streaming
                     in HD, simultaneous streaming on multiple devices, and
@@ -256,9 +254,9 @@ const About = () => {
 
           <div className="wrapper d-flex justify-content-between align-items-center flex-column mb-4">
             <div className="faq-clicker w-100 d-flex justify-content-between   p-2  ">
-              <p className="text-center d-flex justify-content-center  align-items-center ">
+              <h4 className="text-center d-flex justify-content-center  align-items-center ">
                 Q: Can I cancel my MovieFlix subscription at any time?
-              </p>
+              </h4>
               <button className="circular-button">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -277,7 +275,7 @@ const About = () => {
             <div className="plus-clicked ">
               <ul>
                 <li>
-                  <p>
+                  <p className="para">
                     A: Yes, you can cancel your MovieFlix subscription at any
                     time. There are no long-term contracts, and you can easily
                     manage your subscription settings through your account
@@ -291,9 +289,9 @@ const About = () => {
 
           <div className="wrapper d-flex justify-content-between align-items-center flex-column mb-4">
             <div className="faq-clicker w-100 d-flex justify-content-between   p-2  ">
-              <p className="text-center d-flex justify-content-center  align-items-center ">
+              <h4 className="text-center d-flex justify-content-center  align-items-center ">
                 Q: Are there different subscription plans available?
-              </p>
+              </h4>
               <button className="circular-button">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -312,7 +310,7 @@ const About = () => {
             <div className="plus-clicked ">
               <ul>
                 <li>
-                  <p>
+                  <p className="para">
                     A: MovieFlix offers different subscription tiers to cater to
                     varying user needs. These may include options for streaming
                     in HD, simultaneous streaming on multiple devices, and
@@ -321,6 +319,51 @@ const About = () => {
                   </p>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+        {/* Contact Us */}
+
+        <div className="container">
+          <div className="row">
+            {/* Contact Section */}
+            <div className="col-md-6">
+              <div className="Contact wrapper d-flex flex-column">
+                <div className="Contact-content">
+                  <h1 className="ctitles text-light">Contact Us</h1>
+                  <div className="Phone">
+                    <p>Phone</p>
+                    <a href="tel:+1-555-555-5555">222</a>
+                  </div>
+                  <div className="Email">
+                    <p>Email</p>
+                    <a href="mailto:info@movieflix.com">info@movieflix.com</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Form Section */}
+            <div className="col-md-6">
+              <div className="formemail">
+                <div className="form-floating mb-3">
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                  />
+                  <label htmlFor="floatingInput">Email address</label>
+                </div>
+                <div className="form-floating">
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label htmlFor="floatingPassword">Password</label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
