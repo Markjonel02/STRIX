@@ -353,6 +353,7 @@ const About = () => {
                 </div>
               </div>
             </div>
+
             <div
               className="col-md-6 bg-body-secondary p-5 rounded-4 mb-5"
               data-aos="fade-up"
