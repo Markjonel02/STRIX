@@ -393,7 +393,7 @@ const Movies: React.FC = () => {
         </div>
 
         <div className="container-fluid mt-2 py-3">
-          <span className="d-flex fs-5 fw-light text-light mb-2">
+          <span className="d-flex fs-5 fw-bold text-light mb-2 ">
             Popular Series
           </span>
           <Series />

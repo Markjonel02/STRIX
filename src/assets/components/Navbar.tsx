@@ -1,12 +1,8 @@
 import React from "react";
 import { Outlet, NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useFavorites } from "../Context/FavoriteContext";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-
 const Navbar: React.FC = () => {
   const { favorites } = useFavorites();
-  const heartIcon = <FontAwesomeIcon icon={faHeart} />;
 
   return (
     <>
@@ -14,15 +10,7 @@ const Navbar: React.FC = () => {
         <NavItem to="/" text="Home" />
         <NavItem to="/movies" text="Movies" />
         <NavItem to="/about" text="About" />
-
-        <li className=" d-flex ms-5 ">
-          <NavItemWithIcon
-            to="/favorites"
-            icon={heartIcon}
-            count={favorites.length}
-          />
-        </li>
-
+        <Navtems to="/favorites" count={favorites.length}></Navtems>
         <Outlet />
       </ul>
     </>
@@ -35,7 +23,7 @@ interface NavItemProps {
 }
 
 const NavItem: React.FC<NavItemProps> = ({ to, text }) => (
-  <li className="nav-item">
+  <li className="nav-item d-flex ">
     <NavLink className="nav-link" to={to}>
       {text}
     </NavLink>
@@ -44,19 +32,19 @@ const NavItem: React.FC<NavItemProps> = ({ to, text }) => (
 
 interface NavItemWithIconProps {
   to: string;
-  icon: React.ReactNode;
+
   count: number;
 }
 
-const NavItemWithIcon: React.FC<NavItemWithIconProps> = ({
+const Navtems: React.FC<NavItemWithIconProps> = ({
   to,
-  icon,
+
   count,
 }) => (
   <li className="nav-item">
-    <NavLink className="nav-link nav-item ms-3" to={to}>
-      <span className="mx-1">{icon}</span>
+    <NavLink className="nav-link nav-item " to={to}>
       {count !== 0 && <span>{count}</span>}
+      Favorites
     </NavLink>
   </li>
 );

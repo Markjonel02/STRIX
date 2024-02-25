@@ -48,7 +48,7 @@ const Series = () => {
         <Outlet />
       </Swiper>
 
-      <span className="d-flex fs-5 fw-light text-light mb-2">
+      <span className="d-flex fs-5 fw-bold text-light mb-2">
         Popular Kdramas
       </span>
       <div className="k-dramas-sec">
