@@ -2,7 +2,7 @@ import { Container, Card } from "react-bootstrap";
 import Masonry from "react-masonry-css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Series from "./Series";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useFavorites } from "../Context/FavoriteContext";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -28,7 +28,7 @@ import "swiper/css/effect-fade";
 import "swiper/swiper-bundle.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import debounce from "lodash.debounce";
+
 // Define the type for each video item
 
 export interface VideoItem {
@@ -148,21 +148,34 @@ const Movies: React.FC = () => {
     },
   ];
 
-  //state for queries
-  const [SearchQueries, setSearchQueries] = useState<string>("");
-  const [FilteredMovies, setFilteredMovies] = useState<VideoItem[]>([]);
+  // State for search queries and filtered movies
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [filteredMovies, setFilteredMovies] = useState<VideoItem[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   // Function to handle changes in the search input
-  const handleSearchInputChange = debounce((value: string) => {
-    setSearchQueries(value);
-  }, 200);
+  const handleSearchInputChange = (value: string) => {
+    setSearchQuery(value);
+    setLoading(true); // Set loading state when a search query is entered
+  };
+
   // Filter movies based on search query
   useEffect(() => {
     const filtered = items.filter((item) =>
-      item.title.toLowerCase().includes(SearchQueries.toLowerCase())
+      item.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
-    setFilteredMovies(filtered);
-  }, [SearchQueries, items]);
+    // Simulate delay for lazy loading effect
+    setTimeout(() => {
+      setFilteredMovies(filtered);
+      setLoading(false); // Reset loading state after filtering is done
+    }, 500); // Adjust delay as needed
+  }, [searchQuery, items]);
+
+  // Memoize the filtered movies to prevent unnecessary re-renders
+  const memoizedFilteredMovies = useMemo(
+    () => filteredMovies,
+    [filteredMovies]
+  );
 
   /* toast */
   const [Toast, setToast] = useState<string>("");
@@ -278,7 +291,7 @@ const Movies: React.FC = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className="cont mt-xl-5">
+      <div className="cont mt-xl-5 mt-sm-5 mt-md-5 ">
         <div className="left-content">
           <h1 className="text-light fs-4 fw-light">Discover</h1>
         </div>
@@ -289,7 +302,7 @@ const Movies: React.FC = () => {
               type="search"
               placeholder="Search"
               aria-label="Search"
-              value={SearchQueries}
+              value={searchQuery}
               onChange={(e) => handleSearchInputChange(e.target.value)}
             />
           </form>
@@ -302,78 +315,95 @@ const Movies: React.FC = () => {
         data-aos-duration="700"
         className="dc-grid overflow-y-auto h-100 hide-scrollbar mt-2  "
       >
+        {loading && (
+          <div className=" d-flex justify-content-center  ">
+            <svg viewBox="25 25 50 50" className="svs">
+              <circle r="20" cy="50" cx="50" className="circles"></circle>
+            </svg>
+          </div>
+        )}
+        {!loading && memoizedFilteredMovies.length === 0 && (
+          <div className="d-flex justify-content-center  align-items-center mt-5 ">
+            <h1>No results found.</h1>
+          </div>
+        )}
         <Masonry
           breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid shadow-1"
+          className="my-masonry-grid shadow-1 "
           columnClassName="my-masonry-grid_column"
         >
           {/* Map through video items and render each as a Card */}
-          {FilteredMovies.map((item, index) => (
-            <Card
-              key={item.id}
-              className="pinterest-grid-item"
-              data-aos="fade-down"
-              data-aos-easing="linear"
-              data-aos-duration="500ms"
-            >
-              {/* Lazy-loaded image with blur effect */}
-              <LazyLoadImage
-                alt={item.title}
-                height="100%"
-                src={item.imageUrl}
-                width="100%"
-                effect="blur"
-                wrapperClassName="lazy-image-wrapper"
-                className=" rounded "
-              />
-              {/* Card body containing title, content, and favorite checkbox */}
-              <Card.Body>
-                <Card.Title className=" fw-semibold ">{item.title}</Card.Title>
-                <Card.Text>
-                  <p>{` Category: ${item.genre}`}</p>
-                </Card.Text>
-                <Card.Text>
-                  <TruncatedText content={item.content} maxLength={30} />
-                </Card.Text>
-
-                <input
-                  type="checkbox"
-                  checked={favoriteStates[index]}
-                  id={`favorite-${index}`}
-                  name={`favorite-checkbox-${index}`}
-                  value={`favorite-button-${index}`}
-                  onChange={() => handleToggleFavorite(index)}
+          {!loading &&
+            memoizedFilteredMovies.map((item, index) => (
+              <Card
+                key={item.id}
+                className="pinterest-grid-item"
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="500ms"
+              >
+                {/* Lazy-loaded image with blur effect */}
+                <LazyLoadImage
+                  alt={item.title}
+                  height="100%"
+                  src={item.imageUrl}
+                  width="100%"
+                  effect="blur"
+                  wrapperClassName="lazy-image-wrapper"
+                  className=" rounded "
                 />
-                <label htmlFor={`favorite-${index}`} className="container">
-                  {/* Heart icon indicating favorite status */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill={favoriteStates[index] ? "red" : "none"}
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="feather feather-heart"
-                  >
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                  </svg>
-                  {/* Display whether the item is added to favorites or not */}
-                  <div className="action">
-                    {favoriteStates[index] ? (
-                      <span className="option-2 shadow ">
-                        Added to Favorites
-                      </span>
-                    ) : (
-                      <span className="option-1 shadow ">Add to Favorites</span>
-                    )}
-                  </div>
-                </label>
-              </Card.Body>
-            </Card>
-          ))}
+                {/* Card body containing title, content, and favorite checkbox */}
+                <Card.Body>
+                  <Card.Title className=" fw-semibold ">
+                    {item.title}
+                  </Card.Title>
+                  <Card.Text>
+                    <p>{` Category: ${item.genre}`}</p>
+                  </Card.Text>
+                  <Card.Text>
+                    <TruncatedText content={item.content} maxLength={30} />
+                  </Card.Text>
+
+                  <input
+                    type="checkbox"
+                    checked={favoriteStates[index]}
+                    id={`favorite-${index}`}
+                    name={`favorite-checkbox-${index}`}
+                    value={`favorite-button-${index}`}
+                    onChange={() => handleToggleFavorite(index)}
+                  />
+                  <label htmlFor={`favorite-${index}`} className="container">
+                    {/* Heart icon indicating favorite status */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill={favoriteStates[index] ? "red" : "none"}
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="feather feather-heart"
+                    >
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    {/* Display whether the item is added to favorites or not */}
+                    <div className="action">
+                      {favoriteStates[index] ? (
+                        <span className="option-2 shadow ">
+                          Added to Favorites
+                        </span>
+                      ) : (
+                        <span className="option-1 shadow ">
+                          Add to Favorites
+                        </span>
+                      )}
+                    </div>
+                  </label>
+                </Card.Body>
+              </Card>
+            ))}
         </Masonry>
         <div className="Toast-con position-fixed   end-0 p-3">
           {
@@ -423,7 +453,6 @@ const Movies: React.FC = () => {
             <span>specifically to you.</span>
           </span>
         </div>
-
         <div className="container-fluid mt-2 py-3">
           <span className="d-flex fs-5 fw-bold text-light mb-2 ">
             Popular Series
