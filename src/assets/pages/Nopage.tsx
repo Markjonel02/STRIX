@@ -1,11 +1,11 @@
 import React from "react";
-import videoSource from "../img/404vid.mp4"; // Update the path to your video file
+import videoSource from "../img/404vid.mp4";
 const styles: React.CSSProperties = {
   position: "absolute",
   display: "flex",
   top: "65%",
   left: "50%",
-  transform: "translateX(-50%)", // Corrected transform property
+  transform: "translateX(-50%)",
   zIndex: 1,
 };
 

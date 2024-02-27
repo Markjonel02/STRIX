@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
-/* import Img from "../img/logo2.png"; */
 import Navbar from "./Navbar";
 
-/* const img = {
-  size: 200,
-  altname: "logo",
-}; */
+
 
 const predefinedStyles = {
   backgroundColor: "background-color: rgba(17, 25, 40, 0.15)",
@@ -42,7 +38,7 @@ const Header = () => {
         <div className="img-container me-3">
           <h1 className="fw-bolder fs-1 text-light">MovieFlix</h1>
 
-          {/*     <img src={Img} alt={img.altname} style={{ width: img.size }} /> */}
+ 
         </div>
 
         <div className="button">

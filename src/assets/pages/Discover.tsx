@@ -1,11 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
+
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-//import swiper/modules
+
 import { Pagination, EffectCoverflow } from "swiper/modules";
 export const Discover = () => {
   return (

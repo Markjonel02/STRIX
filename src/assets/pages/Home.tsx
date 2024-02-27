@@ -163,9 +163,10 @@ const Home = () => {
             <strong>Create profiles for kids</strong>
           </h1>
           <span className="kids-span fs-4">
-            Send kids on adventures with their favorite characters in
+            Send kids on adventures with their favorite
             <span style={{ display: "block" }}>
-              a space made just for them—free with your membership.
+              characters in a space made just for them—free <br /> with your
+              membership.
             </span>
           </span>
         </div>

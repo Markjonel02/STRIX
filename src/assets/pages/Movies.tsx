@@ -337,7 +337,7 @@ const Movies: React.FC = () => {
             memoizedFilteredMovies.map((item, index) => (
               <Card
                 key={item.id}
-                className="pinterest-grid-item"
+                className="grid-item"
                 data-aos="fade-down"
                 data-aos-easing="linear"
                 data-aos-duration="500ms"

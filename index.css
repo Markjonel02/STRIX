@@ -86,7 +86,7 @@ border-bottom:2px solid #b3d4fc;
   padding-left: 20px; 
 }
 
-.pinterest-grid-item {
+.grid-item {
   width: 100%;
   margin-bottom: 20px; 
 }
@@ -833,5 +833,8 @@ display: flex;
 }
 .card:hover{
 opacity:0.8;
+}
+.cont{
+margin-top: 2rem;
 }
 }

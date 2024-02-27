@@ -42,9 +42,8 @@ const Navtems: React.FC<NavItemWithIconProps> = ({
   count,
 }) => (
   <li className="nav-item">
-    <NavLink className="nav-link nav-item " to={to}>
-      {count !== 0 && <span>{count}</span>}
-      Favorites
+    <NavLink className="nav-link nav-item" to={to}>
+      {count !== 0 && <span className="me-2">{count} </span>} Favorites
     </NavLink>
   </li>
 );

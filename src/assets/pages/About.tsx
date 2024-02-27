@@ -257,7 +257,7 @@ const About = () => {
                       <p className="para">{item.answer}</p>
                     </li>
                   </ul>
-                </div> 
+                </div>
               )}
             </div>
           ))}
@@ -348,6 +348,22 @@ const About = () => {
                         Address
                       </p>
                       <p className="text-light">Cainta Rizal</p>
+                    </div>
+                  </div>
+                  <div className="map border  p-2 rounded  mb-4">
+                    <div style={{ width: " 100%" }}>
+                      <iframe
+                        className="rounded"
+                        width="100%"
+                        height="400"
+                        frameBorder="0"
+                        scrolling="no"
+                        marginHeight="0"
+                        marginwidth="0"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=san%20Andres,Cainta%20Rizal+(MovieFlix)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                      >
+                        <a href="https://www.gps.ie/">gps systems</a>
+                      </iframe>
                     </div>
                   </div>
                 </div>
