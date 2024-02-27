@@ -291,11 +291,11 @@ const Movies: React.FC = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className="cont mt-xl-5 mt-sm-5 mt-md-5 ">
+      <div className="cont mt-xl-5 mt-sm-5 mt-md-5 mb-4">
         <div className="left-content">
           <h1 className="text-light fs-4 fw-light">Discover</h1>
         </div>
-        <div className="right-content">
+        <div className="right-content ">
           <form className="d-flex">
             <input
               className="form-control"
@@ -323,8 +323,8 @@ const Movies: React.FC = () => {
           </div>
         )}
         {!loading && memoizedFilteredMovies.length === 0 && (
-          <div className="d-flex justify-content-center  align-items-center mt-5 ">
-            <h1>No results found.</h1>
+          <div className="d-flex justify-content-center  align-items-center mt-5 text-light">
+            <h1 className="fw-bold">No results found.</h1>
           </div>
         )}
         <Masonry
