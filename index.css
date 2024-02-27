@@ -433,6 +433,22 @@ label {
   z-index: 0;
  }
  
+ .cont {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  margin-inline: 20px;
+}
+
+.left-content {
+  width: 50%; 
+}
+
+.right-content {
+  width: calc(50% - 10px); 
+
+}
+
  .shape {
   fill: #0E1822;
  }

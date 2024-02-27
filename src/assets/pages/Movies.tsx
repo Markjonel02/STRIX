@@ -28,7 +28,7 @@ import "swiper/css/effect-fade";
 import "swiper/swiper-bundle.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
-
+import debounce from "lodash.debounce";
 // Define the type for each video item
 
 export interface VideoItem {
@@ -148,6 +148,22 @@ const Movies: React.FC = () => {
     },
   ];
 
+  //state for queries
+  const [SearchQueries, setSearchQueries] = useState<string>("");
+  const [FilteredMovies, setFilteredMovies] = useState<VideoItem[]>([]);
+
+  // Function to handle changes in the search input
+  const handleSearchInputChange = debounce((value: string) => {
+    setSearchQueries(value);
+  }, 200);
+  // Filter movies based on search query
+  useEffect(() => {
+    const filtered = items.filter((item) =>
+      item.title.toLowerCase().includes(SearchQueries.toLowerCase())
+    );
+    setFilteredMovies(filtered);
+  }, [SearchQueries, items]);
+
   /* toast */
   const [Toast, setToast] = useState<string>("");
   const [Showtoast, setShowtoast] = useState(false);
@@ -262,8 +278,24 @@ const Movies: React.FC = () => {
           </SwiperSlide>
         </Swiper>
       </div>
+      <div className="cont mt-xl-5">
+        <div className="left-content">
+          <h1 className="text-light fs-4 fw-light">Discover</h1>
+        </div>
+        <div className="right-content">
+          <form className="d-flex">
+            <input
+              className="form-control"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              value={SearchQueries}
+              onChange={(e) => handleSearchInputChange(e.target.value)}
+            />
+          </form>
+        </div>
+      </div>
 
-      <h1 className=" text-light mt-xl-5 ms-3 py-2 fs-4 fw-light ">Discover</h1>
       <Container
         fluid
         data-aos="fade-right "
@@ -276,7 +308,7 @@ const Movies: React.FC = () => {
           columnClassName="my-masonry-grid_column"
         >
           {/* Map through video items and render each as a Card */}
-          {items.map((item, index) => (
+          {FilteredMovies.map((item, index) => (
             <Card
               key={item.id}
               className="pinterest-grid-item"

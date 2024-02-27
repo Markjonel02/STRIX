@@ -257,7 +257,7 @@ const About = () => {
                       <p className="para">{item.answer}</p>
                     </li>
                   </ul>
-                </div>
+                </div> 
               )}
             </div>
           ))}
