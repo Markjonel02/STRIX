@@ -2,7 +2,7 @@ import about from "../img/pexels-tima-miroshnichenko-7991269.jpg";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
-
+import Contact from "./Contact";
 const imgProperty = {
   radius: 20,
   imgSrc: about,
@@ -312,7 +312,7 @@ const About = () => {
                             strokeLinejoin="round"
                             d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
                           />
-                        </svg>{" "}
+                        </svg>
                         Email
                       </p>
                       <a
@@ -374,72 +374,7 @@ const About = () => {
               className="col-md-6 bg-body-secondary p-5 rounded-4 mb-5"
               data-aos="fade-up"
             >
-              <h1
-                className="mb-4"
-                style={{ fontSize: "50px", fontWeight: "800" }}
-              >
-                Get in Touch
-              </h1>
-              <form action="">
-                <div className="mb-3">
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="mb-3">
-                        <p className="mb-2 fs-6  fw-medium text-dark">
-                          Firstname
-                        </p>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="firstName"
-                          placeholder="John"
-                          style={{ height: "55px" }}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="mb-3">
-                        <p className="mb-2 fs-6  fw-medium text-dark">
-                          Lastname
-                        </p>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="lastName"
-                          placeholder="Doe"
-                          style={{ height: "55px" }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="email">
-                    <p className="mb-2 fs-6  fw-medium text-dark">Email</p>
-                    <input
-                      type="email"
-                      className="form-control"
-                      placeholder="name@example.com"
-                      style={{ height: "55px" }}
-                    />
-                  </div>
-                </div>
-
-                <div className="form-floating mb-3">
-                  <p className="mb-2 fs-6  fw-medium text-dark">Message</p>
-                  <textarea
-                    className="form-control "
-                    style={{ height: "150px" }}
-                    placeholder="Leave a comment here"
-                  ></textarea>
-                </div>
-                <div className="btnsub d-flex">
-                  <button
-                    type="submit"
-                    className="btn btn-dark fw-semibold fs-5 w-100 py-3 "
-                  >
-                    Send a Message
-                  </button>
-                </div>
-              </form>
+              <Contact />
             </div>
           </div>
         </div>
