@@ -3,6 +3,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import Contact from "./Contact";
+
 const imgProperty = {
   radius: 20,
   imgSrc: about,
@@ -13,6 +14,7 @@ type FAQItem = {
   question: string;
   answer: string;
 };
+
 const About = () => {
   const [rotatedIndexes, setRotatedIndexes] = useState<number[]>([]);
 
@@ -215,7 +217,7 @@ const About = () => {
         </div>
 
         {/* FAQ SECTION */}
-        <div className="FAQ container d-flex flex-column mb-xl-5 py-5 ">
+        <div className="FAQ container d-flex flex-column mb-xl-5 py-5  mb-lg-5  mb-md-4  mb-sm-5">
           <h2 className=" text-light fw-bolder mb-4">MovieFlix FAQ</h2>
           {/* Render FAQ items */}
           {faqItems.map((item, index) => (
@@ -273,7 +275,6 @@ const About = () => {
                   <div className="Phone d-flex ">
                     <div className="content me-5">
                       <p className="text-light fs-5 fw-bold ">
-                        {" "}
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -304,7 +305,7 @@ const About = () => {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="w-6 h-6"
+                          className="w-6 h-6 me-1"
                           style={{ width: "25px", height: "30px" }}
                         >
                           <path
@@ -347,10 +348,10 @@ const About = () => {
                         </svg>
                         Address
                       </p>
-                      <p className="text-light">Cainta Rizal</p>
+                      <p className="text-light">San Andres, Cainta Rizal</p>
                     </div>
                   </div>
-                  <div className="map border  p-2 rounded  mb-4">
+                  <div className="map border  p-2 rounded-4 mb-4 mt-3">
                     <div style={{ width: " 100%" }}>
                       <iframe
                         className="rounded"
@@ -371,7 +372,7 @@ const About = () => {
             </div>
 
             <div
-              className="col-md-6 bg-body-secondary p-5 rounded-4 mb-5"
+              className="col-md-6 bg-body-secondary px-5 py-5 rounded-4 mb-5"
               data-aos="fade-up"
             >
               <Contact />

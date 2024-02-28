@@ -3,10 +3,10 @@ import axios from "axios";
 
 const Contact: React.FC = () => {
   const [to, setTo] = useState<string>("");
-
   const [text, setText] = useState<string>("");
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
+  const [email, setEmail] = useState<boolean>(false);
 
   const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,8 +23,11 @@ const Contact: React.FC = () => {
       setText("");
       setFirstName("");
       setLastName("");
+      setEmail(!email);
 
-      alert("Email sent successfully");
+      setTimeout(() => {
+        setEmail(false);
+      }, 3000);
     } catch (error) {
       console.error("Error sending email:", error);
       alert("Error sending email");
@@ -33,6 +36,28 @@ const Contact: React.FC = () => {
 
   return (
     <>
+      {email && (
+        <svg
+          className="checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 52 52"
+        >
+          <circle
+            className="checkmark__circle"
+            cx="26"
+            cy="26"
+            r="25"
+            fill="none"
+          />
+          <path
+            className="checkmark__check"
+            fill="none"
+            d="M14.1 27.2l7.1 7.2 16.7-16.8"
+          />
+          <p>sent</p>
+        </svg>
+      )}
+
       <h1 className="mb-4" style={{ fontSize: "50px", fontWeight: "800" }}>
         Get in Touch
       </h1>
