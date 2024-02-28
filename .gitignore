@@ -23,6 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
-src/.Server/Server.mjs
+.Server/Server.mjs
 
 
