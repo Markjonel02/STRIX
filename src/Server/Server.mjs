@@ -1,4 +1,4 @@
-import ('dotenv').config();
+
 import express from 'express';
 import nodemailer from 'nodemailer';
 import bodyParser from 'body-parser';
@@ -13,8 +13,8 @@ app.use(cors());
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'process.env.itsmepiglet05@gmail.com',
-    pass: 'process.env.ysfg enfr shzc ipty'
+    user: 'itsmepiglet05@gmail.com',
+    pass: 'ysfg enfr shzc ipty'
   }
 });
 
@@ -26,9 +26,9 @@ app.post('/send-email', (req, res) => {
   const mailOptions = { 
     from,
     to:'itsmepiglet05@gmail.com',
-    subject: 'Message from Contact Form', 
+    subject: `Message from Contact Form (${from})`, 
     text: `Message from ${firstName} ${lastName}: ${text}`,
-    html: `<p>Message from ${firstName} ${lastName}: ${html} ${from}</p>`
+    html: `<p>Message from ${firstName} ${lastName}: ${html}</p>`
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
