@@ -5,7 +5,6 @@ import Mobile from "../img/About-Svg/Devices.svg";
 import manage from "../img/About-Svg/manage_search_white_24dp.svg";
 import ads from "../img/About-Svg/ads_click_white_24dp.svg";
 import interest from "../img/About-Svg/interests_white_24dp.svg";
-import recommend from "../img/About-Svg/recommend_white_24dp.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
 const imgProperty = {
@@ -468,8 +467,6 @@ const About = () => {
                         height="400"
                         frameBorder="0"
                         scrolling="no"
-                        marginHeight="0"
-                        marginwidth="0"
                         src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=san%20Andres,Cainta%20Rizal+(MovieFlix)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                       >
                         <a href="https://www.gps.ie/">gps systems</a>

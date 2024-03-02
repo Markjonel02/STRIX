@@ -15,7 +15,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer style={footerStyle} className="bg-black  mt-2 ">
+      <footer style={footerStyle} className="bg-black  mt-2 py-5">
         <div className="container p-5">
           <div className="row">
             <div className="col-md-6 item text" style={{ marginBottom: "0px" }}>
