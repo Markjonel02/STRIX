@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 
-
-
 const predefinedStyles = {
   backgroundColor: "background-color: rgba(17, 25, 40, 0.15)",
   backdropFilter: "backdrop-filter: blur(1px) saturate(170%)",
@@ -34,11 +32,9 @@ const Header = () => {
       }`}
       style={isScrolling ? {} : predefinedStyles}
     >
-      <div className="container-fluid d-flex justify-content-between align-items-center">
+      <div className="container-fluid d-flex justify-content-between ">
         <div className="img-container me-3">
           <h1 className="fw-bolder fs-1 text-light">MovieFlix</h1>
-
- 
         </div>
 
         <div className="button">
@@ -56,7 +52,7 @@ const Header = () => {
         </div>
 
         <div
-          className="collapse navbar-collapse justify-content-center "
+          className="collapse navbar-collapse justify-content-end "
           id="navbarNav"
         >
           <Navbar />

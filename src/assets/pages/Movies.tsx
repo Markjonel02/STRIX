@@ -296,7 +296,7 @@ const Movies: React.FC = () => {
           <h1 className="text-light fs-4 fw-light">Discover</h1>
         </div>
         <div className="right-content ">
-          <form className="d-flex">
+          <form className="d-flex justify-content-end ">
             <input
               className="form-control"
               type="search"
@@ -304,6 +304,7 @@ const Movies: React.FC = () => {
               aria-label="Search"
               value={searchQuery}
               onChange={(e) => handleSearchInputChange(e.target.value)}
+              style={{ width: "300px" }}
             />
           </form>
         </div>
@@ -322,10 +323,17 @@ const Movies: React.FC = () => {
             </svg>
           </div>
         )}
-        {!loading && memoizedFilteredMovies.length === 0 && (
-          <div className="d-flex justify-content-center  align-items-center mt-5 text-light">
+        {!loading && searchQuery && memoizedFilteredMovies.length === 0 && (
+          <div className="d-flex justify-content-center align-items-center mt-5 text-light">
             <h1 className="fw-bold">No results found.</h1>
           </div>
+        )}
+        {/* if found 1  movie, use singular else use plural */}
+        {!loading && searchQuery && memoizedFilteredMovies.length > 0 && (
+          <h1 className="fw-bold text-center mt-5 mb-3 text-light">
+            {memoizedFilteredMovies.length} result
+            {memoizedFilteredMovies.length > 1 ? "s" : ""} found
+          </h1>
         )}
         <Masonry
           breakpointCols={breakpointColumnsObj}

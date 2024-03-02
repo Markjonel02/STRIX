@@ -60,7 +60,7 @@ const Footer = () => {
 
           <div></div>
 
-          <p className="copyright d-flex justify-content-center align-content-end mt-4 fs-4 fw-light ">
+          <p className="copyright d-flex mt-4 fs-5 fw-light ">
             MovieFlix © 2024
           </p>
         </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet, NavLink } from "react-router-dom";
-import { useFavorites } from "../Context/FavoriteContext";
+/* import { useFavorites } from "../Context/FavoriteContext"; */
 const Navbar: React.FC = () => {
-  const { favorites } = useFavorites();
+  /* nst { favorites } = useFavorites(); */
 
   return (
     <>
@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
         <NavItem to="/" text="Home" />
         <NavItem to="/movies" text="Movies" />
         <NavItem to="/about" text="About" />
-        <Navtems to="/favorites" count={favorites.length}></Navtems>
+        <Navtems to="/favorites"></Navtems>
         <Outlet />
       </ul>
     </>
@@ -32,18 +32,12 @@ const NavItem: React.FC<NavItemProps> = ({ to, text }) => (
 
 interface NavItemWithIconProps {
   to: string;
-
-  count: number;
 }
 
-const Navtems: React.FC<NavItemWithIconProps> = ({
-  to,
-
-  count,
-}) => (
+const Navtems: React.FC<NavItemWithIconProps> = ({ to }) => (
   <li className="nav-item">
     <NavLink className="nav-link nav-item" to={to}>
-      {count !== 0 && <span className="me-2">{count} </span>} Favorites
+      Favorites
     </NavLink>
   </li>
 );

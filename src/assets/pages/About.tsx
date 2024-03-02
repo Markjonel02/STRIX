@@ -1,9 +1,12 @@
 import about from "../img/pexels-tima-miroshnichenko-7991269.jpg";
 import Aos from "aos";
-import "aos/dist/aos.css";
+import "aos/dist/aos.css"; /* 
+import Svg from "../img/About-Svg/undraw_love_it_xkc2.svg";
+import mobile from "../img/About-Svg/undraw_mobile_content_xvgr.svg?inline";
+import app from "../img/About-Svg/undraw_search_app_oso2.svg";
+import selection from "../img/About-Svg/undraw_undraw_selection_f3no_lndu.svg"; */
 import { useEffect, useState } from "react";
-import Contact from "./Contact";
-
+import axios from "axios";
 const imgProperty = {
   radius: 20,
   imgSrc: about,
@@ -16,6 +19,44 @@ type FAQItem = {
 };
 
 const About = () => {
+  const [submitting, setSubmitting] = useState(false);
+  const [to, setTo] = useState<string>("");
+  const [text, setText] = useState<string>("");
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [email, setEmail] = useState<boolean>(false);
+
+  const sendEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:3001/send-email", {
+        from: to,
+        text,
+        html: text,
+        firstName,
+        lastName,
+      });
+      // Clear all fields
+      setTo("");
+      setText("");
+      setFirstName("");
+      setLastName("");
+      setEmail(!email);
+      setSubmitting(!submitting);
+      setTimeout(() => {
+        setEmail(false);
+        setSubmitting(submitting);
+      }, 3000);
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+  };
+
   const [rotatedIndexes, setRotatedIndexes] = useState<number[]>([]);
 
   const faqItems: FAQItem[] = [
@@ -50,6 +91,15 @@ const About = () => {
       setRotatedIndexes([...rotatedIndexes, index]);
     }
   };
+
+  useEffect(() => {
+    if (email) {
+      setTimeout(() => {
+        setEmail(false);
+      }, 3000);
+    }
+  }, [email]);
+
   useEffect(() => {
     Aos.init();
     return () => {
@@ -86,6 +136,7 @@ const About = () => {
             </div>
           </div>
         </div>
+
         <div
           className="container about-MovieFlix d-flex mx-auto justify-content-center align-items-center mt-xl-5 text-light py-5"
           id="id"
@@ -116,7 +167,7 @@ const About = () => {
                   className="btn-watch d-flex justify-content-center align-items-center t-4 p-2 px-2 fw-bold fs-4 btn btn-outline-danger"
                   style={{
                     height: "4.5rem",
-                    width: "20.5rem",
+                    width: "15.5rem",
                   }}
                 >
                   Watch Now
@@ -164,6 +215,7 @@ const About = () => {
             <div className="col-md-3 mb-3" data-aos="zoom-in">
               <div className="card">
                 <div className="card-body">
+                  <div className="img"></div>
                   <p className="card-title">Card 1</p>
                   <p className="card-text ">
                     Diverse selection of movies and TV shows.
@@ -190,6 +242,7 @@ const About = () => {
             <div className="col-md-3 mb-3" data-aos="zoom-in">
               <div className="card">
                 <div className="card-body">
+                  <div className="mobile"></div>
                   <p className="card-title">Card 3</p>
                   <p className="card-text">
                     Convenient streaming on any device.
@@ -217,8 +270,10 @@ const About = () => {
         </div>
 
         {/* FAQ SECTION */}
-        <div className="FAQ container d-flex flex-column mb-xl-5 py-5  mb-lg-5  mb-md-4  mb-sm-5">
-          <h2 className=" text-light fw-bolder mb-4">MovieFlix FAQ</h2>
+        <div className="FAQ container d-flex flex-column py-5  mb-lg-5  mb-md-4  mb-sm-5">
+          <h2 className=" text-light fw-bolder mb-4">
+            FREQUENTLY ASKED QUESTIONS
+          </h2>
           {/* Render FAQ items */}
           {faqItems.map((item, index) => (
             <div
@@ -251,6 +306,7 @@ const About = () => {
                   </svg>
                 </button>
               </div>
+
               {/* FAQ answer - Conditionally render based on rotatedIndexes state */}
               {rotatedIndexes.includes(index) && (
                 <div className="plus-clicked active" data-aos="fade-down">
@@ -264,6 +320,30 @@ const About = () => {
             </div>
           ))}
         </div>
+
+        {email && (
+          <div className="checkmark-container position-relative text-center">
+            <svg
+              className="checkmark"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 52 52"
+            >
+              <circle
+                className="checkmark__circle"
+                cx="26"
+                cy="26"
+                r="25"
+                fill="none"
+              />
+              <path
+                className="checkmark__check"
+                fill="none"
+                d="M14.1 27.2l7.1 7.2 16.7-16.8"
+              />
+            </svg>
+            <p className="message text-light">Message Sent!</p>
+          </div>
+        )}
 
         {/* Contact Us */}
         <div className="Contact container">
@@ -351,11 +431,11 @@ const About = () => {
                       <p className="text-light">San Andres, Cainta Rizal</p>
                     </div>
                   </div>
-                  <div className="map border  p-2 rounded-4 mb-4 mt-3">
+                  <div className="map p-3 rounded-4 mb-4 mt-3">
                     <div style={{ width: " 100%" }}>
                       <iframe
                         className="rounded"
-                        width="100%"
+                        width="90%"
                         height="400"
                         frameBorder="0"
                         scrolling="no"
@@ -375,7 +455,85 @@ const About = () => {
               className="col-md-6 bg-body-secondary px-5 py-5 rounded-4 mb-5"
               data-aos="fade-up"
             >
-              <Contact />
+              <h1
+                className="mb-4"
+                style={{ fontSize: "50px", fontWeight: "800" }}
+              >
+                Get in Touch
+              </h1>
+              <form onSubmit={sendEmail} method="POST">
+                <div className="mb-3">
+                  <div className="row">
+                    <div className="col-md-6">
+                      <div className="mb-3">
+                        <p className="mb-2 fs-6  fw-medium text-dark">
+                          Firstname
+                        </p>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="firstName"
+                          placeholder="John"
+                          style={{ height: "55px" }}
+                          value={firstName}
+                          onChange={(e) => setFirstName(e.target.value)}
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="mb-3">
+                        <p className="mb-2 fs-6  fw-medium text-dark">
+                          Lastname
+                        </p>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="lastName"
+                          placeholder="Doe"
+                          style={{ height: "55px" }}
+                          value={lastName}
+                          onChange={(e) => setLastName(e.target.value)}
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="email">
+                    <p className="mb-2 fs-6  fw-medium text-dark">Email</p>
+                    <input
+                      type="email"
+                      className="form-control"
+                      placeholder="name@example.com"
+                      value={to}
+                      onChange={(e) => setTo(e.target.value)}
+                      style={{ height: "55px" }}
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="form-floating mb-3">
+                  <p className="mb-2 fs-6  fw-medium text-dark">Message</p>
+                  <textarea
+                    className="form-control "
+                    style={{ height: "150px" }}
+                    placeholder="Leave a comment here"
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                    required
+                  ></textarea>
+                </div>
+                <div className="btnsub d-flex">
+                  <button
+                    type="submit"
+                    className="btn btn-dark fw-semibold fs-5 w-100 py-3"
+                    disabled={submitting}
+                  >
+                    {submitting ? "Sending..." : " Send a Message"}
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

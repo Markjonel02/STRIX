@@ -29,7 +29,7 @@ const FavoritesPage: React.FC = () => {
     <div className=" d-flex justify-content-center align-items-center text-light mt-5 py-lg-5">
       {favorites.length === 0 ? (
         <div className="tit d-flex  justify-content-center align-items-center ">
-          <h1 className="text-center   ">No Favorites yet!</h1>
+          <h1 className="text-center ">No Favorites yet!</h1>
         </div>
       ) : (
         <Swiper

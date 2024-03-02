@@ -739,6 +739,7 @@ transform:scale(1.1);
   animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
 }
 
+
 .checkmark {
   width: 56px;
   height: 56px;
@@ -758,7 +759,16 @@ transform:scale(1.1);
   stroke-dashoffset: 48;
   animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
 }
+.checkmark-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.message {
+  margin-top: -105px; /* Adjust margin-top as needed */
+}
 @keyframes stroke {
   100% {
     stroke-dashoffset: 0;
@@ -770,13 +780,14 @@ transform:scale(1.1);
   }
   50% {
     transform: scale3d(1.1, 1.1, 1);
-  }
+  }   
 }
 @keyframes fill {
   100% {
     box-shadow: inset 0px 0px 0px 30px #7ac142;
   }
 }
+
 
 /* Media-Queries */
 @media all and (min-width:320px)  and (max-width:577px) {
