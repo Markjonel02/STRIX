@@ -1,10 +1,11 @@
 import about from "../img/pexels-tima-miroshnichenko-7991269.jpg";
 import Aos from "aos";
-import "aos/dist/aos.css"; /* 
-import Svg from "../img/About-Svg/undraw_love_it_xkc2.svg";
-import mobile from "../img/About-Svg/undraw_mobile_content_xvgr.svg?inline";
-import app from "../img/About-Svg/undraw_search_app_oso2.svg";
-import selection from "../img/About-Svg/undraw_undraw_selection_f3no_lndu.svg"; */
+import "aos/dist/aos.css";
+import Mobile from "../img/About-Svg/Devices.svg";
+import manage from "../img/About-Svg/manage_search_white_24dp.svg";
+import ads from "../img/About-Svg/ads_click_white_24dp.svg";
+import interest from "../img/About-Svg/interests_white_24dp.svg";
+import recommend from "../img/About-Svg/recommend_white_24dp.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
 const imgProperty = {
@@ -47,13 +48,9 @@ const About = () => {
         setEmail(false);
         setSubmitting(submitting);
       }, 3000);
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
     } catch (error) {
       console.error("Error sending email:", error);
+      alert("Error sending email");
     }
   };
 
@@ -215,54 +212,86 @@ const About = () => {
             <div className="col-md-3 mb-3" data-aos="zoom-in">
               <div className="card">
                 <div className="card-body">
-                  <div className="img"></div>
-                  <p className="card-title">Card 1</p>
-                  <p className="card-text ">
+                  <div className="d-flex justify-content-center p-3">
+                    <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
+                      <img src={manage} alt="" width={"50px"} />
+                    </div>
+                  </div>
+                  <p className="card-title text-center fs-5 fw-medium">
                     Diverse selection of movies and TV shows.
                   </p>
-                  <a href="#" className="btn btn-primary">
-                    Go somewhere
-                  </a>
+                  <p className="card-text text-center">
+                    {" "}
+                    Gain a deeper understanding of diverse experiences and
+                    perspectives through compelling storytelling, fostering
+                    empathy and connection with characters from all walks of
+                    life.Experience the magic.
+                  </p>
                 </div>
               </div>
             </div>
             <div className="col-md-3 mb-3" data-aos="zoom-in">
               <div className="card">
                 <div className="card-body">
-                  <p className="card-title">Card 2</p>
-                  <p className="card-text">
-                    Exclusive original content just for you.
+                  <div className="d-flex justify-content-center p-3">
+                    <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
+                      <img src={interest} alt="" width={"50px"} />
+                    </div>
+                  </div>
+                  <p className="card-title text-center  fs-5 fw-medium">
+                    Exclusive original content
                   </p>
-                  <a href="#" className="btn btn-primary">
-                    Go somewhere
-                  </a>
+                  <p className="card-text text-center">
+                    Witness the evolution of storytelling with original content
+                    that pioneers new formats, technologies, and narrative
+                    techniques, driving innovation in the entertainment
+                    industry. Experience the thrill of exclusive original
+                    content
+                  </p>
                 </div>
               </div>
             </div>
             <div className="col-md-3 mb-3" data-aos="zoom-in">
               <div className="card">
                 <div className="card-body">
-                  <div className="mobile"></div>
-                  <p className="card-title">Card 3</p>
-                  <p className="card-text">
-                    Convenient streaming on any device.
+                  <div className="card-wrap"></div>
+                  <div className="d-flex justify-content-center p-3">
+                    <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
+                      <img src={Mobile} alt="" width={"50px"} />
+                    </div>
+                  </div>
+                  <p className="card-title text-center  fs-5 fw-medium">
+                    Convenient streaming.
                   </p>
-                  <a href="#" className="btn btn-primary">
-                    Go somewhere
-                  </a>
+                  <p className="card-text text-center">
+                    With convenient streaming, access your favorite movies, TV
+                    shows, and more on any device, be it your smartphone,
+                    tablet, smart TV, or computer. Enjoy the flexibility of
+                    streaming entertainment anytime, anywhere.
+                  </p>
                 </div>
               </div>
             </div>
             <div className="col-md-3 mb-3" data-aos="zoom-in">
               <div className="card">
                 <div className="card-body">
-                  <p className="card-title">Card 4</p>
-                  <p className="card-text">
-                    Ad-free experience and hiden fees.
-                  </p>
-                  <a href="#" className="btn btn-primary">
-                    Go somewhere
-                  </a>
+                  <div className="card-wrap">
+                    <div className="d-flex justify-content-center p-3">
+                      <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
+                        <img src={ads} alt="" width={"50px"} />
+                      </div>
+                    </div>
+                    <p className="card-title text-center  fs-5 fw-medium">
+                      No ads
+                    </p>
+                    <p className="card-text text-center ">
+                      Say goodbye to annoying ads and intrusive commercials.
+                      With MovieFlix, enjoy uninterrupted viewing without any
+                      distractions, allowing you to fully immerse yourself in
+                      the story without interruptions. with MovieFlix Experience
+                      the ultimate
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

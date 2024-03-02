@@ -767,7 +767,7 @@ transform:scale(1.1);
 }
 
 .message {
-  margin-top: -105px; /* Adjust margin-top as needed */
+  margin-top: -105px;
 }
 @keyframes stroke {
   100% {
@@ -787,7 +787,14 @@ transform:scale(1.1);
     box-shadow: inset 0px 0px 0px 30px #7ac142;
   }
 }
-
+.card-svg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
 
 /* Media-Queries */
 @media all and (min-width:320px)  and (max-width:577px) {
