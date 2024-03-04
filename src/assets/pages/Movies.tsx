@@ -10,6 +10,7 @@ import "swiper/swiper-bundle.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
 import MovieSlider from "./MovieSlider";
+import Footer from "../components/Footer";
 /* image */
 import Avenger from "../img/Moviesimg/avengers-endgame.jpg";
 import spiderman from "../img/Moviesimg/hd_spiderman_no_way_home.jpg";
@@ -283,8 +284,7 @@ const Movies: React.FC = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-
-      <div className="cont mt-xl-5 mt-sm-5 mt-md-5 mb-4">
+      <div className="container d-flex  mt-5  mb-4">
         <div className="left-content">
           <h1 className="text-light fs-4 fw-light mx-md-5 ">Discover</h1>
         </div>
@@ -302,11 +302,10 @@ const Movies: React.FC = () => {
           </form>
         </div>
       </div>
-
       <Container
         data-aos="fade-right "
         data-aos-duration="700"
-        className="dc-grid overflow-y-auto h-100 hide-scrollbar mt-2  "
+        className="dc-grid mt-2  "
       >
         {loading && (
           <div className=" d-flex justify-content-center  ">
@@ -435,14 +434,16 @@ const Movies: React.FC = () => {
             </div>
           }
         </div>
-
-        <div className="container-fluid mt-2 py-3">
+        <div className="container-fluid mt-5 py-3">
           <span className="d-flex fs-5 fw-bold text-light mb-2 ">
             Popular Series
           </span>
           <Series />
         </div>
       </Container>
+      <div className="footer " style={{ backgroundColor: "#131517ff" }}>
+        <Footer />
+      </div>
     </>
   );
 };

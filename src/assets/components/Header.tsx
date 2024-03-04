@@ -52,7 +52,7 @@ const Header = () => {
         </div>
 
         <div
-          className="collapse navbar-collapse justify-content-end "
+          className="collapse navbar-collapse justify-content-end me-5"
           id="navbarNav"
         >
           <Navbar />

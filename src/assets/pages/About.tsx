@@ -115,16 +115,16 @@ const About = () => {
             data-aos-delay="300"
           >
             <h1 className="mb-3">Welcome to MovieFlix</h1>
-            <p className="sub-text mt-3 d-flex  justify-content-center align-items-center text-center">
+            <p className="sub-text mt-3 d-flex  justify-content-center align-items-center text-center fs-5">
               Experienced the best Movies Quality watch with family, friends,
               and kids.
             </p>
-            <div className="button mt-2 d-flex justify-content-center  align-items-center">
+            <div className="button mt-4 d-flex justify-content-center  align-items-center">
               <button
                 className="t-4 p-2 fw-bold fs-4 btn btn-outline-secondary text-light"
                 style={{
                   height: "4.5rem",
-                  width: "14.5rem",
+                  width: "12.5rem",
                 }}
               >
                 Get Started
@@ -137,11 +137,11 @@ const About = () => {
           className="container about-MovieFlix d-flex mx-auto justify-content-center align-items-center mt-xl-5 text-light py-5"
           id="id"
         >
-          <div className="row d-flex justify-content-center">
-            <div className="col-md-6">
-              <div className="text-content mb-5 ">
+          <div className="row d-flex justify-content-center  align-items-center ">
+            <div className="col-md-6 d-flex justify-content-center align-items-center">
+              <div className="text-content mb-5  mt-5 ">
                 <h1
-                  className=" titles "
+                  className=" titles  ms-1"
                   data-aos="fade-right"
                   data-aos-duration="500ms"
                   data-aos-delay="150"
@@ -149,15 +149,15 @@ const About = () => {
                   About MovieFlix
                 </h1>
                 <p
-                  className="sub-text"
+                  className="sub-text ms-1"
                   style={{ whiteSpace: "pre-wrap", fontSize: "1.2rem" }}
                   data-aos="fade-right"
                   data-aos-duration="200ms"
                   data-aos-delay="300"
                 >
-                  "Where every click becomes a cinematic journey. Welcome to
+                  Where every click becomes a cinematic journey. Welcome to
                   Movieflix Services, where your screen comes to life with
-                  endless stories waiting to unfold."
+                  endless stories waiting to unfold.
                 </p>
                 <button
                   className="btn-watch d-flex justify-content-center align-items-center t-4 p-2 px-2 fw-bold fs-4 btn btn-outline-danger"
@@ -209,9 +209,9 @@ const About = () => {
           </div>
           <div className="row py-4">
             <div className="col-md-3 mb-3" data-aos="zoom-in">
-              <div className="card">
+              <div className="card p-3 ">
                 <div className="card-body ">
-                  <div className="d-flex justify-content-center p-3">
+                  <div className="d-flex justify-content-center">
                     <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
                       <img src={manage} alt="" width={"50px"} />
                     </div>
@@ -230,17 +230,17 @@ const About = () => {
               </div>
             </div>
             <div className="col-md-3 mb-3" data-aos="zoom-in">
-              <div className="card">
+              <div className="card p-3">
                 <div className="card-body">
-                  <div className="d-flex justify-content-center p-3">
-                    <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
+                  <div className="d-flex justify-content-center">
+                    <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-2">
                       <img src={interest} alt="" width={"50px"} />
                     </div>
                   </div>
                   <p className="card-title text-center  fs-5 fw-medium">
                     Exclusive original content
                   </p>
-                  <p className="card-text text-center">
+                  <p className="card-text text-center ">
                     Witness the evolution of storytelling with original content
                     that pioneers new formats, technologies, and narrative
                     techniques, driving innovation in the entertainment
@@ -251,10 +251,10 @@ const About = () => {
               </div>
             </div>
             <div className="col-md-3 mb-3" data-aos="zoom-in">
-              <div className="card">
+              <div className="card p-3">
                 <div className="card-body">
                   <div className="card-wrap"></div>
-                  <div className="d-flex justify-content-center p-3">
+                  <div className="d-flex justify-content-center">
                     <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
                       <img src={Mobile} alt="" width={"50px"} />
                     </div>
@@ -262,7 +262,7 @@ const About = () => {
                   <p className="card-title text-center  fs-5 fw-medium">
                     Convenient streaming.
                   </p>
-                  <p className="card-text text-center">
+                  <p className="card-text text-center p-1">
                     With convenient streaming, access your favorite movies, TV
                     shows, and more on any device, be it your smartphone,
                     tablet, smart TV, or computer. Enjoy the flexibility of
@@ -272,10 +272,10 @@ const About = () => {
               </div>
             </div>
             <div className="col-md-3 mb-3" data-aos="zoom-in">
-              <div className="card">
+              <div className="card p-3">
                 <div className="card-body">
                   <div className="card-wrap">
-                    <div className="d-flex justify-content-center p-3">
+                    <div className="d-flex justify-content-center">
                       <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
                         <img src={ads} alt="" width={"50px"} />
                       </div>
@@ -283,7 +283,7 @@ const About = () => {
                     <p className="card-title text-center  fs-5 fw-medium">
                       No ads
                     </p>
-                    <p className="card-text text-center ">
+                    <p className="card-text text-center mb-1">
                       Say goodbye to annoying ads and intrusive commercials.
                       With MovieFlix, enjoy uninterrupted viewing without any
                       distractions, allowing you to fully immerse yourself in

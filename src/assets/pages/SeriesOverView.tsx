@@ -25,14 +25,14 @@ const SeriesOverview = () => {
     <>
       {selectedSeries && (
         <div
-          className="image-container position-relative w-100 vh-100"
-          style={{ backgroundColor: "#000000ff" }}
+          className="image-container position-relative w-100"
+          style={{ backgroundColor: "#000000ff", overflow: "hidden" }}
         >
           <img
             src={selectedSeries.imageUrl}
             alt={selectedSeries.title}
-            className="img-fluid"
-            style={{ width: "100%", height: "100%" }}
+            className=" fit-to-content"
+            style={{ width: "100%" }}
             data-aos="fade"
             data-aos-duration="1500ms"
             data-aos-delay="100ms"
@@ -40,7 +40,7 @@ const SeriesOverview = () => {
           <div className="overlay"></div>
           <div
             className="text-containers  text-light d-flex flex-wrap "
-            style={{ width: "500px" }}
+            style={{ width: "600px" }}
           >
             <div className="container" data-aos="zoom-in-up">
               <h1 className="title mb-4" data-aos="zoom-in">

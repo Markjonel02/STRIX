@@ -15,8 +15,11 @@ const Footer = () => {
 
   return (
     <>
-      <footer style={footerStyle} className="bg-black  mt-2 py-5">
-        <div className="container p-5">
+      <footer
+        style={footerStyle}
+        className="container-fluid bg-black d-flex d-block mt-2 p-5"
+      >
+        <div className="container">
           <div className="row">
             <div className="col-md-6 item text" style={{ marginBottom: "0px" }}>
               <img src={img.imgURL} alt="sample" style={img.size} />
@@ -61,8 +64,10 @@ const Footer = () => {
           <div></div>
         </div>
       </footer>
-      <div className="Credits container me-0 text-light d-flex ">
-        <p className="copyright d-flex mt-4 fs-5 fw-light ">MovieFlix © 2024</p>
+      <div className="Credits   text-light d-flex bg-dark">
+        <p className="container copyright d-flex mt-4 fs-5 fw-light ms-5 mx-5 ps-5 ">
+          MovieFlix © 2024
+        </p>
       </div>
     </>
   );
