@@ -33,8 +33,8 @@ const Header = () => {
       style={isScrolling ? {} : predefinedStyles}
     >
       <div className="container-fluid d-flex justify-content-between ">
-        <div className="img-container me-3">
-          <h1 className="fw-bolder fs-1 text-light">MovieFlix</h1>
+        <div className="img-container ">
+          <h6 className="fw-bolder fs-2 text-light  ms-md-5  ">MovieFlix</h6>
         </div>
 
         <div className="button">

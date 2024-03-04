@@ -59,7 +59,7 @@ const Home = () => {
   };
 
   const textOverlayStyle: React.CSSProperties = {
-    fontSize: "5rem",
+    fontSize: "3.3rem",
     fontWeight: "bolder",
     color: "white",
   };
@@ -78,8 +78,8 @@ const Home = () => {
               MovieFlix
             </h2>
 
-            <h3
-              className="sub-title text-white  fs-4 "
+            <h6
+              className="sub-title text-white  fs-5 "
               data-aos="zoom-in-up"
               data-aos-duration="900"
               data-aos-delay="1000"
@@ -89,8 +89,8 @@ const Home = () => {
                 best and quality movies
               </span>
               , TV series, <br />
-              and more just for you..
-            </h3>
+              and more just for you.
+            </h6>
           </div>
         </div>
       </div>

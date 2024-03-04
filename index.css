@@ -63,7 +63,7 @@ font-weight: 600;
 
 
 .navbar  a{ 
- font-size: 1.2rem;
+ font-size: 1rem;
  letter-spacing: 2px;
 
 }
@@ -478,7 +478,7 @@ label {
   background: linear-gradient(120deg, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 100%);
   z-index: 1;
   pointer-events: none;
-  mix-blend-mode: multiply; /* This will make the overlay blend with the image */
+  mix-blend-mode: multiply; 
 }
 
 
@@ -491,7 +491,7 @@ label {
   background: linear-gradient(90deg, rgba(126, 125, 125, 0.7) 100%, rgba(0,0,0,0.9) 100%);
   z-index: 1;
   pointer-events: none;
-  mix-blend-mode: multiply; /* This will make the overlay blend with the image */
+  mix-blend-mode: multiply;
 }
 .image-container {
   background-color: #000000ff;
@@ -538,7 +538,40 @@ label {
   stroke-dashoffset: -125px;
  }
 }
+.swiper-image-container {
+  position: relative;
+}
 
+.swiper-image-container .head-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-92%, -50%);
+}
+.image-overlay {
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
+}
+
+.head-banner {
+ display: flex;
+ flex-direction: column;
+  text-align: left;
+
+  position: absolute;
+  top: 40%;
+  left: 3.5rem;
+  color: white;
+}
+
+.head-banner h1,
+.head-banner span {
+  text-align: left;
+
+}
 
 
 
@@ -796,10 +829,10 @@ transform:scale(1.1);
 } 
 
 /* Media-Queries */
-@media all and (min-width:320px)  and (max-width:577px) {
+@media all and (min-width:320px)  and (max-width:660px) {
 
 .home, .text-overlay{
-    font-size: 7rem;
+    font-size: 1rem;
   }
   .tv-section{
   display: flex;
@@ -905,6 +938,7 @@ margin-top: 2rem;
 .titles, .btitles, .ctitles{
 font-size: 2.3rem;
 }
-
-
+.swiper-image-container .head-banner {
+display: none; 
+}
 }

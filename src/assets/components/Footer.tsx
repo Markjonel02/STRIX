@@ -26,8 +26,8 @@ const Footer = () => {
                 All here from MovieFlix
               </p>
             </div>
-            <div className=" about-links col-sm-6 col-md-3 item fw-light list-unstyled  ">
-              <h3>About</h3>
+            <div className=" about-links col-sm-6 col-md-3 item fw-medium  list-unstyled  ">
+              <h3 className=" fw-semibold">About</h3>
               <ul>
                 <li>
                   <a href="#" className="">
@@ -42,8 +42,8 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="col-sm-6 col-md-3 item fw-light ">
-              <h3>Services</h3>
+            <div className="col-sm-6 col-md-3 item fw-medium  ">
+              <h3 className="fw-semibold">Services</h3>
               <ul>
                 <li>
                   <a href="#">Monitoring</a>
@@ -59,12 +59,11 @@ const Footer = () => {
           </div>
 
           <div></div>
-
-          <p className="copyright d-flex mt-4 fs-5 fw-light ">
-            MovieFlix © 2024
-          </p>
         </div>
       </footer>
+      <div className="Credits container me-0 text-light d-flex ">
+        <p className="copyright d-flex mt-4 fs-5 fw-light ">MovieFlix © 2024</p>
+      </div>
     </>
   );
 };

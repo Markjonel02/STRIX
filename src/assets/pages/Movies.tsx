@@ -9,6 +9,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import "swiper/swiper-bundle.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
+import MovieSlider from "./MovieSlider";
 /* image */
 import Avenger from "../img/Moviesimg/avengers-endgame.jpg";
 import spiderman from "../img/Moviesimg/hd_spiderman_no_way_home.jpg";
@@ -250,50 +251,42 @@ const Movies: React.FC = () => {
       <div className="Movie-slider">
         <Swiper
           pagination={{ dynamicBullets: true, clickable: true }}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          effect={"fade"}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          effect="fade"
           loop={true}
           modules={[Autoplay, EffectFade, Pagination]}
         >
-          <div className="img-overlays"></div>
           <SwiperSlide>
-            <LazyLoadImage
-              src={marvel}
+            <MovieSlider
+              imageUrl={marvel}
               alt="Doctor Strange Multiverse of Madness"
-              effect="blur"
-              width="100%"
-              height="auto"
-              loading="lazy"
+              title="Only in MovieFlix"
+              description="MovieFlix is the home of amazing original programming that you can’t find anywhere else. Movies, TV shows, specials, and more, all tailored specifically to you."
             />
           </SwiperSlide>
+
           <SwiperSlide>
-            <LazyLoadImage
-              src={Avenger}
+            <MovieSlider
+              imageUrl={Avenger}
               alt="Avengers End Game"
-              effect="blur"
-              width="100%"
-              height="auto"
-              loading="lazy"
+              title="Only in MovieFlix"
+              description="MovieFlix is the home of amazing original programming that you can’t find anywhere else. Movies, TV shows, specials, and more, all tailored specifically to you."
             />
           </SwiperSlide>
           <SwiperSlide>
-            <LazyLoadImage
-              src={spiderman}
+            <MovieSlider
+              imageUrl={spiderman}
               alt="Spiderman No Way Home"
-              effect="blur"
-              width="100%"
-              height="auto"
-              loading="lazy"
+              title="Only in MovieFlix"
+              description="MovieFlix is the home of amazing original programming that you can’t find anywhere else. Movies, TV shows, specials, and more, all tailored specifically to you."
             />
           </SwiperSlide>
         </Swiper>
       </div>
+
       <div className="cont mt-xl-5 mt-sm-5 mt-md-5 mb-4">
         <div className="left-content">
-          <h1 className="text-light fs-4 fw-light">Discover</h1>
+          <h1 className="text-light fs-4 fw-light mx-md-5 ">Discover</h1>
         </div>
         <div className="right-content ">
           <form className="d-flex justify-content-end ">
@@ -311,7 +304,6 @@ const Movies: React.FC = () => {
       </div>
 
       <Container
-        fluid
         data-aos="fade-right "
         data-aos-duration="700"
         className="dc-grid overflow-y-auto h-100 hide-scrollbar mt-2  "
@@ -443,24 +435,7 @@ const Movies: React.FC = () => {
             </div>
           }
         </div>
-        <div className="head-banner text-light d-block mt-xl-5 ms-2 py-5">
-          <strong>
-            <h1 className="fw-bolder" style={{ fontSize: "3.2em" }}>
-              Only in MovieFlix
-            </h1>
-          </strong>
-          <span
-            className="d-block fs-5 fw-light "
-            style={{ whiteSpace: "pre-line" }}
-          >
-            MovieFlix is the home of amazing original programming that you can’t
-            <span className="d-block">
-              find anywhere else. Movies, TV shows, specials and more, all
-              tailored
-            </span>
-            <span>specifically to you.</span>
-          </span>
-        </div>
+
         <div className="container-fluid mt-2 py-3">
           <span className="d-flex fs-5 fw-bold text-light mb-2 ">
             Popular Series

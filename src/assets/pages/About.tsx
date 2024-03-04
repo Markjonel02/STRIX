@@ -210,7 +210,7 @@ const About = () => {
           <div className="row py-4">
             <div className="col-md-3 mb-3" data-aos="zoom-in">
               <div className="card">
-                <div className="card-body">
+                <div className="card-body ">
                   <div className="d-flex justify-content-center p-3">
                     <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
                       <img src={manage} alt="" width={"50px"} />

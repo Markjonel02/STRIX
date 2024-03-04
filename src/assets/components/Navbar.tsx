@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <ul className="navbar-nav ">
+      <ul className="navbar-nav me-4 ">
         <NavItem to="/" text="Home" />
         <NavItem to="/movies" text="Movies" />
         <NavItem to="/about" text="About" />
