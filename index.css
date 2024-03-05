@@ -499,7 +499,11 @@ label {
   -webkit-box-shadow: 1px 9px 42px 1px rgba(0,0,0,0.42);
   -moz-box-shadow: 1px 9px 42px 1px rgba(0,0,0,0.42);
 }
-
+    
+  .image-content {
+    display: inline-block; /* Display images in a row */
+  }
+  
 .swiper-navigation-container {
   position: relative;
 }
@@ -780,8 +784,7 @@ line-height:2.5 ;
 }
  
 .desc-p{
-  display: flex;
-  flex-direction: column;
+ 
 }
 .text-acontainer>h1{
  text-align: center;
@@ -805,6 +808,8 @@ transition:  all .2s ease-in-out;
 }
 
 .desc-p {
+  display: flex;
+  flex-direction: column;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -998,7 +1003,8 @@ display:none;
 }
 
 .title{
-display: none;
+text-align: left;
+font-size: 2em;
 }
 
 .text-acontainer>h1{
@@ -1043,5 +1049,10 @@ display:none;
 .card:hover{
 transform: none;
 }
-
+.desc-p,.desc{
+  display: none;
+}
+.cast p {
+  display: none;
+}
 }

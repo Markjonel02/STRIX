@@ -47,7 +47,7 @@ const SeriesOverview = () => {
                 {selectedSeries.title.replace(/-/g, " ")}
               </h1>
               <div className="desc">
-                <div className="d-flex flex-wrap fw-medium ">
+                <div className="d-flex fw-medium ">
                   <p className="ms-2 mb-1">{selectedSeries.date}</p>
                   <span className="ms-2 me-1">|</span>
                   <p className="ms-1 mb-1">{selectedSeries.age}</p>
