@@ -1,9 +1,7 @@
 import React from "react";
 import { Outlet, NavLink } from "react-router-dom";
-/* import { useFavorites } from "../Context/FavoriteContext"; */
-const Navbar: React.FC = () => {
-  /* nst { favorites } = useFavorites(); */
 
+const Navbar: React.FC = () => {
   return (
     <>
       <ul className="navbar-nav me-4 ">
@@ -24,7 +22,7 @@ interface NavItemProps {
 
 const NavItem: React.FC<NavItemProps> = ({ to, text }) => (
   <li className="nav-item d-flex ">
-    <NavLink className="nav-link" to={to}>
+    <NavLink className="nav-link" to={to} onClick={() => scrollToTop()}>
       {text}
     </NavLink>
   </li>
@@ -36,10 +34,21 @@ interface NavItemWithIconProps {
 
 const Navtems: React.FC<NavItemWithIconProps> = ({ to }) => (
   <li className="nav-item">
-    <NavLink className="nav-link nav-item" to={to}>
+    <NavLink
+      className="nav-link nav-item"
+      to={to}
+      onClick={() => scrollToTop()}
+    >
       Favorites
     </NavLink>
   </li>
 );
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
 
 export default Navbar;

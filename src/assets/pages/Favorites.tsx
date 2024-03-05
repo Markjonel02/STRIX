@@ -26,9 +26,9 @@ const FavoritesPage: React.FC = () => {
   const p = <FontAwesomeIcon icon={faPlay} />;
 
   return (
-    <div className=" d-flex justify-content-center align-items-center text-light mt-5 py-lg-5">
+    <div className=" d-flex justify-content-center align-items-center text-light vh-100">
       {favorites.length === 0 ? (
-        <div className="tit d-flex  justify-content-center align-items-center ">
+        <div className="tit d-flex  justify-content-center ">
           <h1 className="text-center ">No Favorites yet!</h1>
         </div>
       ) : (

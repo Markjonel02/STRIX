@@ -3,11 +3,10 @@ import { useEffect, Suspense, lazy } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-// Import your components
 const Header = lazy(() => import("./assets/components/Header"));
 import Maincontainer from "./assets/components/Maincontainer";
+const Footer = lazy(() => import("./assets/components/Footer"));
 
-// Import your pages
 const Homes = lazy(() => import("./assets/pages/Home"));
 const Movies = lazy(() => import("./assets/pages/Movies"));
 const About = lazy(() => import("./assets/pages/About"));
@@ -63,7 +62,10 @@ const App = () => {
               <Route path="/"></Route>
               <Route path="*" element={<Nopage />} />
             </Routes>
-          </Maincontainer>
+          </Maincontainer>{" "}
+          <div className="footer " style={{ backgroundColor: "#131517ff" }}>
+            <Footer />
+          </div>
         </div>
       </Suspense>
     </>

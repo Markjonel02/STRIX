@@ -7,6 +7,7 @@ import ads from "../img/About-Svg/ads_click_white_24dp.svg";
 import interest from "../img/About-Svg/interests_white_24dp.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Swiper, SwiperSlide } from "swiper/react";
 const imgProperty = {
   radius: 20,
   imgSrc: about,
@@ -186,116 +187,123 @@ const About = () => {
           </div>
         </div>
 
-        <div className="container mt-5 mb-5 py-5 shadow">
-          <div className="benefits-container">
-            <h1
-              className="btitles  text-light mb-3"
-              data-aos="fade-right"
-              data-aos-duration="500ms"
-              data-aos-delay="150"
-            >
-              Benefits
-            </h1>
+        <Swiper>
+          {" "}
+          <SwiperSlide>
+            {" "}
+            <div className="container mt-5 mb-5 py-5 shadow">
+              <div className="benefits-container">
+                <h1
+                  className="btitles  text-light mb-3"
+                  data-aos="fade-right"
+                  data-aos-duration="500ms"
+                  data-aos-delay="150"
+                >
+                  Benefits
+                </h1>
 
-            <p
-              className="sub-text text-light"
-              style={{ whiteSpace: "pre-wrap", fontSize: "1.2rem" }}
-              data-aos="fade-right"
-              data-aos-duration="200ms"
-              data-aos-delay="300"
-            >
-              Benefits of wacthing in MovieFlix gives you Entertainment.
-            </p>
-          </div>
-          <div className="row py-4">
-            <div className="col-md-3 mb-3" data-aos="zoom-in">
-              <div className="card p-3 ">
-                <div className="card-body ">
-                  <div className="d-flex justify-content-center">
-                    <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
-                      <img src={manage} alt="" width={"50px"} />
+                <p
+                  className="sub-text text-light"
+                  style={{ whiteSpace: "pre-wrap", fontSize: "1.2rem" }}
+                  data-aos="fade-right"
+                  data-aos-duration="200ms"
+                  data-aos-delay="300"
+                >
+                  Benefits of wacthing in MovieFlix gives you Entertainment.
+                </p>
+              </div>
+
+              <div className="row py-4">
+                <div className="col-md-3 mb-3" data-aos="zoom-in">
+                  <div className="card p-3 ">
+                    <div className="card-body ">
+                      <div className="d-flex justify-content-center">
+                        <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
+                          <img src={manage} alt="" width={"50px"} />
+                        </div>
+                      </div>
+                      <p className="card-title text-center fs-5 fw-medium">
+                        Diverse selection of movies and TV shows.
+                      </p>
+                      <p className="card-text text-center">
+                        {" "}
+                        Gain a deeper understanding of diverse experiences and
+                        perspectives through compelling storytelling, fostering
+                        empathy and connection with characters from all walks of
+                        life.Experience the magic.
+                      </p>
                     </div>
                   </div>
-                  <p className="card-title text-center fs-5 fw-medium">
-                    Diverse selection of movies and TV shows.
-                  </p>
-                  <p className="card-text text-center">
-                    {" "}
-                    Gain a deeper understanding of diverse experiences and
-                    perspectives through compelling storytelling, fostering
-                    empathy and connection with characters from all walks of
-                    life.Experience the magic.
-                  </p>
                 </div>
-              </div>
-            </div>
-            <div className="col-md-3 mb-3" data-aos="zoom-in">
-              <div className="card p-3">
-                <div className="card-body">
-                  <div className="d-flex justify-content-center">
-                    <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-2">
-                      <img src={interest} alt="" width={"50px"} />
+                <div className="col-md-3 mb-3" data-aos="zoom-in">
+                  <div className="card p-3">
+                    <div className="card-body">
+                      <div className="d-flex justify-content-center">
+                        <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-2">
+                          <img src={interest} alt="" width={"50px"} />
+                        </div>
+                      </div>
+                      <p className="card-title text-center  fs-5 fw-medium">
+                        Exclusive original content
+                      </p>
+                      <p className="card-text text-center ">
+                        Witness the evolution of storytelling with original
+                        content that pioneers new formats, technologies, and
+                        narrative techniques, driving innovation in the
+                        entertainment industry. Experience the thrill of
+                        exclusive original content
+                      </p>
                     </div>
                   </div>
-                  <p className="card-title text-center  fs-5 fw-medium">
-                    Exclusive original content
-                  </p>
-                  <p className="card-text text-center ">
-                    Witness the evolution of storytelling with original content
-                    that pioneers new formats, technologies, and narrative
-                    techniques, driving innovation in the entertainment
-                    industry. Experience the thrill of exclusive original
-                    content
-                  </p>
                 </div>
-              </div>
-            </div>
-            <div className="col-md-3 mb-3" data-aos="zoom-in">
-              <div className="card p-3">
-                <div className="card-body">
-                  <div className="card-wrap"></div>
-                  <div className="d-flex justify-content-center">
-                    <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
-                      <img src={Mobile} alt="" width={"50px"} />
+                <div className="col-md-3 mb-3" data-aos="zoom-in">
+                  <div className="card p-3">
+                    <div className="card-body">
+                      <div className="card-wrap"></div>
+                      <div className="d-flex justify-content-center">
+                        <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
+                          <img src={Mobile} alt="" width={"50px"} />
+                        </div>
+                      </div>
+                      <p className="card-title text-center  fs-5 fw-medium">
+                        Convenient streaming.
+                      </p>
+                      <p className="card-text text-center p-1">
+                        With convenient streaming, access your favorite movies,
+                        TV shows, and more on any device, be it your smartphone,
+                        tablet, smart TV, or computer. Enjoy the flexibility of
+                        streaming entertainment anytime, anywhere.
+                      </p>
                     </div>
                   </div>
-                  <p className="card-title text-center  fs-5 fw-medium">
-                    Convenient streaming.
-                  </p>
-                  <p className="card-text text-center p-1">
-                    With convenient streaming, access your favorite movies, TV
-                    shows, and more on any device, be it your smartphone,
-                    tablet, smart TV, or computer. Enjoy the flexibility of
-                    streaming entertainment anytime, anywhere.
-                  </p>
                 </div>
-              </div>
-            </div>
-            <div className="col-md-3 mb-3" data-aos="zoom-in">
-              <div className="card p-3">
-                <div className="card-body">
-                  <div className="card-wrap">
-                    <div className="d-flex justify-content-center">
-                      <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
-                        <img src={ads} alt="" width={"50px"} />
+                <div className="col-md-3 mb-3" data-aos="zoom-in">
+                  <div className="card p-3">
+                    <div className="card-body">
+                      <div className="card-wrap">
+                        <div className="d-flex justify-content-center">
+                          <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
+                            <img src={ads} alt="" width={"50px"} />
+                          </div>
+                        </div>
+                        <p className="card-title text-center  fs-5 fw-medium">
+                          No ads
+                        </p>
+                        <p className="card-text text-center mb-1">
+                          Say goodbye to annoying ads and intrusive commercials.
+                          With MovieFlix, enjoy uninterrupted viewing without
+                          any distractions, allowing you to fully immerse
+                          yourself in the story without interruptions. with
+                          MovieFlix Experience the ultimate
+                        </p>
                       </div>
                     </div>
-                    <p className="card-title text-center  fs-5 fw-medium">
-                      No ads
-                    </p>
-                    <p className="card-text text-center mb-1">
-                      Say goodbye to annoying ads and intrusive commercials.
-                      With MovieFlix, enjoy uninterrupted viewing without any
-                      distractions, allowing you to fully immerse yourself in
-                      the story without interruptions. with MovieFlix Experience
-                      the ultimate
-                    </p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </SwiperSlide>
+        </Swiper>
 
         {/* FAQ SECTION */}
         <div className="FAQ container d-flex flex-column py-5  mb-lg-5  mb-md-4  mb-sm-5">

@@ -10,7 +10,6 @@ import "swiper/swiper-bundle.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
 import MovieSlider from "./MovieSlider";
-import Footer from "../components/Footer";
 /* image */
 import Avenger from "../img/Moviesimg/avengers-endgame.jpg";
 import spiderman from "../img/Moviesimg/hd_spiderman_no_way_home.jpg";
@@ -257,8 +256,9 @@ const Movies: React.FC = () => {
           loop={true}
           modules={[Autoplay, EffectFade, Pagination]}
         >
-          <SwiperSlide>
+          <SwiperSlide data-aos="" lazy>
             <MovieSlider
+              data-aos="zoom-in"
               imageUrl={marvel}
               alt="Doctor Strange Multiverse of Madness"
               title="Only in MovieFlix"
@@ -441,9 +441,6 @@ const Movies: React.FC = () => {
           <Series />
         </div>
       </Container>
-      <div className="footer " style={{ backgroundColor: "#131517ff" }}>
-        <Footer />
-      </div>
     </>
   );
 };

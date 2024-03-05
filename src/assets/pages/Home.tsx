@@ -5,7 +5,6 @@ import gif from "../img/Colourful Multimedia Stream Play Button Icon Logo.gif";
 import img from "../img/tv.png";
 import dl from "../img/modbile.jpg";
 import kids from "../img/kids.png";
-import Footer from "../components/Footer";
 
 const Home = () => {
   // aos
@@ -170,11 +169,6 @@ const Home = () => {
             </span>
           </span>
         </div>
-      </div>
-
-      <div className="footer " style={{ backgroundColor: "#131517ff" }}>
-       
-        <Footer />
       </div>
     </>
   );

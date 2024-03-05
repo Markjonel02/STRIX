@@ -795,6 +795,9 @@ font-size:1.5rem;
 }
 .card:hover{
 transform:scale(1.1);
+transition:  all .2s ease-in-out;
+
+
 }
 .titles, .btitles, .ctitles{
   font-size: 2.8rem;
