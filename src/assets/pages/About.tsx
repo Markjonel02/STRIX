@@ -160,10 +160,10 @@ const About = () => {
                   endless stories waiting to unfold.
                 </p>
                 <button
-                  className="btn-watch d-flex justify-content-center align-items-center t-4 p-2 px-2 fw-bold fs-4 btn btn-outline-danger"
+                  className="btn-watch d-flex justify-content-center align-items-center t-4 p-2 px-2 fw-bold fs-5 btn btn-outline-danger mt-5"
                   style={{
                     height: "4.5rem",
-                    width: "15.5rem",
+                    width: "12.5rem",
                   }}
                 >
                   Watch Now
