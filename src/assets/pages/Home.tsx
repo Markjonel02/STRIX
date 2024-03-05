@@ -5,7 +5,7 @@ import gif from "../img/Colourful Multimedia Stream Play Button Icon Logo.gif";
 import img from "../img/tv.png";
 import dl from "../img/modbile.jpg";
 import kids from "../img/kids.png";
-
+import watching from "../img/watching.jpg";
 const Home = () => {
   // aos
   useEffect(() => {
@@ -34,7 +34,7 @@ const Home = () => {
   };
   const parallaxStyle: React.CSSProperties = {
     content: "''",
-    background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./src/assets/img/watching.jpg') center no-repeat`,
+    background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${watching}) center no-repeat`,
     backgroundSize: "cover",
     backgroundAttachment: "fixed",
     width: "100%",

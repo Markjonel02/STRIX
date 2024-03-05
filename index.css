@@ -998,9 +998,7 @@ display:none;
 }
 
 .title{
-  font-size: 1rem;
-  letter-spacing: 2px;
-  text-align: left;
+display: none;
 }
 
 .text-acontainer>h1{
