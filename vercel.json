@@ -7,9 +7,9 @@
     { "handle": "Server" }
   ],
   
-    "build": {
-      "postbuild": "node .Server/Server.mjs"
-    },
+    "build": [
+      {"postbuild": "node .Server/Server.mjs"}
+    ],
 
   
    "rewrites": [
