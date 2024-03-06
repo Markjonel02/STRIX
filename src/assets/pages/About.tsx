@@ -31,18 +31,19 @@ const About = () => {
     },
     // when window width is >= 576px
     576: {
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 15,
     },
     // when window width is >= 768px
     768: {
-      slidesPerView: 3,
+      slidesPerView: 2,
       spaceBetween: 25,
     },
     // when window width is >= 992px
     992: {
-      slidesPerView: 3.4,
-      spaceBetween: 25,
+      slidesPerView: 2.3,
+      spaceBetween: 30,
+      padding: 5,
     },
     // when window width is >= 1200px
     1200: {
@@ -93,7 +94,7 @@ const About = () => {
     {
       question: "Can I download movies and TV shows for offline viewing?",
       answer:
-        "Yes, STRIX allows users to download select movies and TV shows for offline viewing. This feature is available on the MovieStrix app for mobile devices. Simply find the title you want to download, and look for the download icon next to it.",
+        "Yes, STRIX allows users to download select movies and TV shows for offline viewing. This feature is available on the Strix web app for mobile devices. Simply find the title you want to download, and look for the download icon next to it.",
     },
     {
       question: "Are there different subscription plans available?",
@@ -103,7 +104,7 @@ const About = () => {
     {
       question: "Can I cancel my STRIX  subscription at any time?",
       answer:
-        "Yes, you can cancel your STRIX  subscription at any time. There are no long-term contracts, and you can easily manage your subscription settings through your account dashboard. Keep in mind that cancellation may result in the loss of access to the MovieStrix content library.",
+        "Yes, you can cancel your STRIX  subscription at any time. There are no long-term contracts, and you can easily manage your subscription settings through your account dashboard. Keep in mind that cancellation may result in the loss of access to the strix content library.",
     },
     {
       question: "Are subtitles available on STRIX ?",
@@ -148,7 +149,7 @@ const About = () => {
             data-aos-duration="500ms"
             data-aos-delay="300"
           >
-            <h1 className="mb-3">Welcome to MovieStrix</h1>
+            <h1 className="mb-3">Welcome to strix </h1>
             <p className="sub-text mt-3 d-flex  justify-content-center align-items-center text-center fs-5">
               Experienced the best Movies Quality watch with family, friends,
               and kids.
@@ -485,7 +486,7 @@ const About = () => {
                         </svg>
                         Email
                       </p>
-                      <a href="mailto:info@STRIX .com" className="text-light">
+                      <a href="mailto:info@Strix.com" className="text-light">
                         info@STRIX.com
                       </a>
                     </div>
