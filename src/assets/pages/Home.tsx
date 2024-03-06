@@ -75,7 +75,7 @@ const Home = () => {
               data-aos-duration="800"
               data-aos-delay="500"
             >
-              MovieStrix
+              STRIX
             </h2>
 
             <h6

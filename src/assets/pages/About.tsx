@@ -93,22 +93,22 @@ const About = () => {
     {
       question: "Can I download movies and TV shows for offline viewing?",
       answer:
-        "Yes, MovieStrix allows users to download select movies and TV shows for offline viewing. This feature is available on the MovieStrix app for mobile devices. Simply find the title you want to download, and look for the download icon next to it.",
+        "Yes, STRIX allows users to download select movies and TV shows for offline viewing. This feature is available on the MovieStrix app for mobile devices. Simply find the title you want to download, and look for the download icon next to it.",
     },
     {
       question: "Are there different subscription plans available?",
       answer:
-        "MovieStrix offers different subscription tiers to cater to varying user needs. These may include options for streaming in HD, simultaneous streaming on multiple devices, and ad-free viewing experiences. Pricing and features of each plan may vary.",
+        "STRIX  offers different subscription tiers to cater to varying user needs. These may include options for streaming in HD, simultaneous streaming on multiple devices, and ad-free viewing experiences. Pricing and features of each plan may vary.",
     },
     {
-      question: "Can I cancel my MovieStrix subscription at any time?",
+      question: "Can I cancel my STRIX  subscription at any time?",
       answer:
-        "Yes, you can cancel your MovieStrix subscription at any time. There are no long-term contracts, and you can easily manage your subscription settings through your account dashboard. Keep in mind that cancellation may result in the loss of access to the MovieStrix content library.",
+        "Yes, you can cancel your STRIX  subscription at any time. There are no long-term contracts, and you can easily manage your subscription settings through your account dashboard. Keep in mind that cancellation may result in the loss of access to the MovieStrix content library.",
     },
     {
-      question: "Are subtitles available on MovieStrix?",
+      question: "Are subtitles available on STRIX ?",
       answer:
-        "Yes, MovieStrix offers subtitles for many of its titles in multiple languages. Users can enable subtitles while watching a movie or TV show by selecting their preferred language from the options provided.  ",
+        "Yes, STRIX  offers subtitles for many of its titles in multiple languages. Users can enable subtitles while watching a movie or TV show by selecting their preferred language from the options provided.  ",
     },
   ];
   // Function to handle click event on FAQ item
@@ -184,7 +184,7 @@ const About = () => {
                   data-aos-duration="500ms"
                   data-aos-delay="150"
                 >
-                  About MovieStrix
+                  About STRIX
                 </h1>
                 <p
                   className="sub-text ms-1"
@@ -194,8 +194,8 @@ const About = () => {
                   data-aos-delay="300"
                 >
                   Where every click becomes a cinematic journey. Welcome to
-                  MovieStrix Services, where your screen comes to life with
-                  endless stories waiting to unfold.
+                  STRIX Services, where your screen comes to life with endless
+                  stories waiting to unfold.
                 </p>
                 <button
                   className="btn-watch d-flex justify-content-center align-items-center t-4 p-2 px-2 fw-bold fs-5 btn btn-outline-danger mt-5"
@@ -485,11 +485,8 @@ const About = () => {
                         </svg>
                         Email
                       </p>
-                      <a
-                        href="mailto:info@movieStrix.com"
-                        className="text-light"
-                      >
-                        info@moviestrix.com
+                      <a href="mailto:info@STRIX .com" className="text-light">
+                        info@STRIX.com
                       </a>
                     </div>
 

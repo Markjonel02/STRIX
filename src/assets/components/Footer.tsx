@@ -22,13 +22,11 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-6 item text" style={{ marginBottom: "0px" }}>
-              <h1 className=" fw-bold mb-3 ">
-                Movie<span className="text-danger">Strix</span>
-              </h1>
+              <h1 className=" fw-bold mb-3 ">STRIX</h1>
               <p>
-                “To make MovieStrix the biggest local and international hits.”
+                “To make STRIX the biggest local and international hits.”
                 <br />
-                All here from MovieStrix
+                All here from STRIX
               </p>
             </div>
             <div className=" about-links col-sm-6 col-md-3 item fw-medium  list-unstyled  ">
@@ -68,7 +66,7 @@ const Footer = () => {
       </footer>
       <div className="Credits   text-light d-flex bg-dark">
         <p className="container copyright d-flex mt-4 fs-5 fw-light ms-5 mx-5 ps-5 ">
-          MovieStrix © 2024
+          STRIX © 2024
         </p>
       </div>
     </>

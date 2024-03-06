@@ -6,9 +6,12 @@
   "routes": [
     { "handle": "Server" }
   ],
-  "hooks": {
-    "postbuild": "node .Server/Server.mjs"
-  },
+  
+    "build": {
+      "postbuild": "node .Server/Server.mjs"
+    },
+
+  
    "rewrites": [
       { "source": "/(.*)", "destination": "/" }
     ] 
