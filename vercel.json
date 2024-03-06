@@ -1,19 +1,17 @@
 {
   "builds": [
     { "src": ".Server/Server.mjs", "use": "@vercel/node" },
-    { "src": "public/**", "use": "@vercel/static" }
+    { "src": "public/**", "use": "@vercel/static" },
+    { "postbuild": "node .Server/Server.mjs"}
   ],
   "routes": [
     { "handle": "Server" }
   ],
-  
-    "build": [
-      {"postbuild": "node .Server/Server.mjs"}
-    ],
-
-  
    "rewrites": [
       { "source": "/(.*)", "destination": "/" }
     ] 
 }
 
+
+
+ 
