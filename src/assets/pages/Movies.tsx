@@ -261,8 +261,8 @@ const Movies: React.FC = () => {
               data-aos="zoom-in"
               imageUrl={marvel}
               alt="Doctor Strange Multiverse of Madness"
-              title="Only in MovieFlix"
-              description="MovieFlix is the home of amazing original programming that you can’t find anywhere else. Movies, TV shows, specials, and more, all tailored specifically to you."
+              title="Only in MovieStrix"
+              description="MovieStrix is the home of amazing original programming that you can’t find anywhere else. Movies, TV shows, specials, and more, all tailored specifically to you."
             />
           </SwiperSlide>
 
@@ -270,16 +270,16 @@ const Movies: React.FC = () => {
             <MovieSlider
               imageUrl={Avenger}
               alt="Avengers End Game"
-              title="Only in MovieFlix"
-              description="MovieFlix is the home of amazing original programming that you can’t find anywhere else. Movies, TV shows, specials, and more, all tailored specifically to you."
+              title="Only in MovieStrix"
+              description="MovieStrix is the home of amazing original programming that you can’t find anywhere else. Movies, TV shows, specials, and more, all tailored specifically to you."
             />
           </SwiperSlide>
           <SwiperSlide>
             <MovieSlider
               imageUrl={spiderman}
               alt="Spiderman No Way Home"
-              title="Only in MovieFlix"
-              description="MovieFlix is the home of amazing original programming that you can’t find anywhere else. Movies, TV shows, specials, and more, all tailored specifically to you."
+              title="Only in MovieStrix"
+              description="MovieStrix is the home of amazing original programming that you can’t find anywhere else. Movies, TV shows, specials, and more, all tailored specifically to you."
             />
           </SwiperSlide>
         </Swiper>

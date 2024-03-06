@@ -34,7 +34,7 @@ const Header = () => {
     >
       <div className="container-fluid d-flex justify-content-between ">
         <div className="img-container ">
-          <h6 className="fw-bolder fs-2 text-light  ms-md-5  ">MovieFlix</h6>
+          <h6 className="fw-bolder fs-2 text-light  ms-md-5  ">MovieStrix</h6>
         </div>
 
         <div className="button">

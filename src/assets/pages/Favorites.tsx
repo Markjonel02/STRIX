@@ -43,13 +43,14 @@ const FavoritesPage: React.FC = () => {
               key={item.id}
             >
               <div className="card-animation-cont d-flex">
-                <div className="card" id="cards">
+                <div className="cards" id="cards">
                   <img src={item.imageUrl} alt="" />
                   <div className="info">
                     <strong>{item.title}</strong>
                     <span className="sub-title">{item.genre}</span>
                     <hr />
                     <div className="hide-info">
+                      W
                       <span className="text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         <div className="butt-cont d-flex">
