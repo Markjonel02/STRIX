@@ -6,11 +6,9 @@
   "routes": [
     { "handle": "Server" }
   ],
+
    "rewrites": [
       { "source": "/(.*)", "destination": "/" }
-    ] 
+    ]
 }
 
-
-
- 
