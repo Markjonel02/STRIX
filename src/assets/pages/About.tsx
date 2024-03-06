@@ -8,6 +8,8 @@ import interest from "../img/About-Svg/interests_white_24dp.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
+import reccomend from "../img/About-Svg/recommend_white_24dp.svg";
+import watched from "../img/About-Svg/watched.mp4";
 const imgProperty = {
   radius: 20,
   imgSrc: about,
@@ -20,6 +22,33 @@ type FAQItem = {
 };
 
 const About = () => {
+  const breakpoints = {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    // when window width is >= 576px
+    576: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+    },
+    // when window width is >= 768px
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 25,
+    },
+    // when window width is >= 992px
+    992: {
+      slidesPerView: 3.4,
+      spaceBetween: 25,
+    },
+    // when window width is >= 1200px
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  };
   const [submitting, setSubmitting] = useState(false);
   const [to, setTo] = useState<string>("");
   const [text, setText] = useState<string>("");
@@ -122,7 +151,7 @@ const About = () => {
             </p>
             <div className="button mt-4 d-flex justify-content-center  align-items-center">
               <button
-                className="t-4 p-2 fw-bold fs-4 btn btn-outline-secondary text-light"
+                className="t-4 p-2 fw-bold fs-4 btn btn-outline-danger text-light"
                 style={{
                   height: "4.5rem",
                   width: "12.5rem",
@@ -138,6 +167,10 @@ const About = () => {
           className="container about-MovieFlix d-flex mx-auto justify-content-center align-items-center mt-xl-5 text-light py-5"
           id="id"
         >
+          <video className="video-background" autoPlay muted loop>
+            <source src={watched} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="row d-flex justify-content-center  align-items-center ">
             <div className="col-md-6 d-flex justify-content-center align-items-center">
               <div className="text-content mb-5  mt-5 ">
@@ -186,124 +219,137 @@ const About = () => {
             </div>
           </div>
         </div>
+        <div className="container mt-5">
+          <div className="benefits-container container">
+            <h1
+              className="btitles  text-light mb-3"
+              data-aos="fade-right"
+              data-aos-duration="500ms"
+              data-aos-delay="150"
+            >
+              Benefits
+            </h1>
 
-        <Swiper>
-          {" "}
-          <SwiperSlide>
-            {" "}
-            <div className="container mt-5 mb-5 py-5 shadow">
-              <div className="benefits-container">
-                <h1
-                  className="btitles  text-light mb-3"
-                  data-aos="fade-right"
-                  data-aos-duration="500ms"
-                  data-aos-delay="150"
-                >
-                  Benefits
-                </h1>
+            <p
+              className="sub-text text-light"
+              style={{ whiteSpace: "pre-wrap", fontSize: "1.2rem" }}
+              data-aos="fade-right"
+              data-aos-duration="200ms"
+              data-aos-delay="300"
+            >
+              Benefits of wacthing in MovieFlix gives you Entertainment.
+            </p>
+          </div>
 
-                <p
-                  className="sub-text text-light"
-                  style={{ whiteSpace: "pre-wrap", fontSize: "1.2rem" }}
-                  data-aos="fade-right"
-                  data-aos-duration="200ms"
-                  data-aos-delay="300"
-                >
-                  Benefits of wacthing in MovieFlix gives you Entertainment.
-                </p>
-              </div>
-
-              <div className="row py-4">
-                <div className="col-md-3 mb-3" data-aos="zoom-in">
-                  <div className="card p-3 ">
-                    <div className="card-body ">
+          <Swiper
+            className="container mt-0 mb-5 p-5 "
+            breakpoints={breakpoints}
+            w-100
+            grabCursor={true}
+          >
+            <div className="row py-4">
+              <SwiperSlide className="a-cards" style={{ width: "100%" }}>
+                <div className="card p-3">
+                  <div className="card-body">
+                    <div className="card-wrap">
                       <div className="d-flex justify-content-center">
                         <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
-                          <img src={manage} alt="" width={"50px"} />
-                        </div>
-                      </div>
-                      <p className="card-title text-center fs-5 fw-medium">
-                        Diverse selection of movies and TV shows.
-                      </p>
-                      <p className="card-text text-center">
-                        {" "}
-                        Gain a deeper understanding of diverse experiences and
-                        perspectives through compelling storytelling, fostering
-                        empathy and connection with characters from all walks of
-                        life.Experience the magic.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-3 mb-3" data-aos="zoom-in">
-                  <div className="card p-3">
-                    <div className="card-body">
-                      <div className="d-flex justify-content-center">
-                        <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-2">
-                          <img src={interest} alt="" width={"50px"} />
+                          <img src={ads} alt="" width={"50px"} />
                         </div>
                       </div>
                       <p className="card-title text-center  fs-5 fw-medium">
-                        Exclusive original content
+                        No ads
                       </p>
-                      <p className="card-text text-center ">
-                        Witness the evolution of storytelling with original
-                        content that pioneers new formats, technologies, and
-                        narrative techniques, driving innovation in the
-                        entertainment industry. Experience the thrill of
-                        exclusive original content
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-3 mb-3" data-aos="zoom-in">
-                  <div className="card p-3">
-                    <div className="card-body">
-                      <div className="card-wrap"></div>
-                      <div className="d-flex justify-content-center">
-                        <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
-                          <img src={Mobile} alt="" width={"50px"} />
-                        </div>
-                      </div>
-                      <p className="card-title text-center  fs-5 fw-medium">
-                        Convenient streaming.
-                      </p>
-                      <p className="card-text text-center p-1">
-                        With convenient streaming, access your favorite movies,
-                        TV shows, and more on any device, be it your smartphone,
-                        tablet, smart TV, or computer. Enjoy the flexibility of
-                        streaming entertainment anytime, anywhere.
+                      <p className="card-text text-center mb-1">
+                        Enjoy uninterrupted viewing without any interruptions
+                        from annoying advertisements or intrusive commercials,
+                        allowing you to fully immerse yourself in the content.
+                        just for you and your family
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3 mb-3" data-aos="zoom-in">
-                  <div className="card p-3">
-                    <div className="card-body">
-                      <div className="card-wrap">
-                        <div className="d-flex justify-content-center">
-                          <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
-                            <img src={ads} alt="" width={"50px"} />
-                          </div>
-                        </div>
-                        <p className="card-title text-center  fs-5 fw-medium">
-                          No ads
-                        </p>
-                        <p className="card-text text-center mb-1">
-                          Say goodbye to annoying ads and intrusive commercials.
-                          With MovieFlix, enjoy uninterrupted viewing without
-                          any distractions, allowing you to fully immerse
-                          yourself in the story without interruptions. with
-                          MovieFlix Experience the ultimate
-                        </p>
+              </SwiperSlide>
+              <SwiperSlide className="a-cards" style={{ width: "100%" }}>
+                <div className="card p-3">
+                  <div className="card-body">
+                    <div className="card-wrap"></div>
+                    <div className="d-flex justify-content-center">
+                      <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4 ">
+                        <img src={Mobile} alt="" width={"50px"} />
                       </div>
                     </div>
+                    <p className="card-title text-center  fs-5 fw-medium">
+                      Convenient streaming.
+                    </p>
+                    <p className="card-text text-center p-1 mb-3">
+                      Enjoy seamless access to your favorite movies and TV shows
+                      on any device, anytime, anywhere, ensuring entertainment
+                      at your fingertips with ease.
+                    </p>
                   </div>
                 </div>
-              </div>
+              </SwiperSlide>
+              <SwiperSlide className="a-cards" style={{ width: "100%" }}>
+                <div className="card p-3">
+                  <div className="card-body">
+                    <div className="d-flex justify-content-center">
+                      <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
+                        <img src={interest} alt="" width={"50px"} />
+                      </div>
+                    </div>
+                    <p className="card-title text-center  fs-5 fw-medium">
+                      Exclusive original content
+                    </p>
+                    <p className="card-text text-center ">
+                      Witness evolution of storytelling with original content
+                      that pioneers new formats, technologies, and narrative
+                      techniques, driving innovation in the industry.
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="a-cards" style={{ width: "100%" }}>
+                <div className="card p-3 ">
+                  <div className="card-body ">
+                    <div className="d-flex justify-content-center">
+                      <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
+                        <img src={manage} alt="" width={"50px"} />
+                      </div>
+                    </div>
+                    <p className="card-title text-center fs-5 fw-medium">
+                      Diverse selection of movies and TV shows.
+                    </p>
+                    <p className="card-text text-center">
+                      Gain a deeper understanding of diverse experiences and
+                      perspectives through compelling storytelling, fostering
+                      empathy and connection.
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="a-cards" style={{ width: "100%" }}>
+                <div className="card p-3 ">
+                  <div className="card-body ">
+                    <div className="d-flex justify-content-center">
+                      <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
+                        <img src={reccomend} alt="" width={"50px"} />
+                      </div>
+                    </div>
+                    <p className="card-title text-center fs-5 fw-medium">
+                      Diverse selection of movies and TV shows.
+                    </p>
+                    <p className="card-text text-center">
+                      Gain a deeper understanding of diverse experiences and
+                      perspectives through compelling storytelling, fostering
+                      empathy and connection.
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
             </div>
-          </SwiperSlide>
-        </Swiper>
+          </Swiper>
+        </div>
 
         {/* FAQ SECTION */}
         <div className="FAQ container d-flex flex-column py-5  mb-lg-5  mb-md-4  mb-sm-5">

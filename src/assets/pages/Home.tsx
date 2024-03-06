@@ -15,7 +15,7 @@ const Home = () => {
     };
   }, []);
 
-  const [scrollPos, setScrollPos] = useState<number>(0);
+  const [scrollPos, setScrollPos] = useState<number>(0);  
 
   const handleScroll = () => {
     setScrollPos(window.scrollY);

@@ -21,14 +21,11 @@
 
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
+
+body {  font-family: 'Montserrat', sans-serif;
   background-color:#131517ff;
-  scroll-behavior: smooth; /* Enable smooth scrolling */
 
-}
 
-body {
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
   overflow: -webkit-scrollbars-none; 
@@ -43,7 +40,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 body::-webkit-scrollbar-track {
-  background-color: transparent;
+  background-color: black;
 }
 
 a{
@@ -749,28 +746,39 @@ line-height:2.5 ;
 .imgs{
   border-radius: 10px;
   }
-/* Overview  section */
-.bgs {
-  background:url(./src/assets/img/SeriesOverview/.jpg) no-repeat center;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  background-attachment: fixed;
-  z-index:-1
-}
-.about-section {
-  background: url('./src/assets/img/pexels-donald-tong-109669.jpg') no-repeat center;
+/* Overview  section  url('./src/assets/img/pexels-donald-tong-109669.jpg')*/
+/* .about-section {  
+  background: url('./src/assets/About-Svg/watched.mp4') no-repeat center;
   background-size: cover; 
   position: relative; 
+  width: 100%;
+}
+ */
+
+
+ .about-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Adjust the height as needed */
+  overflow: hidden;
 }
 
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
 .aoverlay {
   position: absolute; 
   top: 0; 
   left: 0; 
   width: 100%; 
   height: 100%; 
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.2); 
 }
 
 .about-section::before {
@@ -918,11 +926,8 @@ transition:  all .2s ease-in-out;
 } 
 
 
-
-
-
 /* Media-Queries */
-@media screen and (min-width:320px)  and (max-width:660px) {
+@media all and (min-width:320px)  and (max-width:660px) {
 
 .home, .text-overlay{
     font-size: 1rem;
