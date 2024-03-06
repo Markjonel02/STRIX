@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import gif from "../img/Colourful Multimedia Stream Play Button Icon Logo.gif";
+
 import img from "../img/tv.png";
 import dl from "../img/modbile.jpg";
 import kids from "../img/kids.png";
 import watching from "../img/watching.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const Home = () => {
   // aos
   useEffect(() => {
@@ -111,14 +112,28 @@ const Home = () => {
           data-aos-duration="1000"
           data-a0s-delay="900"
         >
-          <img src={gif} alt="GIF" className="top-image img-fluid" />
-          <img src={img} alt="Image" className="bottom-image img-fluid" />
+          <LazyLoadImage
+            src={img}
+            alt="Image"
+            effect="blur"
+            width="100%"
+            height="auto"
+            loading="lazy"
+            className="bottom-image img-fluid"
+          />
         </div>
       </div>
 
       <div className="Download-mobile mt-2 bg-black position-relative d-flex justify-content-center align-items-center py-5">
         <div className="img-DL" data-aos="zoom-in">
-          <img src={dl} alt="Download" className="img-fluid" />
+          <LazyLoadImage
+            src={dl}
+            alt="Download"
+            effect="blur"
+            width="100%"
+            height="auto"
+            loading="lazy"
+          />
         </div>
         <div className="text-dl-container text-light text-start  ">
           <h1 className=" fw-bolder">
@@ -154,7 +169,15 @@ const Home = () => {
 
       <div className="watch-k bg-black mt-2  d-flex  align-items-center text-start ">
         <div className="tv-video position-relative mt-3" data-aos="zoom-in">
-          <img src={kids} alt="GIF" className="img-kids img-fluid" />
+          <LazyLoadImage
+            src={kids}
+            alt="GIF"
+            effect="blur"
+            width="100%"
+            height="auto"
+            loading="lazy"
+            className="img-kids img-fluid"
+          />
         </div>
 
         <div className="k-text text-light mb-3" style={{ display: "block" }}>

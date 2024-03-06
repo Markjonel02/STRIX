@@ -246,10 +246,13 @@ const About = () => {
           </div>
 
           <Swiper
-            className="container mt-0 mb-5 p-5 "
+            className="container mt-0 mb-5 p-3 "
             breakpoints={breakpoints}
             w-100
             grabCursor={true}
+            data-aos="zoom-in"
+            data-aos-duration="800"
+            data-aos-delay="500"
           >
             <div className="row py-4">
               <SwiperSlide className="a-cards" style={{ width: "100%" }}>
