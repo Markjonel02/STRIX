@@ -10,6 +10,7 @@ import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import reccomend from "../img/About-Svg/recommend_white_24dp.svg";
 import watched from "../img/About-Svg/watched.mp4";
+import message from "../sound/videoplayback.mp3";
 const imgProperty = {
   radius: 20,
   imgSrc: about,
@@ -77,6 +78,9 @@ const About = () => {
         setEmail(false);
         setSubmitting(submitting);
       }, 3000);
+      // Play sound effect
+      const audio = new Audio(message);
+      audio.play();
     } catch (error) {
       console.error("Error sending email:", error);
       alert("Error sending email");
