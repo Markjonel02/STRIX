@@ -4,7 +4,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import { Link, Outlet } from "react-router-dom";
 import { series, Kdramadb } from "../data/Data";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const size = ["w-100 h-50"];
 
 const Series = () => {
@@ -33,12 +33,15 @@ const Series = () => {
             <Link
               to={`/series/${encodeURIComponent(seriesItem.title)}/${index}`}
             >
-              <img
-                src={seriesItem.imageUrl}
-                className={`card-img-top img-fluid border-0 ${size}`}
+              <LazyLoadImage
                 alt={`${seriesItem.title}${index}`}
-                loading="lazy"
+                height="100%"
+                src={seriesItem.imageUrl}
+                width="100%"
+                effect="blur"
+                className={`card-img-top img-fluid border-0 ${size}`}
               />
+              <img loading="lazy" />
               <p className="text-center mt-2 text-decoration-none fw-lighter text-light">
                 {seriesItem.title.replace(/-/g, " ")}
               </p>
@@ -67,12 +70,15 @@ const Series = () => {
               key={index}
             >
               <Link to={`/series/${encodeURIComponent(kd.title)}/${index}`}>
-                <img
-                  src={kd.imageUrl}
-                  className={`card-img-top border-0 ${size}`}
+                <LazyLoadImage
                   alt={`${kd.title}${index}`}
-                  loading="lazy"
+                  height="100%"
+                  src={kd.imageUrl}
+                  width="100%"
+                  effect="blur"
+                  className={`card-img-top border-0 ${size}`}
                 />
+
                 <p className="text-center text-decoration-none fw-lighter text-light">
                   {kd.title.replace(/-/g, " ")}
                 </p>

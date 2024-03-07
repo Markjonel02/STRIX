@@ -34,10 +34,6 @@ const Header = () => {
     >
       <div className="container-fluid d-flex justify-content-between ">
         <div className="img-container ">
-          {/* <h6 className="fw-bolder fs-2 text-light  ms-md-5  ">
-            {" "}
-            <i>STRIX</i>
-          </h6> */}
           <svg
             width="150"
             viewBox="0 0 3984 1158"
