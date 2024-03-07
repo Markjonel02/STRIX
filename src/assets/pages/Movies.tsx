@@ -67,6 +67,18 @@ const TruncatedText: React.FC<TruncatedTextProps> = ({
 };
 
 const Movies: React.FC = () => {
+  const [isBlury, setisBlury] = useState<boolean>(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setisBlury(false);
+    }, 1500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   useEffect(() => {
     Aos.init();
     return () => {
@@ -256,7 +268,7 @@ const Movies: React.FC = () => {
           loop={true}
           modules={[Autoplay, EffectFade, Pagination]}
         >
-          <SwiperSlide data-aos="" lazy>
+          <SwiperSlide>
             <MovieSlider
               data-aos="zoom-in"
               imageUrl={marvel}
@@ -286,7 +298,7 @@ const Movies: React.FC = () => {
       </div>
       <div className="container d-flex  mt-5  mb-4">
         <div className="left-content">
-          <h1 className="text-light fs-4 fw-light mx-md-5 ">Discover</h1>
+          <h1 className="text-light fs-5 fw-bold  ">Discover</h1>
         </div>
         <div className="right-content ">
           <form className="d-flex justify-content-end ">
@@ -350,6 +362,10 @@ const Movies: React.FC = () => {
                   effect="blur"
                   wrapperClassName="lazy-image-wrapper"
                   className=" rounded "
+                  style={{
+                    filter: isBlury ? "blur(20px)" : "none",
+                    transition: "filter 2s ease ",
+                  }}
                 />
                 {/* Card body containing title, content, and favorite checkbox */}
                 <Card.Body>

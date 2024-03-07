@@ -1,9 +1,8 @@
 // MovieSlide.tsx
-import React from "react";
-import { SwiperSlide } from "swiper/react";
+import React, { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-
+useEffect;
 interface MovieSlideProps {
   imageUrl: string;
   alt: string;
@@ -25,41 +24,53 @@ const MovieSlide: React.FC<MovieSlideProps> = ({
 }) => {
   const truncatedDescription = truncateDescription(description, 3);
 
+  const [isBlury, setisBlury] = useState<boolean>(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setisBlury(false);
+    }, 1500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
-    <SwiperSlide>
-      <div className="swiper-image-container">
-        <LazyLoadImage
-          src={imageUrl}
-          alt={alt}
-          effect="blur"
-          width="100%"
-          height="auto"
-          loading="lazy"
-        />
-        <div className="image-overlay "></div>
-        <div className="head-banner d-xl-flex flex-xl-column">
-          <strong>
-            <h1
-              className="fw-bolder"
-              style={{
-                fontSize: "3em",
-              }}
-            >
-              {title}
-            </h1>
-          </strong>
-          <span
-            className="d-block fw-light fs-5 "
+    <div className="swiper-image-container">
+      <LazyLoadImage
+        src={imageUrl}
+        alt={alt}
+        effect="blur"
+        width="100%"
+        loading="lazy"
+        style={{
+          filter: isBlury ? "blur(20px)" : "none",
+          transition: "filter 2s ease",
+        }}
+      />
+      <div className="image-overlay "></div>
+      <div className="head-banner d-xl-flex flex-xl-column">
+        <strong>
+          <h1
+            className="fw-bolder"
             style={{
-              whiteSpace: "pre-line",
-              textAlign: "left",
+              fontSize: "3em",
             }}
           >
-            {truncatedDescription}
-          </span>
-        </div>
+            {title}
+          </h1>
+        </strong>
+        <span
+          className="d-block fw-light fs-5 "
+          style={{
+            whiteSpace: "pre-line",
+            textAlign: "left",
+          }}
+        >
+          {truncatedDescription}
+        </span>
       </div>
-    </SwiperSlide>
+    </div>
   );
 };
 
