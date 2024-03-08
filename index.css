@@ -242,13 +242,13 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .card-animation-cont #cards {
   position: relative;
   height: 300px;
-  width: 270px;
+  width: 280px;
   overflow: hidden;
   border-radius: 10px;
 }
@@ -286,11 +286,11 @@ label {
   text-decoration: none;
   color: rgb(20, 20, 20);
   border-radius: 10px;
-  transform: translateY(68%); /* Change this property */
+  transform: translateY(68%); 
   transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 .card-animation-cont #cards .info strong {
-  font-size: 1rem;
+  font-size: 1em;
   text-transform: uppercase;
 }
 .card-animation-cont #cards .info .sub-title {
@@ -913,7 +913,6 @@ transition:  all .2s ease-in-out;
   justify-content: center;
   align-items: center;
 } 
-
 
 /* Media-Queries */
 @media all and (min-width:320px)  and (max-width:660px) {

@@ -49,15 +49,15 @@ const FavoritesPage: React.FC = () => {
                     <strong>{item.title}</strong>
                     <span className="sub-title">{item.genre}</span>
                     <hr />
-                    <div className="hide-info">
+                    <div className="hide-info mb-4">
                       W
                       <span className="text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         <div className="butt-cont d-flex">
-                          <button className="btn btn-outline-success ms-2 mt-3 ">
+                          <button className="btn btn-outline-success ms-2 mt-2 ">
                             Watch <span>{p}</span>
                           </button>
-                          <button className="btn btn-outline-danger ms-2 mt-3">
+                          <button className="btn btn-outline-danger ms-2 mt-2">
                             Delete<span>{i}</span>
                           </button>
                         </div>
