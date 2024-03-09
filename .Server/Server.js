@@ -14,10 +14,11 @@ app.use(cors());
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
+  host: 'smtp.gmail.com',
   secure: false,
   auth: {
-    user:"process.env.EMAIL",
-    pass:"process.env.PASSWORD"
+    user:"itsmepiglet05@gmail.com",
+    pass:"mebl qwes sbrr vxhm"
   }
 });
 //add req and res

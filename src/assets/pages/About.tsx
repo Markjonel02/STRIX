@@ -83,7 +83,7 @@ const About = () => {
       const audio = new Audio(message);
       audio.play();
     } catch (error) {
-      console.error("Error sending email:", error);
+/*       console.error("Error sending email:", error); */
       alert("Error sending email");
     }
   };
