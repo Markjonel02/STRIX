@@ -24,7 +24,6 @@ type FAQItem = {
 
 const About = () => {
   const breakpoints = {
-    // when window width is >= 320px
     320: {
       slidesPerView: 1,
       spaceBetween: 10,
@@ -33,23 +32,23 @@ const About = () => {
     576: {
       slidesPerView: 1,
       spaceBetween: 15,
-    }, // when window width is >= 768px
+    },
+    // when window width is >= 768px
     768: {
       slidesPerView: 2,
       spaceBetween: 25,
     },
+    // when window width is >= 1366px
     1366: {
       slidesPerView: 1.2,
       spaceBetween: 30,
     },
-
     // when window width is >= 992px
     992: {
       slidesPerView: 2.3,
       spaceBetween: 30,
       padding: 5,
     },
-
     // when window width is >= 1200px
     1200: {
       slidesPerView: 4,
