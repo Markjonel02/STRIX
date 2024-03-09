@@ -45,6 +45,11 @@ const About = () => {
       spaceBetween: 30,
       padding: 5,
     },
+    1366: {
+      slidesPerView: 2.1,
+      spaceBetween: 30,
+    },
+
     // when window width is >= 1200px
     1200: {
       slidesPerView: 4,
@@ -83,7 +88,7 @@ const About = () => {
       const audio = new Audio(message);
       audio.play();
     } catch (error) {
-/*       console.error("Error sending email:", error); */
+      /*       console.error("Error sending email:", error); */
       alert("Error sending email");
     }
   };
