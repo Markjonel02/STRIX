@@ -45,14 +45,14 @@ const About = () => {
       spaceBetween: 30,
       padding: 5,
     },
-    1366: {
-      slidesPerView: 2.1,
-      spaceBetween: 30,
-    },
 
     // when window width is >= 1200px
     1200: {
       slidesPerView: 4,
+      spaceBetween: 30,
+    },
+    1366: {
+      slidesPerView: 2.1,
       spaceBetween: 30,
     },
   };
