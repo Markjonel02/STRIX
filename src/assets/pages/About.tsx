@@ -33,12 +33,16 @@ const About = () => {
     576: {
       slidesPerView: 1,
       spaceBetween: 15,
-    },
-    // when window width is >= 768px
+    }, // when window width is >= 768px
     768: {
       slidesPerView: 2,
       spaceBetween: 25,
     },
+    1366: {
+      slidesPerView: 1.2,
+      spaceBetween: 30,
+    },
+
     // when window width is >= 992px
     992: {
       slidesPerView: 2.3,
@@ -49,10 +53,6 @@ const About = () => {
     // when window width is >= 1200px
     1200: {
       slidesPerView: 4,
-      spaceBetween: 30,
-    },
-    1366: {
-      slidesPerView: 2.1,
       spaceBetween: 30,
     },
   };
