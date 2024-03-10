@@ -133,7 +133,6 @@ const Home = () => {
             effect="blur"
             width="100%"
             height="auto"
-            loading="lazy"
             className="bottom-image img-fluid"
             style={{
               filter: isBlury ? "blur(20px)" : "none",
@@ -151,7 +150,6 @@ const Home = () => {
             effect="blur"
             width="100%"
             height="auto"
-            loading="lazy"
             style={{
               filter: isBlury ? "blur(20px)" : "none",
               transition: "filter 2s ease",
@@ -198,7 +196,6 @@ const Home = () => {
             effect="blur"
             width="100%"
             height="auto"
-            loading="lazy"
             style={{
               filter: isBlury ? "blur(20px)" : "none",
               transition: "filter 2s ease",
