@@ -59,7 +59,7 @@ const About = () => {
       spaceBetween: 30,
     },
   };
-  const form = useRef<HTMLElement>(null);
+  const form = useRef<HTMLFormElement>(null);
   const [submitting, setSubmitting] = useState(false);
   const [email, setEmail] = useState<boolean>(false);
   const [to, setTo] = useState<string>("");
