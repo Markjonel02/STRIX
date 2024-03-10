@@ -1,4 +1,4 @@
- import express from 'express';
+/*  import express from 'express';
 import nodemailer from 'nodemailer';
 import bodyParser from 'body-parser';
 import cors from 'cors';
@@ -48,4 +48,4 @@ app.post('/send-email', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
- 
+  */

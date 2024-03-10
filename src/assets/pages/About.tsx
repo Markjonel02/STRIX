@@ -6,11 +6,14 @@ import manage from "../img/About-Svg/manage_search_white_24dp.svg";
 import ads from "../img/About-Svg/ads_click_white_24dp.svg";
 import interest from "../img/About-Svg/interests_white_24dp.svg";
 import { useEffect, useState } from "react";
-import axios from "axios";
+/* import axios from "axios"; */
 import { Swiper, SwiperSlide } from "swiper/react";
 import reccomend from "../img/About-Svg/recommend_white_24dp.svg";
 import watched from "../img/About-Svg/watched.mp4";
 import message from "../sound/videoplayback.mp3";
+import React, { useRef } from "react";
+import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
+
 const imgProperty = {
   radius: 20,
   imgSrc: about,
@@ -56,42 +59,52 @@ const About = () => {
       spaceBetween: 30,
     },
   };
+  const form = useRef<HTMLElement>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [email, setEmail] = useState<boolean>(false);
   const [to, setTo] = useState<string>("");
   const [text, setText] = useState<string>("");
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
-  const [email, setEmail] = useState<boolean>(false);
-
-  const sendEmail = async (e: React.FormEvent) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      await axios.post("http://localhost:3001/send-email", {
-        from: to,
-        text,
-        html: text,
-        firstName,
-        lastName,
-      });
-      // Clear all fields
-      setTo("");
-      setText("");
-      setFirstName("");
-      setLastName("");
-      setEmail(!email);
-      setSubmitting(!submitting);
-      setTimeout(() => {
-        setEmail(false);
-        setSubmitting(submitting);
-      }, 3000);
+
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_e4rotd1",
+          "template_uuvl30p",
+          form.current,
+          "9-tGhop5kKFi2PCQs"
+        )
+        .then(
+          (response: EmailJSResponseStatus) => {
+            console.log("SUCCESS!", response.status, response.text);
+            setTo("");
+            setText("");
+            setFirstName("");
+            setLastName("");
+            setEmail(!email);
+            setTimeout(() => {
+              setEmail(false);
+              setSubmitting(submitting);
+            }, 3000);
+          },
+          (error) => {
+            console.log("FAILED...", error);
+          }
+        );
+
       // Play sound effect
       const audio = new Audio(message);
       audio.play();
-    } catch (error) {
-      /*       console.error("Error sending email:", error); */
-      alert("Error sending email");
     }
   };
+  /*   const [submitting, setSubmitting] = useState(false); */
+  /*  const [to, setTo] = useState<string>("");
+  const [text, setText] = useState<string>("");
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>(""); */
 
   const [rotatedIndexes, setRotatedIndexes] = useState<number[]>([]);
 
@@ -551,7 +564,7 @@ const About = () => {
               >
                 Get in Touch
               </h1>
-              <form onSubmit={sendEmail} method="POST">
+              <form onSubmit={sendEmail} method="POST" ref={form}>
                 <div className="mb-3">
                   <div className="row">
                     <div className="col-md-6">
@@ -567,6 +580,7 @@ const About = () => {
                           style={{ height: "55px" }}
                           value={firstName}
                           onChange={(e) => setFirstName(e.target.value)}
+                          name="from_name"
                           required
                         />
                       </div>
@@ -584,7 +598,8 @@ const About = () => {
                           style={{ height: "55px" }}
                           value={lastName}
                           onChange={(e) => setLastName(e.target.value)}
-                          required
+                          name=""
+                          /*   required */
                         />
                       </div>
                     </div>
@@ -599,6 +614,7 @@ const About = () => {
                       onChange={(e) => setTo(e.target.value)}
                       style={{ height: "55px" }}
                       required
+                      name="from_email"
                     />
                   </div>
                 </div>
@@ -612,6 +628,7 @@ const About = () => {
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     required
+                    name="message"
                   ></textarea>
                 </div>
                 <div className="btnsub d-flex">

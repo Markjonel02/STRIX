@@ -171,33 +171,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/*  <div className="  watch-k bg-black mt-2  d-flex  align-items-center text-start ">
-        <div className="tv-video position-relative mt-3 " data-aos="zoom-in">
-          <LazyLoadImage
-            src={kids}
-            alt="GIF"
-            effect="blur"
-            width="100%"
-            height="auto"
-            loading="lazy"
-            className="img-kids"
-          />
-        </div>
-
-        <div className="k-text text-light mb-3" style={{ display: "block" }}>
-          <h1 className="fs-1 fw-bold mt-2 ">
-            <strong>Create profiles for kids</strong>
-          </h1>
-          <span className="kids-span fs-4">
-            Send kids on adventures with their favorite
-            <span style={{ display: "block" }}>
-              characters in a space made just for them—free <br /> with your
-              membership.
-            </span>
-          </span>
-        </div>
-      </div> */}
-
       <div className="Download-mobile mt-2 bg-black position-relative d-flex justify-content-center align-items-center py-5 ">
         <div className="img-DL ms-sm-4" data-aos="zoom-in">
           <LazyLoadImage
@@ -214,12 +187,9 @@ const Home = () => {
           <h1 className="fs-1 fw-bold mt-2">
             <strong>Create profiles for kids</strong>
           </h1>
-          <span className="kids-span fs-4">
-            Send kids on adventures with their favorite
-            <span style={{ display: "block" }}>
-              characters in a space made just for them—free
-              <span> with your membership.</span>
-            </span>
+          <span className="kids-span fs-4" style={{ display: "block" }}>
+            Send kids on adventures with their favorite characters in a space
+            made just for them—free with your membership.
           </span>
         </div>
       </div>

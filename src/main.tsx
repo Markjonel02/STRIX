@@ -12,7 +12,6 @@ import "swiper/css/navigation";
 import { BrowserRouter as Router } from "react-router-dom";
 import "@fortawesome/fontawesome-svg-core"; // Import the functions you need from the SDKs you need
 
-
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <FavoritesProvider>
