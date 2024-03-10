@@ -39,18 +39,19 @@ const About = () => {
       spaceBetween: 25,
     },
     // when window width is >= 1366px
-    1366: {
-      slidesPerView: 1.2,
-      spaceBetween: 30,
-    },
+
     // when window width is >= 992px
     992: {
       slidesPerView: 2.3,
       spaceBetween: 30,
-      padding: 5,
     },
+
     // when window width is >= 1200px
     1200: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    1366: {
       slidesPerView: 4,
       spaceBetween: 30,
     },
@@ -272,11 +273,11 @@ const About = () => {
                       <p className="card-title text-center  fs-5 fw-medium">
                         No ads
                       </p>
-                      <p className="card-text text-center mb-1">
+                      <p className="card-text text-center mb-2">
                         Enjoy uninterrupted viewing without any interruptions
                         from annoying advertisements or intrusive commercials,
                         allowing you to fully immerse yourself in the content.
-                        just for you and your family
+                        just for all of you.
                       </p>
                     </div>
                   </div>
