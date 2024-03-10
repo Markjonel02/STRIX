@@ -925,6 +925,23 @@ transition:  all .2s ease-in-out;
   justify-content: center;
   align-items: center;
 } 
+/* Custom CSS to control the fixed width and height of benefit cards */
+.a-cards-wrapper {
+  width: 100%;
+}
+
+.a-cards {
+  width: 100%;
+  height: 100%;
+}
+
+.card-body {
+  height: 100%;
+}
+
+.card-wrap {
+  height: 100%;
+}
 
 /* Media-Queries */
 @media all and (min-width:320px)  and (max-width:660px) {

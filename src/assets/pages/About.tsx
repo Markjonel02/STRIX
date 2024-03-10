@@ -14,6 +14,9 @@ import message from "../sound/videoplayback.mp3";
 import React, { useRef } from "react";
 import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 const imgProperty = {
   radius: 20,
   imgSrc: about,
@@ -59,6 +62,18 @@ const About = () => {
       spaceBetween: 30,
     },
   };
+
+  const [isBlury, setisBlury] = useState<boolean>(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setisBlury(false);
+    }, 1500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   const form = useRef<HTMLFormElement>(null);
   const [submitting, setSubmitting] = useState(false);
   const [email, setEmail] = useState<boolean>(false);
@@ -233,10 +248,17 @@ const About = () => {
                 data-aos="fade-down"
                 data-aos-duration="300ms"
               >
-                <img
+                <LazyLoadImage
                   src={imgProperty.imgSrc}
                   alt={imgProperty.alt}
+                  effect="blur"
+                  width="100%"
+                  loading="lazy"
                   className="imgs w-100"
+                  style={{
+                    filter: isBlury ? "blur(20px)" : "none",
+                    transition: "filter 2s ease",
+                  }}
                 />
               </div>
             </div>
@@ -274,23 +296,26 @@ const About = () => {
             data-aos-delay="500"
           >
             <div className="row py-4">
-              <SwiperSlide className="a-cards" style={{ width: "100%" }}>
-                <div className="card p-3">
+              <SwiperSlide
+                className="a-cards-wrapper"
+                style={{ width: "100%" }}
+              >
+                <div className="card a-cards p-3">
                   <div className="card-body">
                     <div className="card-wrap">
                       <div className="d-flex justify-content-center">
                         <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
-                          <img src={ads} alt="" width={"50px"} />
+                          <img src={ads} alt="" width="50px" />
                         </div>
                       </div>
-                      <p className="card-title text-center  fs-5 fw-medium">
+                      <p className="card-title text-center fs-5 fw-medium">
                         No ads
                       </p>
-                      <p className="card-text text-center mb-2">
+                      <p className="card-text text-center ">
                         Enjoy uninterrupted viewing without any interruptions
                         from annoying advertisements or intrusive commercials,
                         allowing you to fully immerse yourself in the content.
-                        just for all of you.
+                        Just for of you. and for friends,kids,and family.
                       </p>
                     </div>
                   </div>
@@ -308,68 +333,86 @@ const About = () => {
                     <p className="card-title text-center  fs-5 fw-medium">
                       Convenient streaming.
                     </p>
-                    <p className="card-text text-center p-1 mb-3">
+                    <p className="card-text text-center p-1">
                       Enjoy seamless access to your favorite movies and TV shows
                       on any device, anytime, anywhere, ensuring entertainment
-                      at your fingertips with ease.
+                      at your fingertips with ease. strix
                     </p>
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide className="a-cards" style={{ width: "100%" }}>
-                <div className="card p-3">
+
+              <SwiperSlide
+                className="a-cards-wrapper"
+                style={{ width: "100%" }}
+              >
+                <div className="card a-cards p-3">
                   <div className="card-body">
-                    <div className="d-flex justify-content-center">
-                      <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
-                        <img src={interest} alt="" width={"50px"} />
+                    <div className="card-wrap">
+                      <div className="d-flex justify-content-center">
+                        <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
+                          <img src={manage} alt="" width={"50px"} />
+                        </div>
                       </div>
+                      <p className="card-title text-center  fs-5 fw-medium">
+                        Exclusive original content
+                      </p>
+                      <p className="card-text text-center ">
+                        Witness evolution of storytelling with original content
+                        that pioneers new formats, technologies, and narrative
+                        techniques, driving innovation in the industry.
+                      </p>
                     </div>
-                    <p className="card-title text-center  fs-5 fw-medium">
-                      Exclusive original content
-                    </p>
-                    <p className="card-text text-center ">
-                      Witness evolution of storytelling with original content
-                      that pioneers new formats, technologies, and narrative
-                      techniques, driving innovation in the industry.
-                    </p>
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide className="a-cards" style={{ width: "100%" }}>
-                <div className="card p-3 ">
-                  <div className="card-body ">
-                    <div className="d-flex justify-content-center">
-                      <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
-                        <img src={manage} alt="" width={"50px"} />
+
+              <SwiperSlide
+                className="a-cards-wrapper"
+                style={{ width: "100%" }}
+              >
+                <div className="card a-cards p-3">
+                  <div className="card-body">
+                    <div className="card-wrap">
+                      <div className="d-flex justify-content-center">
+                        <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
+                          <img src={interest} alt="" width={"50px"} />
+                        </div>
                       </div>
+                      <p className="card-title text-center fs-5 fw-medium">
+                        Diverse selection of movies and TV shows.
+                      </p>
+                      <p className="card-text text-center">
+                        Gain a deeper understanding of diverse experiences and
+                        perspectives through compelling storytelling, fostering
+                        empathy and connection.
+                      </p>
                     </div>
-                    <p className="card-title text-center fs-5 fw-medium">
-                      Diverse selection of movies and TV shows.
-                    </p>
-                    <p className="card-text text-center">
-                      Gain a deeper understanding of diverse experiences and
-                      perspectives through compelling storytelling, fostering
-                      empathy and connection.
-                    </p>
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide className="a-cards" style={{ width: "100%" }}>
-                <div className="card p-3 ">
-                  <div className="card-body ">
-                    <div className="d-flex justify-content-center">
-                      <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
-                        <img src={reccomend} alt="" width={"50px"} />
+
+              <SwiperSlide
+                className="a-cards-wrapper"
+                style={{ width: "100%" }}
+              >
+                <div className="card a-cards p-3">
+                  <div className="card-body">
+                    <div className="card-wrap">
+                      <div className="d-flex justify-content-center">
+                        <div className="card-svg bg-secondary rounded-circle d-flex justify-content-center align-items-center mb-4">
+                          <img src={reccomend} alt="" width={"50px"} />
+                        </div>
                       </div>
+                      <p className="card-title text-center fs-5 fw-medium">
+                        Diverse selection of movies and TV shows.
+                      </p>
+                      <p className="card-text text-center">
+                        Gain a deeper understanding of diverse experiences and
+                        perspectives through compelling storytelling, fostering
+                        empathy and connection.
+                      </p>
                     </div>
-                    <p className="card-title text-center fs-5 fw-medium">
-                      Diverse selection of movies and TV shows.
-                    </p>
-                    <p className="card-text text-center">
-                      Gain a deeper understanding of diverse experiences and
-                      perspectives through compelling storytelling, fostering
-                      empathy and connection.
-                    </p>
                   </div>
                 </div>
               </SwiperSlide>
