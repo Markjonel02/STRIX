@@ -17,6 +17,17 @@ const Home = () => {
     };
   }, []);
 
+  const [isBlury, setisBlury] = useState<boolean>(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setisBlury(false);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   const [scrollPos, setScrollPos] = useState<number>(0);
 
   const handleScroll = () => {
@@ -124,6 +135,10 @@ const Home = () => {
             height="auto"
             loading="lazy"
             className="bottom-image img-fluid"
+            style={{
+              filter: isBlury ? "blur(20px)" : "none",
+              transition: "filter 2s ease",
+            }}
           />
         </div>
       </div>
@@ -137,6 +152,10 @@ const Home = () => {
             width="100%"
             height="auto"
             loading="lazy"
+            style={{
+              filter: isBlury ? "blur(20px)" : "none",
+              transition: "filter 2s ease",
+            }}
           />
         </div>
         <div className="text-dl-container text-light text-start  ">
@@ -180,6 +199,10 @@ const Home = () => {
             width="100%"
             height="auto"
             loading="lazy"
+            style={{
+              filter: isBlury ? "blur(20px)" : "none",
+              transition: "filter 2s ease",
+            }}
           />
         </div>
 
