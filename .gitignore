@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
-.Server/Server.js
+.Server/Server.js   
 .vercel
+.Server
