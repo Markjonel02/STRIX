@@ -1,10 +1,10 @@
-/*  import express from 'express';
+ import express from 'express';
 import nodemailer from 'nodemailer';
 import bodyParser from 'body-parser';
-import cors from 'cors';
-import dotenv from 'dotenv';  
+/* import cors from 'cors';
+import dotenv from 'dotenv';  */ 
 
-dotenv.config(); 
+/* dotenv.config();  */
 const app = express();
 const port = 3001;
 
@@ -48,4 +48,4 @@ app.post('/send-email', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-   */
+  
